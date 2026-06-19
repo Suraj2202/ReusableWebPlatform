@@ -2160,5 +2160,79 @@ Upgrade Path:
 
 ---
 
+## Appendix E: Asset Specifications (AI-Generated Content)
+
+All images and videos across client sites must follow these specifications for **uniformity and consistency**.
+
+### Image Specifications
+
+| Asset Type | Dimensions (px) | Aspect Ratio | Format | Max File Size | Notes |
+|---|---|---|---|---|---|
+| **Logo** | 200 x 60 | Flexible | SVG (preferred), PNG | 50KB | Transparent background |
+| **Logo (Square/Icon)** | 512 x 512 | 1:1 | SVG, PNG | 100KB | For favicon, social |
+| **Hero Banner** | 1920 x 1080 | 16:9 | WebP, JPG | 300KB | Full-width background |
+| **Hero Banner (Mobile)** | 768 x 1024 | 3:4 | WebP, JPG | 150KB | Portrait for mobile |
+| **Service Card Image** | 800 x 600 | 4:3 | WebP, PNG | 150KB | Service/feature icons or photos |
+| **Service Icon** | 128 x 128 | 1:1 | SVG, PNG | 20KB | Flat/minimal style |
+| **Gallery Image** | 1200 x 800 | 3:2 | WebP, JPG | 200KB | Landscape orientation |
+| **Gallery Thumbnail** | 400 x 300 | 4:3 | WebP, JPG | 50KB | Auto-generated from full image |
+| **Testimonial Avatar** | 200 x 200 | 1:1 | WebP, PNG | 30KB | Circular crop, face centered |
+| **Team Member Photo** | 600 x 600 | 1:1 | WebP, JPG | 100KB | Consistent background/style |
+| **About Section Image** | 1200 x 900 | 4:3 | WebP, JPG | 200KB | Company/office/team |
+| **Blog/Tour Detail Image** | 1200 x 675 | 16:9 | WebP, JPG | 200KB | Detail page hero |
+| **OG/Social Share Image** | 1200 x 630 | ~1.91:1 | JPG, PNG | 200KB | For link previews |
+| **Favicon** | 32 x 32, 192 x 192 | 1:1 | ICO, PNG | 10KB | Multi-size |
+| **Background Pattern/Texture** | 1920 x 1080 | 16:9 | WebP, PNG | 100KB | Subtle, tileable if needed |
+
+### Video Specifications
+
+| Asset Type | Resolution | Aspect Ratio | Format | Max File Size | Duration | Notes |
+|---|---|---|---|---|---|---|
+| **Hero Background Video** | 1920 x 1080 | 16:9 | MP4 (H.264) | 5MB | 10-20s | Loop, no audio, muted autoplay |
+| **Hero Video (Mobile)** | 720 x 1280 | 9:16 | MP4 (H.264) | 3MB | 10-15s | Portrait version |
+| **Tour/Service Promo** | 1280 x 720 | 16:9 | MP4 (H.264) | 10MB | 30-60s | Optional audio |
+
+### AI Image Generation Prompts — Style Guide
+
+| Parameter | Specification |
+|---|---|
+| **Style Consistency** | All images for a single client must use the same AI model + style seed |
+| **Color Palette** | Match client's brand colors (primary/accent as dominant tones) |
+| **Lighting** | Bright, natural, warm lighting (unless brand requires otherwise) |
+| **Composition** | Subject centered or rule-of-thirds; clean backgrounds |
+| **Text in Images** | AVOID — text should be HTML overlay, not baked into images |
+| **Faces** | Use only for testimonials/team; ensure diversity and realism |
+| **Backgrounds** | Consistent treatment per site (solid, gradient, or photographic) |
+| **Negative Prompts** | No watermarks, no text, no logos, no borders, no artifacts |
+
+### Asset Naming Convention
+
+```
+Format: {section}-{descriptor}-{size}.{ext}
+
+Examples:
+  hero-beach-sunset-1920x1080.webp
+  hero-beach-sunset-768x1024.webp    (mobile variant)
+  service-tour-packages-800x600.webp
+  service-icon-adventure-128x128.svg
+  gallery-mountain-trek-01-1200x800.webp
+  testimonial-avatar-john-200x200.webp
+  team-member-priya-600x600.webp
+  og-share-image-1200x630.jpg
+```
+
+### Responsive Image Breakpoints (Auto-Generated at Build)
+
+| Breakpoint | Width | Usage |
+|---|---|---|
+| Small (mobile) | 320px, 480px | Mobile devices |
+| Medium (tablet) | 768px | Tablets |
+| Large (desktop) | 1024px, 1280px | Desktop |
+| XL (wide) | 1920px | Large displays |
+
+The build pipeline (Astro Image + Sharp) auto-generates all responsive sizes from the **largest source image**. You only need to provide the full-size version.
+
+---
+
 _Document End_  
-_Next Step: Begin Phase 0 — Validate architecture with proof-of-concept_
+_Next Step: Begin Phase 1 — Project Setup_
