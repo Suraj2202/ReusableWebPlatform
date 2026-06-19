@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects
+# Redirect www to non-www (set when custom domain is added)
+# https://www.example.com/* https://example.com/:splat 301
