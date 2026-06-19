@@ -26,3 +26,8 @@ yarn-error.log*
 
 # Astro
 .astro/
+
+# Generated responsive images (created by prebuild script)
+public/assets/**/*-*w.jpg
+public/assets/**/*-*w.webp
+public/assets/**/*.webp

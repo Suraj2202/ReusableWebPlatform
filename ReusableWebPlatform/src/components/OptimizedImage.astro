@@ -1,0 +1,63 @@
+---
+/**
+ * OptimizedImage — outputs <picture> with WebP source + responsive srcset.
+ * Falls back gracefully if WebP doesn't exist (browser just uses jpg).
+ */
+
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
+  width?: number;
+  height?: number;
+  sizes?: string;
+  responsive?: boolean;
+}
+
+const {
+  src,
+  alt,
+  class: className = '',
+  loading = 'lazy',
+  decoding = 'async',
+  width,
+  height,
+  sizes = '(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw',
+  responsive = false,
+} = Astro.props;
+
+// Generate WebP path
+const webpSrc = src.replace(/\.(jpe?g|png)$/i, '.webp');
+
+// Generate responsive srcset paths
+const WIDTHS = [640, 960, 1280];
+function getSrcset(ext: string) {
+  const base = src.replace(/\.(jpe?g|png)$/i, '');
+  return WIDTHS.map((w) => `${base}-${w}w${ext} ${w}w`).join(', ');
+}
+
+const webpSrcset = responsive ? getSrcset('.webp') : undefined;
+const jpgSrcset = responsive ? getSrcset(src.match(/\.(jpe?g|png)$/i)?.[0] || '.jpg') : undefined;
+---
+
+<picture>
+  {responsive ? (
+    <>
+      <source type="image/webp" srcset={webpSrcset} sizes={sizes} />
+      <source srcset={jpgSrcset} sizes={sizes} />
+    </>
+  ) : (
+    <source type="image/webp" srcset={webpSrc} />
+  )}
+  <img
+    src={src}
+    alt={alt}
+    class={className}
+    loading={loading}
+    decoding={decoding}
+    width={width}
+    height={height}
+  />
+</picture>

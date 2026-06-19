@@ -1,5 +1,6 @@
 ---
 import { getSiteConfig } from '@/utils/config';
+import OptimizedImage from '@/components/OptimizedImage.astro';
 
 const config = getSiteConfig();
 const { hero } = config;
@@ -9,13 +10,14 @@ const { hero } = config;
   <!-- Background Image -->
   {
     hero.backgroundImage && (
-      <img
+      <OptimizedImage
         src={hero.backgroundImage}
         alt=""
         class="absolute inset-0 w-full h-full object-cover hero-parallax scale-110"
         loading="eager"
         decoding="async"
-        aria-hidden="true"
+        width={1920}
+        height={1080}
       />
     )
   }

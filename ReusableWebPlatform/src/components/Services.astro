@@ -1,5 +1,6 @@
 ---
 import { getSiteConfig } from '@/utils/config';
+import OptimizedImage from '@/components/OptimizedImage.astro';
 
 const config = getSiteConfig();
 const { services } = config;
@@ -38,12 +39,15 @@ const iconMap: Record<string, string> = {
           >
             {service.image && (
               <div class="aspect-[4/3] overflow-hidden">
-                <img
+                <OptimizedImage
                   src={service.image}
                   alt={service.title}
                   class="w-full h-full object-cover img-zoom img-lazy"
                   loading="lazy"
                   decoding="async"
+                  responsive={true}
+                  width={480}
+                  height={360}
                 />
               </div>
             )}

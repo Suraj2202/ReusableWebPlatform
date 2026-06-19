@@ -1,5 +1,6 @@
 ---
 import { getSiteConfig } from '@/utils/config';
+import OptimizedImage from '@/components/OptimizedImage.astro';
 
 const config = getSiteConfig();
 const { about } = config;
@@ -13,12 +14,14 @@ const { about } = config;
         {
           about.image && (
             <div class="relative">
-              <img
+              <OptimizedImage
                 src={about.image}
                 alt={about.title}
                 class="rounded-theme shadow-lg w-full object-cover aspect-[4/3] img-lazy"
                 loading="lazy"
                 decoding="async"
+                width={640}
+                height={480}
               />
             </div>
           )
