@@ -1,0 +1,69 @@
+# =============================================================
+# Lighthouse Performance Audit — Runs on PRs to main
+# Blocks merge if scores below thresholds
+# =============================================================
+
+name: Lighthouse Audit
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  lighthouse:
+    name: Performance Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Run Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          uploadArtifacts: true
+          configPath: './lighthouserc.json'
+
+      - name: Comment results on PR
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const resultsPath = '.lighthouseci';
+            if (fs.existsSync(resultsPath)) {
+              const files = fs.readdirSync(resultsPath).filter(f => f.endsWith('.json'));
+              if (files.length > 0) {
+                const report = JSON.parse(fs.readFileSync(`${resultsPath}/${files[0]}`, 'utf8'));
+                const scores = report.categories;
+                const body = `## 🔍 Lighthouse Audit Results\n\n` +
+                  `| Category | Score |\n|---|---|\n` +
+                  `| Performance | ${Math.round((scores.performance?.score || 0) * 100)} |\n` +
+                  `| Accessibility | ${Math.round((scores.accessibility?.score || 0) * 100)} |\n` +
+                  `| Best Practices | ${Math.round((scores['best-practices']?.score || 0) * 100)} |\n` +
+                  `| SEO | ${Math.round((scores.seo?.score || 0) * 100)} |\n`;
+                github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: body
+                });
+              }
+            }
