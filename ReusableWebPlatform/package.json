@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Reusable static website platform for multi-client deployment",
   "scripts": {
+    "predev": "node scripts/optimize-images.mjs",
     "dev": "astro dev",
     "prebuild": "node scripts/optimize-images.mjs",
     "build": "astro build",

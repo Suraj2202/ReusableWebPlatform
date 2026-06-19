@@ -83,7 +83,7 @@ async function main() {
     await generateWebP(img);
 
     // Generate responsive sizes for gallery/services images
-    const relDir = dirname(img).replace(ASSETS_DIR, '').replace(/^[\\/]/, '');
+    const relDir = dirname(img).replaceAll('\\', '/').replace(ASSETS_DIR, '').replace(/^\//, '');
     if (RESPONSIVE_DIRS.includes(relDir)) {
       await generateResponsive(img);
     }
