@@ -1,0 +1,72 @@
+---
+import { getSiteConfig } from '@/utils/config';
+
+const config = getSiteConfig();
+const { hero } = config;
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden" id="hero">
+  <!-- Background Image -->
+  {hero.backgroundImage && (
+    <img
+      src={hero.backgroundImage}
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      aria-hidden="true"
+    />
+  )}
+
+  <!-- Background Video -->
+  {hero.backgroundVideo && (
+    <video
+      class="absolute inset-0 w-full h-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+      <source src={hero.backgroundVideo} type="video/mp4" />
+    </video>
+  )}
+
+  <!-- Overlay -->
+  <div
+    class="absolute inset-0 bg-neutral"
+    style={`opacity: ${hero.overlay || 0.45}`}
+    aria-hidden="true"
+  ></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+      {hero.headline}
+    </h1>
+    <p class="text-lg md:text-xl lg:text-2xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+      {hero.subheadline}
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      {hero.cta?.primary && (
+        <a href={hero.cta.primary.href} class="btn-primary text-lg px-8 py-4">
+          {hero.cta.primary.label}
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      )}
+      {hero.cta?.secondary && (
+        <a href={hero.cta.secondary.href} class="btn-secondary text-lg px-8 py-4">
+          {hero.cta.secondary.label}
+        </a>
+      )}
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
+    <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>

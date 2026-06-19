@@ -1,0 +1,79 @@
+---
+import { getSiteConfig } from '@/utils/config';
+
+const config = getSiteConfig();
+const { faq } = config;
+---
+
+<section class="section-padding bg-white" id="faq">
+  <div class="container-narrow max-w-3xl">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="text-primary font-semibold text-sm uppercase tracking-wider">FAQ</span>
+      <h2 class="section-title mt-2">{faq.title}</h2>
+      <p class="section-subtitle">{faq.subtitle}</p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="space-y-4" id="faq-accordion">
+      {faq.items.map((item, index) => (
+        <div class="border border-neutral/10 rounded-theme overflow-hidden faq-item">
+          <button
+            class="w-full flex items-center justify-between p-5 text-left hover:bg-surface/50 transition-colors duration-200"
+            aria-expanded="false"
+            aria-controls={`faq-answer-${index}`}
+            data-faq-toggle
+          >
+            <span class="font-semibold text-neutral pr-4">{item.question}</span>
+            <svg
+              class="w-5 h-5 text-primary shrink-0 transition-transform duration-300 faq-chevron"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="hidden px-5 pb-5"
+            id={`faq-answer-${index}`}
+            role="region"
+          >
+            <p class="text-neutral/70 leading-relaxed">{item.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const toggles = document.querySelectorAll('[data-faq-toggle]');
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      const targetId = toggle.getAttribute('aria-controls');
+      const target = targetId ? document.getElementById(targetId) : null;
+      const chevron = toggle.querySelector('.faq-chevron');
+
+      // Close all others
+      toggles.forEach((otherToggle) => {
+        if (otherToggle !== toggle) {
+          otherToggle.setAttribute('aria-expanded', 'false');
+          const otherId = otherToggle.getAttribute('aria-controls');
+          const otherTarget = otherId ? document.getElementById(otherId) : null;
+          otherTarget?.classList.add('hidden');
+          otherToggle.querySelector('.faq-chevron')?.classList.remove('rotate-180');
+        }
+      });
+
+      // Toggle current
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      if (target) {
+        target.classList.toggle('hidden');
+      }
+      chevron?.classList.toggle('rotate-180');
+    });
+  });
+</script>

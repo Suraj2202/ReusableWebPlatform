@@ -1,0 +1,84 @@
+---
+import { getSiteConfig } from '@/utils/config';
+import { generateStructuredData, getPageTitle } from '@/utils/seo';
+import '@/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const config = getSiteConfig();
+const { title, description, ogImage } = Astro.props;
+
+const pageTitle = getPageTitle(title || '', config.seo.titleTemplate);
+const pageDescription = description || config.seo.defaultDescription;
+const pageOgImage = ogImage || config.seo.ogImage;
+const canonicalUrl = new URL(Astro.url.pathname, config.seo.siteUrl);
+const structuredData = generateStructuredData(config);
+---
+
+<!doctype html>
+<html lang={config.seo.locale?.split('_')[0] || 'en'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{pageTitle}</title>
+    <meta name="title" content={pageTitle} />
+    <meta name="description" content={pageDescription} />
+    {config.seo.keywords?.length > 0 && (
+      <meta name="keywords" content={config.seo.keywords.join(', ')} />
+    )}
+    <link rel="canonical" href={canonicalUrl.href} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href={config.brand.favicon} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={new URL(pageOgImage, config.seo.siteUrl).href} />
+    <meta property="og:locale" content={config.seo.locale} />
+    <meta property="og:site_name" content={config.brand.name} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={new URL(pageOgImage, config.seo.siteUrl).href} />
+
+    <!-- Google Verification -->
+    {config.seo.googleVerification && (
+      <meta name="google-site-verification" content={config.seo.googleVerification} />
+    )}
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={structuredData} />
+
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href={`https://fonts.googleapis.com/css2?family=${config.theme.fonts.heading}:wght@400;500;600;700&family=${config.theme.fonts.body}:wght@300;400;500;600&display=swap`}
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+
+    <!-- Analytics -->
+    {config.analytics.cloudflareToken && (
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token": "${config.analytics.cloudflareToken}"}`}
+      />
+    )}
+  </body>
+</html>

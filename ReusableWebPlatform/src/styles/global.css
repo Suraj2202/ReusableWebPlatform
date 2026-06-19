@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   CSS Custom Properties (from site.yaml)
+   These are set by the BaseLayout at build time
+   ======================================== */
+
+@layer base {
+  :root {
+    --color-primary: theme('colors.primary');
+    --color-secondary: theme('colors.secondary');
+    --color-accent: theme('colors.accent');
+    --color-neutral: theme('colors.neutral');
+    --color-surface: theme('colors.surface');
+    --radius: theme('borderRadius.theme');
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+    font-family: theme('fontFamily.body');
+  }
+
+  body {
+    @apply bg-white text-neutral leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.heading');
+    @apply font-bold tracking-tight;
+  }
+
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
+  h2 { @apply text-3xl md:text-4xl; }
+  h3 { @apply text-xl md:text-2xl; }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24 px-4;
+  }
+
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .section-header {
+    @apply text-center mb-12 md:mb-16;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-neutral mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-neutral/70 max-w-2xl mx-auto;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-primary text-white font-semibold rounded-theme
+           hover:bg-secondary transition-colors duration-200
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           border-2 border-white text-white font-semibold rounded-theme
+           hover:bg-white hover:text-neutral transition-colors duration-200
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-accent text-neutral font-semibold rounded-theme
+           hover:bg-accent/90 transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-theme shadow-md hover:shadow-xl 
+           transition-shadow duration-300 overflow-hidden;
+  }
+}
+
+/* Smooth scroll offset for fixed header */
+html {
+  scroll-padding-top: 5rem;
+}
+
+/* Custom scrollbar */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+  }
+}

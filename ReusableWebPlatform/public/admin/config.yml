@@ -1,0 +1,202 @@
+backend:
+  name: github
+  repo: Suraj2202/ReusableWebPlatform
+  branch: main
+
+media_folder: "public/assets"
+public_folder: "/assets"
+
+collections:
+  # ========================================
+  # SITE SETTINGS (Single File)
+  # ========================================
+  - name: "settings"
+    label: "⚙️ Site Settings"
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "content/site.yaml"
+        fields:
+          # Brand
+          - label: "Brand"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Business Name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Founded Year", name: "foundedYear", widget: "number" }
+              - { label: "Logo", name: "logo", widget: "image", required: false }
+              - { label: "Favicon", name: "favicon", widget: "image", required: false }
+
+          # Theme
+          - label: "Theme"
+            name: "theme"
+            widget: "object"
+            fields:
+              - label: "Colors"
+                name: "colors"
+                widget: "object"
+                fields:
+                  - { label: "Primary Color", name: "primary", widget: "color", default: "#0F766E" }
+                  - { label: "Secondary Color", name: "secondary", widget: "color", default: "#134E4A" }
+                  - { label: "Accent Color", name: "accent", widget: "color", default: "#F59E0B" }
+                  - { label: "Text Color", name: "neutral", widget: "color", default: "#1F2937" }
+                  - { label: "Background", name: "background", widget: "color", default: "#FFFFFF" }
+                  - { label: "Surface Color", name: "surface", widget: "color", default: "#F0FDFA" }
+              - label: "Fonts"
+                name: "fonts"
+                widget: "object"
+                fields:
+                  - { label: "Heading Font", name: "heading", widget: "string", default: "Inter" }
+                  - { label: "Body Font", name: "body", widget: "string", default: "Inter" }
+              - { label: "Border Radius", name: "borderRadius", widget: "string", default: "0.75rem" }
+
+          # Hero
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Subheadline", name: "subheadline", widget: "string" }
+              - { label: "Background Image", name: "backgroundImage", widget: "image" }
+              - { label: "Background Video (MP4)", name: "backgroundVideo", widget: "file", required: false }
+              - { label: "Overlay Opacity (0-1)", name: "overlay", widget: "number", min: 0, max: 1, step: 0.05, default: 0.45 }
+              - label: "Call to Action"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - label: "Primary Button"
+                    name: "primary"
+                    widget: "object"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "Link", name: "href", widget: "string" }
+                  - label: "Secondary Button"
+                    name: "secondary"
+                    widget: "object"
+                    fields:
+                      - { label: "Label", name: "label", widget: "string" }
+                      - { label: "Link", name: "href", widget: "string" }
+
+          # About
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - label: "Stats"
+                name: "stats"
+                widget: "list"
+                fields:
+                  - { label: "Value", name: "value", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+
+          # Contact
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Address", name: "address", widget: "text" }
+              - { label: "Working Hours", name: "workingHours", widget: "string" }
+
+          # Social Media
+          - label: "Social Media"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - { label: "Twitter/X URL", name: "twitter", widget: "string", required: false }
+              - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+              - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+              - { label: "WhatsApp Number", name: "whatsapp", widget: "string", required: false }
+
+          # Section Visibility
+          - label: "Section Visibility"
+            name: "sections"
+            widget: "object"
+            fields:
+              - { label: "Show Hero", name: "hero", widget: "boolean", default: true }
+              - { label: "Show About", name: "about", widget: "boolean", default: true }
+              - { label: "Show Services", name: "services", widget: "boolean", default: true }
+              - { label: "Show Gallery", name: "gallery", widget: "boolean", default: true }
+              - { label: "Show Testimonials", name: "testimonials", widget: "boolean", default: true }
+              - { label: "Show FAQ", name: "faq", widget: "boolean", default: true }
+              - { label: "Show Contact", name: "contact", widget: "boolean", default: true }
+
+  # ========================================
+  # SERVICES (Repeatable)
+  # ========================================
+  - name: "services"
+    label: "🛎️ Services / Tours"
+    label_singular: "Service"
+    description: "Add, edit, or remove services displayed on the website"
+    folder: "content/collections/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Icon", name: "icon", widget: "select", options: ["sun", "mountain", "landmark", "binoculars", "building", "ship", "star"], default: "star" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Link", name: "href", widget: "string", default: "#" }
+      - { label: "Display Order", name: "order", widget: "number", default: 1 }
+      - { label: "Detail Content", name: "body", widget: "markdown", required: false }
+
+  # ========================================
+  # TESTIMONIALS (Repeatable)
+  # ========================================
+  - name: "testimonials"
+    label: "⭐ Testimonials"
+    label_singular: "Testimonial"
+    description: "Client reviews and testimonials"
+    folder: "content/collections/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Client Name", name: "name", widget: "string" }
+      - { label: "Role / Title", name: "role", widget: "string" }
+      - { label: "Photo", name: "avatar", widget: "image", required: false }
+      - { label: "Rating (1-5)", name: "rating", widget: "number", min: 1, max: 5, default: 5 }
+      - { label: "Display Order", name: "order", widget: "number", default: 1 }
+      - { label: "Testimonial", name: "body", widget: "markdown" }
+
+  # ========================================
+  # GALLERY (Repeatable)
+  # ========================================
+  - name: "gallery"
+    label: "🖼️ Gallery"
+    label_singular: "Gallery Image"
+    description: "Portfolio and gallery images"
+    folder: "content/collections/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Alt Text", name: "alt", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Display Order", name: "order", widget: "number", default: 1 }
+
+  # ========================================
+  # FAQ (Repeatable)
+  # ========================================
+  - name: "faq"
+    label: "❓ FAQ"
+    label_singular: "FAQ Item"
+    description: "Frequently asked questions"
+    folder: "content/collections/faq"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Question", name: "question", widget: "string" }
+      - { label: "Category", name: "category", widget: "string", required: false }
+      - { label: "Display Order", name: "order", widget: "number", default: 1 }
+      - { label: "Answer", name: "body", widget: "markdown" }

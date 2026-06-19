@@ -1,0 +1,255 @@
+# ============================================
+# SITE CONFIGURATION
+# Single source of truth for all client-specific settings.
+# Edit this file (or use CMS) to customize the website.
+# ============================================
+
+# --- Brand Identity ---
+brand:
+  name: "Wanderlust Travels"
+  tagline: "Explore the World with Us"
+  description: "Premium travel experiences curated for the modern explorer. Discover breathtaking destinations, handcrafted itineraries, and unforgettable adventures."
+  foundedYear: 2018
+  logo: "/assets/logo.svg"
+  favicon: "/favicon.svg"
+
+# --- Theme / Colors ---
+theme:
+  colors:
+    primary: "#0F766E"
+    secondary: "#134E4A"
+    accent: "#F59E0B"
+    neutral: "#1F2937"
+    background: "#FFFFFF"
+    surface: "#F0FDFA"
+  fonts:
+    heading: "Inter"
+    body: "Inter"
+  borderRadius: "0.75rem"
+
+# --- Navigation ---
+navigation:
+  items:
+    - label: "Home"
+      href: "/"
+    - label: "About"
+      href: "/about"
+    - label: "Tours"
+      href: "/tours"
+    - label: "Gallery"
+      href: "/gallery"
+    - label: "Contact"
+      href: "/contact"
+  cta:
+    label: "Book a Trip"
+    href: "/contact"
+
+# --- Hero Section ---
+hero:
+  headline: "Discover Your Next Adventure"
+  subheadline: "Curated travel packages to 50+ breathtaking destinations worldwide"
+  backgroundImage: "/assets/hero-banner.jpg"
+  backgroundVideo: ""
+  overlay: 0.45
+  cta:
+    primary:
+      label: "Explore Tours"
+      href: "/tours"
+    secondary:
+      label: "Contact Us"
+      href: "/contact"
+
+# --- About Section ---
+about:
+  title: "Who We Are"
+  description: "At Wanderlust Travels, we believe every journey tells a story. Since 2018, we've been crafting personalized travel experiences that turn dream destinations into lasting memories. Our team of passionate travel experts handpick each destination and design every itinerary with care."
+  image: "/assets/about.jpg"
+  stats:
+    - value: "500+"
+      label: "Happy Travelers"
+    - value: "50+"
+      label: "Destinations"
+    - value: "6+"
+      label: "Years Experience"
+    - value: "4.9"
+      label: "Average Rating"
+
+# --- Services / Tours ---
+services:
+  title: "Our Tours"
+  subtitle: "Choose your perfect adventure"
+  items:
+    - title: "Beach Getaways"
+      icon: "sun"
+      description: "Pristine beaches, crystal waters, and golden sunsets. Relax and unwind at the world's most beautiful coastal destinations."
+      image: "/assets/services/beach.jpg"
+      href: "/tours#beach"
+    - title: "Mountain Expeditions"
+      icon: "mountain"
+      description: "Conquer majestic peaks and trek through breathtaking trails. From the Himalayas to the Andes, adventure awaits."
+      image: "/assets/services/mountain.jpg"
+      href: "/tours#mountain"
+    - title: "Cultural Journeys"
+      icon: "landmark"
+      description: "Immerse yourself in rich traditions, ancient history, and vibrant local cultures across continents."
+      image: "/assets/services/culture.jpg"
+      href: "/tours#culture"
+    - title: "Wildlife Safaris"
+      icon: "binoculars"
+      description: "Get up close with nature's magnificent creatures in their natural habitats. Unforgettable wildlife encounters."
+      image: "/assets/services/safari.jpg"
+      href: "/tours#safari"
+    - title: "City Escapes"
+      icon: "building"
+      description: "Explore iconic cities, hidden gems, world-class cuisine, and vibrant nightlife around the globe."
+      image: "/assets/services/city.jpg"
+      href: "/tours#city"
+    - title: "Cruise Adventures"
+      icon: "ship"
+      description: "Set sail on luxury cruises with stunning ocean views, gourmet dining, and exotic port stops."
+      image: "/assets/services/cruise.jpg"
+      href: "/tours#cruise"
+
+# --- Gallery ---
+gallery:
+  title: "Travel Gallery"
+  subtitle: "Moments captured from our journeys"
+  images:
+    - src: "/assets/gallery/gallery-01.jpg"
+      alt: "Tropical beach sunset"
+      category: "Beach"
+    - src: "/assets/gallery/gallery-02.jpg"
+      alt: "Mountain peak at sunrise"
+      category: "Mountain"
+    - src: "/assets/gallery/gallery-03.jpg"
+      alt: "Ancient temple ruins"
+      category: "Culture"
+    - src: "/assets/gallery/gallery-04.jpg"
+      alt: "African safari landscape"
+      category: "Safari"
+    - src: "/assets/gallery/gallery-05.jpg"
+      alt: "City skyline at night"
+      category: "City"
+    - src: "/assets/gallery/gallery-06.jpg"
+      alt: "Cruise ship at sea"
+      category: "Cruise"
+
+# --- Testimonials ---
+testimonials:
+  title: "What Our Travelers Say"
+  subtitle: "Real stories from real adventurers"
+  items:
+    - name: "Priya Sharma"
+      role: "Solo Traveler"
+      avatar: "/assets/testimonials/priya.jpg"
+      rating: 5
+      quote: "Wanderlust made my first solo trip absolutely magical. Every detail was perfectly planned. I felt safe and supported throughout."
+    - name: "Rahul Mehta"
+      role: "Family Vacation"
+      avatar: "/assets/testimonials/rahul.jpg"
+      rating: 5
+      quote: "Our family trip to Bali was the best vacation we've ever had. The kids loved every moment and so did we!"
+    - name: "Sarah Johnson"
+      role: "Adventure Seeker"
+      avatar: "/assets/testimonials/sarah.jpg"
+      rating: 5
+      quote: "The mountain expedition exceeded all expectations. Professional guides, stunning routes, and memories for a lifetime."
+
+# --- FAQ ---
+faq:
+  title: "Frequently Asked Questions"
+  subtitle: "Everything you need to know"
+  items:
+    - question: "How do I book a tour package?"
+      answer: "Browse our tours, select your preferred package, and click 'Book Now'. Our team will contact you within 24 hours to finalize the details."
+    - question: "Can I customize my itinerary?"
+      answer: "Absolutely! We specialize in personalized travel experiences. Share your preferences and we'll craft a custom itinerary just for you."
+    - question: "What's included in the tour packages?"
+      answer: "Our packages typically include accommodation, guided tours, transfers, and select meals. Specific inclusions vary by package — check individual tour details."
+    - question: "What is your cancellation policy?"
+      answer: "Free cancellation up to 30 days before departure. Between 15-30 days, a 50% fee applies. Less than 15 days is non-refundable."
+    - question: "Do you offer travel insurance?"
+      answer: "Yes, we partner with leading insurance providers to offer comprehensive travel insurance. We strongly recommend it for all trips."
+    - question: "How far in advance should I book?"
+      answer: "We recommend booking at least 2-3 months in advance for popular destinations. Last-minute bookings are possible but subject to availability."
+
+# --- Contact Information ---
+contact:
+  title: "Get in Touch"
+  subtitle: "Ready to start your adventure? Reach out to us."
+  phone: "+91 98765 43210"
+  email: "hello@wanderlusttravels.com"
+  address: "42 Explorer Lane, Andheri West, Mumbai, Maharashtra 400058, India"
+  mapEmbed: ""
+  workingHours: "Mon - Sat: 9:00 AM - 7:00 PM"
+  formFields:
+    - name: "name"
+      label: "Your Name"
+      type: "text"
+      required: true
+    - name: "email"
+      label: "Email Address"
+      type: "email"
+      required: true
+    - name: "phone"
+      label: "Phone Number"
+      type: "tel"
+      required: false
+    - name: "destination"
+      label: "Preferred Destination"
+      type: "text"
+      required: false
+    - name: "message"
+      label: "Your Message"
+      type: "textarea"
+      required: true
+
+# --- Social Media ---
+social:
+  facebook: "https://facebook.com/wanderlusttravels"
+  instagram: "https://instagram.com/wanderlusttravels"
+  twitter: "https://twitter.com/wanderlusttravels"
+  linkedin: ""
+  youtube: "https://youtube.com/wanderlusttravels"
+  whatsapp: "+919876543210"
+
+# --- Footer ---
+footer:
+  copyright: "© 2024 Wanderlust Travels. All rights reserved."
+  links:
+    - label: "Privacy Policy"
+      href: "/privacy"
+    - label: "Terms of Service"
+      href: "/terms"
+
+# --- SEO ---
+seo:
+  titleTemplate: "%s | Wanderlust Travels"
+  defaultTitle: "Wanderlust Travels - Explore the World"
+  defaultDescription: "Premium travel experiences and curated tour packages to 50+ destinations worldwide. Book your dream vacation today."
+  ogImage: "/assets/og-image.jpg"
+  locale: "en_IN"
+  siteUrl: "https://www.wanderlusttravels.com"
+  googleVerification: ""
+  keywords:
+    - travel agency
+    - tour packages
+    - adventure travel
+    - vacation packages
+    - travel experiences
+
+# --- Section Visibility ---
+sections:
+  hero: true
+  about: true
+  services: true
+  gallery: true
+  testimonials: true
+  faq: true
+  contact: true
+  newsletter: false
+
+# --- Analytics ---
+analytics:
+  cloudflareToken: ""
+  googleAnalyticsId: ""

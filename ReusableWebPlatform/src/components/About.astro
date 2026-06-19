@@ -1,0 +1,51 @@
+---
+import { getSiteConfig } from '@/utils/config';
+
+const config = getSiteConfig();
+const { about } = config;
+---
+
+<section class="section-padding bg-white" id="about">
+  <div class="container-narrow">
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Image -->
+      <div class="order-2 md:order-1">
+        {about.image && (
+          <div class="relative">
+            <img
+              src={about.image}
+              alt={about.title}
+              class="rounded-theme shadow-lg w-full object-cover aspect-[4/3]"
+              loading="lazy"
+            />
+            <!-- Decorative accent -->
+            <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary/20 rounded-theme -z-10"></div>
+          </div>
+        )}
+      </div>
+
+      <!-- Content -->
+      <div class="order-1 md:order-2">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">About Us</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-neutral mt-2 mb-6">
+          {about.title}
+        </h2>
+        <p class="text-neutral/70 leading-relaxed text-lg mb-8">
+          {about.description}
+        </p>
+
+        <!-- Stats -->
+        {about.stats && about.stats.length > 0 && (
+          <div class="grid grid-cols-2 gap-6">
+            {about.stats.map((stat) => (
+              <div class="text-center p-4 bg-surface rounded-theme">
+                <div class="text-3xl font-bold text-primary">{stat.value}</div>
+                <div class="text-sm text-neutral/60 mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
