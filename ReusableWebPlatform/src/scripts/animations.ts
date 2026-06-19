@@ -173,6 +173,15 @@ if (header) {
 // Fade in on page load
 document.body.classList.add('page-loaded');
 
+// Handle back/forward navigation (bfcache restore)
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    // Page was restored from bfcache — reset transition state
+    document.body.classList.remove('page-leaving');
+    document.body.classList.add('page-loaded');
+  }
+});
+
 // Custom smooth scroll with controlled duration
 function smoothScrollTo(target: HTMLElement, duration = 800) {
   const targetRect = target.getBoundingClientRect();
