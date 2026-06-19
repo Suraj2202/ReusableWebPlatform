@@ -5,6 +5,7 @@ import yaml from '@rollup/plugin-yaml';
 
 export default defineConfig({
   site: 'https://example.com', // Overridden per client
+  trailingSlash: 'ignore',
   integrations: [
     tailwind(),
     sitemap(),

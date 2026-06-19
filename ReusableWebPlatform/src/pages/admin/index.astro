@@ -1,0 +1,24 @@
+---
+// CMS admin page - no layout, standalone HTML
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager</title>
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+  </head>
+  <body>
+    <div id="nc-root"></div>
+    <script is:inline src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script is:inline>
+      window.addEventListener('message', function (e) {
+        if (e.origin !== window.location.origin) return;
+        if (typeof e.data === 'string' && e.data.startsWith('authorization:')) {
+          // Decap CMS handles this internally
+        }
+      });
+    </script>
+  </body>
+</html>
