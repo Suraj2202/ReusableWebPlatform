@@ -415,6 +415,11 @@ body.page-leaving {
   }
 }
 
+.pulse-ring {
+  overflow: visible;
+  z-index: 1;
+}
+
 .pulse-ring::before {
   content: '';
   position: absolute;
@@ -422,6 +427,7 @@ body.page-leaving {
   border-radius: inherit;
   border: 2px solid var(--color-accent);
   animation: pulseRing 2s ease-out infinite;
+  pointer-events: none;
 }
 
 /* Respect reduced-motion preference */
