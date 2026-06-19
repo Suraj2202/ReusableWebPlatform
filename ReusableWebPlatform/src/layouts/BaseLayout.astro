@@ -30,9 +30,11 @@ const structuredData = generateStructuredData(config);
     <title>{pageTitle}</title>
     <meta name="title" content={pageTitle} />
     <meta name="description" content={pageDescription} />
-    {config.seo.keywords?.length > 0 && (
-      <meta name="keywords" content={config.seo.keywords.join(', ')} />
-    )}
+    {
+      config.seo.keywords?.length > 0 && (
+        <meta name="keywords" content={config.seo.keywords.join(', ')} />
+      )
+    }
     <link rel="canonical" href={canonicalUrl.href} />
 
     <!-- Favicon -->
@@ -54,9 +56,11 @@ const structuredData = generateStructuredData(config);
     <meta name="twitter:image" content={new URL(pageOgImage, config.seo.siteUrl).href} />
 
     <!-- Google Verification -->
-    {config.seo.googleVerification && (
-      <meta name="google-site-verification" content={config.seo.googleVerification} />
-    )}
+    {
+      config.seo.googleVerification && (
+        <meta name="google-site-verification" content={config.seo.googleVerification} />
+      )
+    }
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={structuredData} />
@@ -73,12 +77,14 @@ const structuredData = generateStructuredData(config);
     <slot />
 
     <!-- Analytics -->
-    {config.analytics.cloudflareToken && (
-      <script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon={`{"token": "${config.analytics.cloudflareToken}"}`}
-      />
-    )}
+    {
+      config.analytics.cloudflareToken && (
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={`{"token": "${config.analytics.cloudflareToken}"}`}
+        />
+      )
+    }
   </body>
 </html>

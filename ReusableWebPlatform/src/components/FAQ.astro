@@ -16,33 +16,36 @@ const { faq } = config;
 
     <!-- FAQ Accordion -->
     <div class="space-y-4" id="faq-accordion">
-      {faq.items.map((item, index) => (
-        <div class="border border-neutral/10 rounded-theme overflow-hidden faq-item">
-          <button
-            class="w-full flex items-center justify-between p-5 text-left hover:bg-surface/50 transition-colors duration-200"
-            aria-expanded="false"
-            aria-controls={`faq-answer-${index}`}
-            data-faq-toggle
-          >
-            <span class="font-semibold text-neutral pr-4">{item.question}</span>
-            <svg
-              class="w-5 h-5 text-primary shrink-0 transition-transform duration-300 faq-chevron"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+      {
+        faq.items.map((item, index) => (
+          <div class="border border-neutral/10 rounded-theme overflow-hidden faq-item">
+            <button
+              class="w-full flex items-center justify-between p-5 text-left hover:bg-surface/50 transition-colors duration-200"
+              aria-expanded="false"
+              aria-controls={`faq-answer-${index}`}
+              data-faq-toggle
             >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div
-            class="hidden px-5 pb-5"
-            id={`faq-answer-${index}`}
-            role="region"
-          >
-            <p class="text-neutral/70 leading-relaxed">{item.answer}</p>
+              <span class="font-semibold text-neutral pr-4">{item.question}</span>
+              <svg
+                class="w-5 h-5 text-primary shrink-0 transition-transform duration-300 faq-chevron"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="hidden px-5 pb-5" id={`faq-answer-${index}`} role="region">
+              <p class="text-neutral/70 leading-relaxed">{item.answer}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
