@@ -7,9 +7,9 @@ name: CI — Build & Lint
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, 'client/**']
   pull_request:
-    branches: [main, develop]
+    branches: [main]
 
 permissions:
   contents: read

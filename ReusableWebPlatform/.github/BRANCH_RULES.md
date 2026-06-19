@@ -5,46 +5,43 @@
 # BRANCHING STRATEGY
 # =============================================================
 #
-# main          — Production. Always deployable. Never push directly.
-# develop       — Integration branch. All features merge here first.
-# feature/*     — New features (e.g., feature/whatsapp-form)
-# fix/*         — Bug fixes (e.g., fix/header-mobile-menu)
-# client/*      — Client-specific forks (e.g., client/wanderlust)
-# release/*     — Release prep (e.g., release/v1.1.0)
-# hotfix/*      — Emergency production fixes
+# main          — Template development. All template work happens here.
+# client/*      — Client-specific customizations (e.g., client/wanderlust)
+# feature/*     — Experimental features before merging to main
+# fix/*         — Bug fixes
+# hotfix/*      — Emergency fixes on client branches
 #
 # =============================================================
 # FLOW
 # =============================================================
 #
-# feature/xyz → PR → develop → PR → main (auto-deploys to production)
+# Template Development:
+#   Work directly on main → push → CI validates → auto-deploys template demo
 #
-# Client customization:
-#   Fork repo OR create client/* branch
-#   Client branches receive upstream template updates via merge
+# Client Customization:
+#   git checkout -b client/clientname   (branch from main)
+#   Make client-specific changes (extra pages, animations, themes, etc.)
+#   Each client/* branch gets its own Cloudflare Pages deployment
+#
+# Syncing template updates to client:
+#   git checkout client/clientname
+#   git merge main                      (pull latest template improvements)
+#   Resolve any conflicts in client-specific files
+#   git push
+#
+# Promoting client feature to template:
+#   If a client feature is useful for all, cherry-pick to main
+#   git checkout main
+#   git cherry-pick <commit-hash>
 #
 # =============================================================
-# BRANCH PROTECTION — main
+# BRANCH PROTECTION — client/* (recommended)
 # =============================================================
 #
-# ✅ Require pull request before merging
-# ✅ Require at least 1 approval
-# ✅ Dismiss stale reviews when new commits are pushed
-# ✅ Require status checks to pass (build, lint, lighthouse)
-# ✅ Require branches to be up to date before merging
-# ✅ Require conversation resolution before merging
-# ✅ Do not allow bypassing the above settings
-# ❌ Do not allow force pushes
-# ❌ Do not allow deletions
-#
-# =============================================================
-# BRANCH PROTECTION — develop
-# =============================================================
-#
-# ✅ Require pull request before merging
 # ✅ Require status checks to pass (build, lint)
 # ❌ Approvals optional (developer self-merge OK)
 # ❌ Do not allow force pushes
+# ❌ Do not allow deletions
 #
 # =============================================================
 # COMMIT MESSAGE FORMAT (Enforced by commitlint)

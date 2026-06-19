@@ -53,8 +53,7 @@
 - [x] .env.example with setup instructions
 
 ## Pending (Manual)
-- [ ] Enable branch protection on main in GitHub Settings
-- [ ] Create develop branch
+- [ ] Enable branch protection on client/* branches in GitHub Settings
 
 # ============================================================
 # PHASE 2: DESIGN SYSTEM & THEME ENGINE
@@ -202,6 +201,8 @@
 # 2026-06-19 | YAML over JSON for config — human-readable, CMS-friendly
 # 2026-06-19 | Fork strategy over monorepo — client isolation, independent deploys
 # 2026-06-19 | WhatsApp + Web3Forms for contact — no backend needed, free
+# 2026-06-19 | main for template dev, client/* branches for customizations — no develop branch
+#              Each client branch = independent deployment. Template updates via git merge main.
 
 # ============================================================
 # RULES — HOW TO UPDATE THIS TRACKER

@@ -15,36 +15,56 @@
 ## Branching Strategy
 
 ```
-main            ← Production (auto-deploys)
-  └── develop   ← Integration branch
-       ├── feature/xyz   ← New features
-       ├── fix/xyz       ← Bug fixes
-       └── client/xyz    ← Client-specific customization
+main            ← Template development (all template work here)
+  ├── feature/xyz   ← Experimental features (merge back to main)
+  ├── fix/xyz       ← Bug fixes (merge back to main)
+  └── client/xyz    ← Client-specific customization (independent deployment)
 ```
 
 ### When to use which branch
 
 | Situation | Branch from | Branch name | Merge into |
 |---|---|---|---|
-| New feature | `develop` | `feature/gallery-zoom` | `develop` |
-| Bug fix | `develop` | `fix/mobile-menu` | `develop` |
-| Emergency fix | `main` | `hotfix/broken-hero` | `main` + `develop` |
-| Client site | `main` | `client/wanderlust` | Never (stays separate) |
-| Release prep | `develop` | `release/v1.1.0` | `main` + `develop` |
+| Template work | `main` | (direct) | `main` |
+| Experimental feature | `main` | `feature/scroll-anim` | `main` |
+| Bug fix | `main` | `fix/mobile-menu` | `main` |
+| Client customization | `main` | `client/wanderlust` | Never (stays separate) |
+| Emergency client fix | `client/xyz` | `hotfix/broken-hero` | `client/xyz` |
 
 ---
 
 ## Development Workflow
 
-### 1. Start work
+### 1. Template Development (on main)
 
 ```bash
-git checkout develop
-git pull origin develop
-git checkout -b feature/your-feature
+git checkout main
+git pull origin main
+# make changes
+git add .
+git commit -m "feat(hero): add video background support"
+git push
 ```
 
-### 2. Make changes
+### 2. Client Branch (new client)
+
+```bash
+git checkout main
+git checkout -b client/clientname
+# customize for client (extra pages, animations, colors, etc.)
+git commit -m "feat(client): add gradient theme for ClientName"
+git push -u origin client/clientname
+# → connect this branch to its own Cloudflare Pages deployment
+```
+
+### 3. Sync template updates to client
+
+```bash
+git checkout client/clientname
+git merge main
+# resolve any conflicts in client-specific files
+git push
+```
 
 - Edit code in `src/` for template changes
 - Edit `content/site.yaml` for content changes
