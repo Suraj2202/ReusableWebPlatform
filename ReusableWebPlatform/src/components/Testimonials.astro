@@ -8,17 +8,20 @@ const { testimonials } = config;
 <section class="section-padding bg-surface" id="testimonials">
   <div class="container-narrow">
     <!-- Section Header -->
-    <div class="section-header">
+    <div class="section-header" data-animate="fade-up">
       <span class="text-primary font-semibold text-sm uppercase tracking-wider">Testimonials</span>
       <h2 class="section-title mt-2">{testimonials.title}</h2>
       <p class="section-subtitle">{testimonials.subtitle}</p>
     </div>
 
     <!-- Testimonials Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-stagger>
       {
         testimonials.items.map((item) => (
-          <div class="bg-white rounded-theme p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 relative">
+          <div
+            class="bg-white rounded-theme p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 relative card-hover"
+            data-animate="fade-up"
+          >
             <svg
               class="w-10 h-10 text-primary/15 absolute top-6 right-6"
               fill="currentColor"

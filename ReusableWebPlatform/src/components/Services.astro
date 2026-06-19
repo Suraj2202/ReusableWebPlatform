@@ -21,24 +21,29 @@ const iconMap: Record<string, string> = {
 <section class="section-padding bg-surface" id="services">
   <div class="container-narrow">
     <!-- Section Header -->
-    <div class="section-header">
+    <div class="section-header" data-animate="fade-up">
       <span class="text-primary font-semibold text-sm uppercase tracking-wider">What We Offer</span>
       <h2 class="section-title mt-2">{services.title}</h2>
       <p class="section-subtitle">{services.subtitle}</p>
     </div>
 
     <!-- Services Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" data-stagger>
       {
         services.items.map((service) => (
-          <a href={service.href || '#'} class="card group cursor-pointer">
+          <a
+            href={service.href || '#'}
+            class="card card-hover group cursor-pointer"
+            data-animate="fade-up"
+          >
             {service.image && (
               <div class="aspect-[4/3] overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover img-zoom img-lazy"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             )}

@@ -8,14 +8,14 @@ const { faq } = config;
 <section class="section-padding bg-white" id="faq">
   <div class="container-narrow max-w-3xl">
     <!-- Section Header -->
-    <div class="section-header">
+    <div class="section-header" data-animate="fade-up">
       <span class="text-primary font-semibold text-sm uppercase tracking-wider">FAQ</span>
       <h2 class="section-title mt-2">{faq.title}</h2>
       <p class="section-subtitle">{faq.subtitle}</p>
     </div>
 
     <!-- FAQ Accordion -->
-    <div class="space-y-4" id="faq-accordion">
+    <div class="space-y-4" id="faq-accordion" data-animate="fade-up" data-delay="200">
       {
         faq.items.map((item, index) => (
           <div class="border border-neutral/10 rounded-theme overflow-hidden faq-item">

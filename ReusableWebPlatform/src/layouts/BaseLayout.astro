@@ -76,6 +76,11 @@ const structuredData = generateStructuredData(config);
   <body class="min-h-screen flex flex-col">
     <slot />
 
+    <!-- Animations Engine -->
+    <script>
+      import '@/scripts/animations';
+    </script>
+
     <!-- Analytics -->
     {
       config.analytics.cloudflareToken && (
