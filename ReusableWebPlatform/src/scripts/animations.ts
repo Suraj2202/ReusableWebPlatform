@@ -235,11 +235,9 @@ document.querySelectorAll('a[href]').forEach((link) => {
     const ev = e as MouseEvent;
     if (ev.ctrlKey || ev.metaKey || ev.shiftKey) return;
 
-    e.preventDefault();
+    // Add fade-out class — don't block navigation (iOS Safari kills
+    // setTimeout navigations after preventDefault as non-user-initiated)
     document.body.classList.add('page-leaving');
-    setTimeout(() => {
-      window.location.href = href;
-    }, 200);
   });
 });
 
