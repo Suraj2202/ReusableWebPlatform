@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-white text-neutral leading-relaxed;
+    @apply bg-surface font-body text-neutral leading-relaxed;
   }
 
   h1,
@@ -17,7 +17,7 @@
   h4,
   h5,
   h6 {
-    @apply font-bold tracking-tight;
+    @apply font-heading font-semibold tracking-tight;
   }
 
   img {

@@ -1,9 +1,60 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import site from '../../content/site.config.yaml';
+
+const { name, tagline, currency } = site.site;
+const colors = site.theme.colors;
+const swatches = [
+  { key: 'primary', label: 'Primary', hex: colors.primary },
+  { key: 'secondary', label: 'Secondary', hex: colors.secondary },
+  { key: 'accent', label: 'Accent', hex: colors.accent },
+  { key: 'neutral', label: 'Neutral', hex: colors.neutral },
+  { key: 'surface', label: 'Surface', hex: colors.surface },
+];
 ---
 
-<BaseLayout title="Hidden Naqsha">
-  <main class="flex min-h-screen items-center justify-center">
-    <h1>Hidden Naqsha</h1>
+<BaseLayout title={`${name} — Brand`} description={tagline}>
+  <main class="mx-auto w-full max-w-4xl px-6 py-16">
+    <!-- Brand identity proof (step 0.1) -->
+    <header class="flex flex-col items-center text-center">
+      <img src="/assets/brand/logo.svg" alt={`${name} logo`} width="280" height="64" class="mb-8" />
+      <h1 class="font-heading text-5xl text-primary md:text-6xl">{name}</h1>
+      <p class="mt-4 max-w-xl font-body text-lg text-neutral/80">{tagline}</p>
+      <a
+        href="#"
+        class="mt-8 inline-block rounded-theme bg-accent px-6 py-3 font-body font-semibold text-neutral shadow-sm transition hover:bg-primary hover:text-surface"
+      >
+        Plan your trip ({currency})
+      </a>
+    </header>
+
+    <!-- Palette -->
+    <section class="mt-16">
+      <h2 class="font-heading text-2xl text-primary">Palette</h2>
+      <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-5">
+        {
+          swatches.map((s) => (
+            <div class="overflow-hidden rounded-theme border border-neutral/10 bg-white">
+              <div class="h-20" style={`background:${s.hex}`} />
+              <div class="p-3">
+                <p class="font-body text-sm font-semibold text-neutral">{s.label}</p>
+                <p class="font-body text-xs text-neutral/60">{s.hex}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="mt-16">
+      <h2 class="font-heading text-2xl text-primary">Typography</h2>
+      <div class="mt-6 space-y-4 rounded-theme bg-white p-6 shadow-sm">
+        <p class="font-heading text-4xl text-neutral">Fraunces — headings</p>
+        <p class="font-body text-lg text-neutral">
+          Inter — body text. The quick brown fox jumps over the lazy dog, 0123456789.
+        </p>
+      </div>
+    </section>
   </main>
 </BaseLayout>

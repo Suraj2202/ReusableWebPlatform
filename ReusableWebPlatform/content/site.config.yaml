@@ -1,0 +1,32 @@
+# Hidden Naqsha — central site config (SINGLE SOURCE OF TRUTH)
+# Edit brand, contact, social handles, and theme tokens here.
+# Components and tailwind.config.mjs read from this file. Change once → whole site updates.
+
+site:
+  name: Hidden Naqsha
+  tagline: Crafting journeys through hidden landscapes
+  description: Trips, treks, and bespoke journeys across the Himalayas and beyond.
+  url: https://hidden-naqsha.pages.dev
+  locale: en
+  currency: '₹'
+
+contact:
+  # PLACEHOLDER number — replace with the real WhatsApp business number (digits only, country code, no +).
+  whatsapp: '910000000000'
+  email: hello@hiddennaqsha.example
+
+social:
+  instagram: 'hiddennaqsha'
+  # Review/follower snapshots are generated into content/data/social.json by the sync script (see docs/rules/04-social-sync.md).
+
+theme:
+  colors:
+    primary: '#0F4C45' # deep pine / teal — headers, primary buttons, key accents
+    secondary: '#0A3A34' # darker pine — hovers, depth
+    accent: '#C9A24B' # warm gold — CTAs, highlights, stars
+    neutral: '#1F2A28' # charcoal — body text
+    surface: '#F7F4EF' # warm off-white — section backgrounds
+  fonts:
+    heading: Fraunces # elegant modern serif
+    body: Inter # clean, legible sans
+  borderRadius: '0.75rem'
