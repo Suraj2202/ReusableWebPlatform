@@ -10,13 +10,16 @@
 | ----------------------------- | ------------------ | -------- | --------- | ----------- | ----------------------------- |
 | `brand/logo.svg`              | Site logo          | SVG      | —         | PLACEHOLDER | generated wordmark (temp)     |
 | `brand/og-image.jpg`          | Social share image | 1200×630 | 1200px    | PLACEHOLDER | from `assets/og-image.jpg`    |
-| `banner/home-poster.jpg`      | Home video poster  | 16:9     | 1920px    | PLACEHOLDER | from `assets/hero-banner.jpg` |
-| `categories/group-trip.jpg`   | Group Trip cover   | 4:3      | 1280px    | NEEDED      | —                             |
-| `categories/adventure.jpg`    | Adventure cover    | 4:3      | 1280px    | NEEDED      | —                             |
-| `categories/trek.jpg`         | Trek cover         | 4:3      | 1280px    | NEEDED      | —                             |
-| `categories/family.jpg`       | Family cover       | 4:3      | 1280px    | NEEDED      | —                             |
-| `categories/school.jpg`       | School cover       | 4:3      | 1280px    | NEEDED      | —                             |
-| `categories/corporate.jpg`    | Corporate cover    | 4:3      | 1280px    | NEEDED      | —                             |
+| `banner/home-poster.jpg`      | Home video poster  | 16:9     | 1920px    | REAL        | user-provided (1376×768)      |
+| `categories/group-trip.jpg`   | Group Trip cover   | 4:3      | 1280px    | PLACEHOLDER | from `services/mountain.jpg`  |
+| `categories/adventure.jpg`    | Adventure cover    | 4:3      | 1280px    | PLACEHOLDER | from `services/safari.jpg`    |
+| `categories/trek.jpg`         | Trek cover         | 4:3      | 1280px    | PLACEHOLDER | from `services/mountain.jpg`  |
+| `categories/family.jpg`       | Family cover       | 4:3      | 1280px    | PLACEHOLDER | from `services/beach.jpg`     |
+| `categories/school.jpg`       | School cover       | 4:3      | 1280px    | PLACEHOLDER | from `services/culture.jpg`   |
+| `categories/corporate.jpg`    | Corporate cover    | 4:3      | 1280px    | PLACEHOLDER | from `services/city.jpg`      |
+| `reviews/avatar-01.jpg`       | Reviewer avatar    | 1:1      | 256px     | PLACEHOLDER | from `testimonials/priya.jpg` |
+| `reviews/avatar-02.jpg`       | Reviewer avatar    | 1:1      | 256px     | PLACEHOLDER | from `testimonials/rahul.jpg` |
+| `reviews/avatar-03.jpg`       | Reviewer avatar    | 1:1      | 256px     | PLACEHOLDER | from `testimonials/sarah.jpg` |
 
 > Add a row whenever a new image path is introduced. Trip images go under `trips/<slug>/` and get their own rows as trips are built.
 

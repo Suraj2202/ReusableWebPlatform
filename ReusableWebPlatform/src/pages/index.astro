@@ -1,9 +1,16 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import VideoBanner from '@/components/VideoBanner.astro';
 import site from '../../content/site.config.yaml';
 
 const { name, tagline, currency } = site.site;
 const colors = site.theme.colors;
+
+// WhatsApp CTA built from the single source of truth (central config).
+const waNumber = site.contact.whatsapp;
+const waText = encodeURIComponent(`Hi ${name}, I'd like help planning a trip.`);
+const waHref = `https://wa.me/${waNumber}?text=${waText}`;
+
 const swatches = [
   { key: 'primary', label: 'Primary', hex: colors.primary },
   { key: 'secondary', label: 'Secondary', hex: colors.secondary },
@@ -14,6 +21,15 @@ const swatches = [
 ---
 
 <BaseLayout title={`${name} — Brand`} description={tagline}>
+  <VideoBanner
+    poster="/assets/banner/home-poster.jpg"
+    videoSrc="/assets/video/home-banner.mp4"
+    headline={name}
+    subtext={tagline}
+    ctaText="Plan your trip on WhatsApp"
+    ctaHref={waHref}
+  />
+
   <main class="mx-auto w-full max-w-4xl px-6 py-16">
     <!-- Brand identity proof (step 0.1) -->
     <header class="flex flex-col items-center text-center">

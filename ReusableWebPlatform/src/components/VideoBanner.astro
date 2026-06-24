@@ -1,0 +1,121 @@
+---
+interface Props {
+  poster: string;
+  videoSrc?: string;
+  headline: string;
+  subtext?: string;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const { poster, videoSrc, headline, subtext, ctaText, ctaHref } = Astro.props;
+---
+
+<section class="relative h-[78vh] min-h-[420px] w-full overflow-hidden md:h-[88vh]">
+  <!-- Poster paints instantly and is always visible (never a blank hero) -->
+  <img
+    src={poster}
+    alt=""
+    aria-hidden="true"
+    width="1920"
+    height="1080"
+    class="absolute inset-0 h-full w-full object-cover"
+  />
+
+  {
+    videoSrc && (
+      <video
+        class="hero-video absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700"
+        poster={poster}
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source src={videoSrc} type="video/mp4" />
+      </video>
+    )
+  }
+
+  <!-- Legibility overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-neutral/50 via-neutral/25 to-neutral/70"></div>
+
+  <!-- Content -->
+  <div
+    class="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center"
+  >
+    <h1
+      class="font-heading text-4xl font-semibold text-surface drop-shadow-md sm:text-5xl md:text-6xl lg:text-7xl"
+    >
+      {headline}
+    </h1>
+    {
+      subtext && (
+        <p class="mt-5 max-w-2xl font-body text-lg text-surface/90 drop-shadow sm:text-xl">
+          {subtext}
+        </p>
+      )
+    }
+    {
+      ctaText && ctaHref && (
+        <a
+          href={ctaHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-8 inline-flex min-h-[44px] items-center rounded-theme bg-accent px-8 py-3 font-body font-semibold text-neutral shadow-lg transition hover:bg-surface hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-surface"
+        >
+          {ctaText}
+        </a>
+      )
+    }
+  </div>
+</section>
+
+<script>
+  // Poster-first hero. The video uses native `autoplay muted loop playsinline`,
+  // which browsers allow to autoplay on all devices (iOS/Android/desktop).
+  // This script only: (1) reveals the video once it actually plays,
+  // (2) honors reduced-motion (poster only), (3) pauses when scrolled offscreen.
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll<HTMLVideoElement>('.hero-video').forEach((video) => {
+    // Force muted at the property level — some browsers ignore the HTML attribute.
+    video.muted = true;
+
+    if (prefersReduced) {
+      // Accessibility: no motion. Keep the elegant poster, never load the video.
+      video.removeAttribute('autoplay');
+      video.pause();
+      return;
+    }
+
+    // Reveal the video only once a frame is actually rendered (no black flash).
+    const reveal = () => {
+      video.style.opacity = '1';
+    };
+    video.addEventListener('playing', reveal);
+    if (!video.paused && video.readyState >= 2) reveal();
+
+    // Pause when offscreen to save battery/CPU; resume when back in view.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const p = video.play();
+            if (p)
+              p.catch(() => {
+                /* autoplay blocked — poster stays */
+              });
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(video);
+  });
+</script>

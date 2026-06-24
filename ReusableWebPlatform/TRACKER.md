@@ -12,9 +12,9 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `1.1 Video banner` — poster-first hero (placeholder poster + video), muted/looped/playsinline, pause offscreen, reduced-motion safe.
-- **Next:** `1.2 Company overview`.
-- **Blocked on:** _nothing (real `home-banner.mp4` + `home-poster.jpg` will be swapped in when uploaded)._
+- **Now:** `1.2 Company overview` — short who-we-are section below the hero (data from site.config), elegant + responsive.
+- **Next:** `1.3 Social proof strip`.
+- **Blocked on:** _nothing._
 
 ---
 
@@ -62,7 +62,7 @@ Before ticking any task, all of these must be true:
 
 ### Phase 1 — Home page
 
-- [ ] **1.1** Video banner (placeholder video). _(rules: 03, 07)_
+- [x] **1.1** Video banner (placeholder video). _(rules: 03, 07)_ — ✅ done (poster-first, reduced-motion safe, real media in `assets/video/`).
 - [ ] **1.2** Company overview.
 - [ ] **1.3** Social proof strip (static snapshot from `social.json`). _(rules: 04)_
 - [ ] **1.4** Explore story-circle row.
@@ -108,7 +108,11 @@ Real media is **not** required to build — placeholders unblock every step (G7)
 
 > Ideas, nice-to-haves, and tangents land here so they don't derail the current task. Review only between phases.
 
-- _(empty — add items as `🅿️ <idea> — why deferred`)_
+- 🅿️ Self-host Fraunces + Inter (currently Google Fonts CDN) — before ship, for perf/privacy.
+- 🅿️ Add WebM variant for hero video (needs ffmpeg) — MP4 (4 MB) works alone for now.
+- 🅿️ Add `banner`/`categories` to `RESPONSIVE_DIRS` in optimize-images so hero/covers get 640/960/1280 sizes.
+- 🅿️ Real hero poster is 1376×768 (under 1920 ideal) — request a higher-res still before ship if needed.
+- 🅿️ Move `.github/` to repo root + connect Cloudflare so CI/preview deploys actually run (Phase 5).
 
 ## 🪵 Decisions
 
@@ -116,7 +120,8 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 
 ## 📓 Session Log
 
-| Date       | Did                                                        | Next           |
-| ---------- | ---------------------------------------------------------- | -------------- |
-| 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created | Start step 0.1 |
-| 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo | Build 1.1      |
+| Date       | Did                                                           | Next           |
+| ---------- | ------------------------------------------------------------- | -------------- |
+| 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created    | Start step 0.1 |
+| 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo    | Build 1.1      |
+| 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure | Build 1.2      |
