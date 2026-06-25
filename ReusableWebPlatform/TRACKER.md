@@ -12,8 +12,8 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `5.1 Animations pass`.
-- **Next:** `5.2 SEO meta, sitemap, Lighthouse`.
+- **Now:** Phase 5 complete — site shipped.
+- **Next:** _none (demo ready)._
 - **Blocked on:** _nothing._
 
 ---
@@ -90,10 +90,10 @@ Before ticking any task, all of these must be true:
 
 ### Phase 5 — Polish & ship
 
-- [ ] **5.1** Animations pass (lightweight, reduced-motion safe). _(rules: 07)_
-- [ ] **5.2** SEO meta, sitemap, Lighthouse ≥ 90 mobile. _(rules: 10)_
-- [ ] **5.3** Cross-device QA — Android Chrome, iOS Safari, desktop @ 320/375/768/1024/1440px. _(rules: 09)_
-- [ ] **5.4** Cloudflare Pages deploy + demo link. _(rules: 12)_
+- [x] **5.1** Animations pass (lightweight, reduced-motion safe). _(rules: 07)_
+- [x] **5.2** SEO meta, sitemap, Lighthouse ≥ 90 mobile. _(rules: 10)_
+- [x] **5.3** Cross-device QA — Android Chrome, iOS Safari, desktop @ 320/375/768/1024/1440px. _(rules: 09)_
+- [x] **5.4** Cloudflare Pages deploy + demo link. _(rules: 12)_
 
 ## 📦 Asset Readiness
 
@@ -108,11 +108,11 @@ Real media is **not** required to build — placeholders unblock every step (G7)
 
 > Ideas, nice-to-haves, and tangents land here so they don't derail the current task. Review only between phases.
 
-- 🅿️ Self-host Fraunces + Inter (currently Google Fonts CDN) — before ship, for perf/privacy.
-- 🅿️ Add WebM variant for hero video (needs ffmpeg) — MP4 (4 MB) works alone for now.
+- ✅ ~~Self-host Fraunces + Inter~~ — done (WOFF2 in `public/assets/fonts/`, no Google CDN).
+- ✅ ~~Add WebM variant for hero video~~ — MP4 compressed to 1 MB, WebM unnecessary.
 - 🅿️ Add `banner`/`categories` to `RESPONSIVE_DIRS` in optimize-images so hero/covers get 640/960/1280 sizes.
 - 🅿️ Real hero poster is 1376×768 (under 1920 ideal) — request a higher-res still before ship if needed.
-- 🅿️ Move `.github/` to repo root + connect Cloudflare so CI/preview deploys actually run (Phase 5).
+- ✅ ~~Move `.github/` to repo root + connect Cloudflare~~ — deploying via wrangler.
 
 ## 🪵 Decisions
 
@@ -131,3 +131,4 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 | 2026-06-25 | 2.1–2.2 done — Category landing + trip detail (card UX, danger token, scroll-spy, 5-img gallery)    | Build 3.1      |
 | 2026-06-25 | 3.1–3.2 done — Family/School/Corporate pages + WhatsApp enquiry form                                | Build 4.1      |
 | 2026-06-25 | 4.1–4.3 done — About Us, Contact, 404 pages (data-driven, placeholder heroes registered)            | Build 5.1      |
+| 2026-06-26 | 5.1–5.4 done — Self-host fonts, CSP hash injection, View Transitions, SEO/OG meta, video compress, footer mobile redesign, form dates, nav grouping, Cloudflare deploy | Ship 🎉 |
