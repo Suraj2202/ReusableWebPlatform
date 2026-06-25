@@ -12,8 +12,8 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `1.3 Social proof strip` — static snapshot from `social.json` (Google rating/count + Instagram followers), elegant + responsive.
-- **Next:** `1.4 Explore story-circle row`.
+- **Now:** `4.1 About Us` page.
+- **Next:** `4.2 Contact`.
 - **Blocked on:** _nothing._
 
 ---
@@ -64,23 +64,23 @@ Before ticking any task, all of these must be true:
 
 - [x] **1.1** Video banner (placeholder video). _(rules: 03, 07)_ — ✅ done (poster-first, reduced-motion safe, real media in `assets/video/`).
 - [x] **1.2** Company overview.
-- [ ] **1.3** Social proof strip (static snapshot from `social.json`). _(rules: 04)_
-- [ ] **1.4** Explore story-circle row.
-- [ ] **1.5** All Tours continuous carousel.
-- [ ] **1.6** Category blocks (Group Trip · Adventure · Trek) — 3 stacked, each own slider.
-- [ ] **1.7** "Plan With Us" feature band (Family · School · Corporate).
-- [ ] **1.8** Reviews carousel.
-- [ ] **1.9** Footer wiring.
+- [x] **1.3** Social proof strip (static snapshot from `social.json`). _(rules: 04)_
+- [x] **1.4** Explore story-circle row.
+- [x] **1.5** All Tours continuous carousel.
+- [x] **1.6** Category blocks (Group Trip · Adventure · Trek) — 3 stacked, each own slider.
+- [x] **1.7** "Plan With Us" feature band (Family · School · Corporate).
+- [x] **1.8** Reviews carousel.
+- [x] **1.9** Footer wiring.
 
 ### Phase 2 — Category & Trip pages
 
-- [ ] **2.1** Category landing `/explore/[category]`.
-- [ ] **2.2** Trip detail `/trip/[slug]` — sticky tabs, itinerary accordion, gallery.
+- [x] **2.1** Category landing `/explore/[category]`.
+- [x] **2.2** Trip detail `/trip/[slug]` — sticky tabs, itinerary accordion, gallery, card-based UX, danger token for exclusions.
 
 ### Phase 3 — Blog-style pages
 
-- [ ] **3.1** Family / School / Corporate template.
-- [ ] **3.2** Enquiry form → WhatsApp message builder.
+- [x] **3.1** Family / School / Corporate template.
+- [x] **3.2** Enquiry form → WhatsApp message builder.
 
 ### Phase 4 — Supporting pages
 
@@ -127,3 +127,6 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 | 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                         | Build 1.2      |
 | 2026-06-25 | 0.2 + 0.3 done — content collections + placeholder data, Header/Footer/WhatsApp float | Build 1.2      |
 | 2026-06-25 | 1.2 done — Company overview section + `overview` block in site.config | Build 1.3      |
+| 2026-06-25 | 1.3–1.9 done — Social proof, story circles, carousels, category blocks, PlanWithUs, reviews, footer | Build 2.1 |
+| 2026-06-25 | 2.1–2.2 done — Category landing + trip detail (card UX, danger token, scroll-spy, 5-img gallery) | Build 3.1 |
+| 2026-06-25 | 3.1–3.2 done — Family/School/Corporate pages + WhatsApp enquiry form | Build 4.1 |
