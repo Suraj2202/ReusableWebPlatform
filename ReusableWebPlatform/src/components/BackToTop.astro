@@ -1,0 +1,39 @@
+---
+// Back-to-top control. Hidden until the page is scrolled, then fades in.
+// Sits above the WhatsApp float button (docs/rules/08-navigation.md, 07-animation.md).
+---
+
+<button
+  type="button"
+  id="back-to-top"
+  aria-label="Back to top"
+  class="pointer-events-none fixed bottom-5 right-5 z-40 flex h-12 w-12 translate-y-2 items-center justify-center rounded-full bg-primary text-surface opacity-0 shadow-lg transition-all duration-200 hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary data-[visible]:pointer-events-auto data-[visible]:translate-y-0 data-[visible]:opacity-100"
+  style="bottom: calc(5.5rem + env(safe-area-inset-bottom)); right: calc(1.25rem + env(safe-area-inset-right));"
+>
+  <svg
+    class="h-5 w-5"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    aria-hidden="true"
+  >
+    <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById('back-to-top');
+  if (btn) {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const toggle = () => {
+      if (window.scrollY > 600) btn.setAttribute('data-visible', '');
+      else btn.removeAttribute('data-visible');
+    };
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: reduce.matches ? 'auto' : 'smooth' });
+    });
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+  }
+</script>

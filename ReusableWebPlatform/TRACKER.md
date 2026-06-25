@@ -12,8 +12,8 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `1.9 Footer wiring + back-to-top` — verify footer links/sections + add a back-to-top control.
-- **Next:** _Phase 1 complete — review & plan Phase 2._
+- **Now:** `Phase 1 complete — review home page, then plan Phase 2`.
+- **Next:** `Phase 2 — trip detail pages & explore routes`.
 - **Blocked on:** _nothing._
 
 ---
@@ -70,7 +70,7 @@ Before ticking any task, all of these must be true:
 - [x] **1.6** Category blocks (Group Trip · Adventure · Trek) — 3 stacked, each own slider.
 - [x] **1.7** "Plan With Us" feature band (Family · School · Corporate).
 - [x] **1.8** Reviews carousel.
-- [ ] **1.9** Footer wiring.
+- [x] **1.9** Footer wiring.
 
 ### Phase 2 — Category & Trip pages
 
@@ -133,3 +133,4 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 | 2026-06-25 | 1.6 done — Category blocks: 3 stacked sliders (#group-trip/#adventure/#trek)          | Build 1.7      |
 | 2026-06-25 | 1.7 done — Plan With Us band (#plan-with-us): Family/School/Corporate + WhatsApp CTA  | Build 1.8      |
 | 2026-06-25 | 1.8 done — Reviews carousel from social.json (ReviewCard, initials monogram avatars)  | Build 1.9      |
+| 2026-06-25 | 1.9 done — Footer verified + back-to-top control — Phase 1 complete                   | Plan Phase 2   |
