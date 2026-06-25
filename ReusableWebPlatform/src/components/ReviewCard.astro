@@ -1,0 +1,57 @@
+---
+interface Props {
+  author: string;
+  rating: number;
+  text: string;
+  date: string;
+}
+const { author, rating, text, date } = Astro.props;
+
+// Initials/monogram fallback — we never load remote avatar images (docs/rules/04-social-sync.md).
+const initials = author
+  .split(/\s+/)
+  .slice(0, 2)
+  .map((part) => part[0]?.toUpperCase() ?? '')
+  .join('');
+
+const reviewDate = new Date(date).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' });
+const stars = Math.round(rating);
+---
+
+<li class="flex w-72 shrink-0 snap-start sm:w-80">
+  <figure
+    class="flex h-full w-full flex-col rounded-theme bg-white p-5 shadow-sm ring-1 ring-neutral/10"
+  >
+    <div class="flex items-center gap-3">
+      <span
+        class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-accent to-primary font-heading text-sm font-semibold text-white"
+        aria-hidden="true"
+      >
+        {initials}
+      </span>
+      <div class="min-w-0">
+        <figcaption class="truncate font-body font-medium text-neutral">{author}</figcaption>
+        <p class="font-body text-xs text-neutral/50">{reviewDate}</p>
+      </div>
+    </div>
+
+    <div class="mt-3 flex items-center gap-0.5" aria-label={`${stars} out of 5 stars`}>
+      {
+        Array.from({ length: 5 }).map((_, i) => (
+          <svg
+            class={i < stars ? 'h-4 w-4 text-accent' : 'h-4 w-4 text-neutral/20'}
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1.99 5.79L10 14.77l-5.2 2.73.99-5.79L1.58 7.62l5.82-.85L10 1.5z" />
+          </svg>
+        ))
+      }
+    </div>
+
+    <blockquote class="mt-3 font-body text-sm leading-relaxed text-neutral/70">
+      &ldquo;{text}&rdquo;
+    </blockquote>
+  </figure>
+</li>

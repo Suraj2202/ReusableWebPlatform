@@ -1,0 +1,55 @@
+---
+import HorizontalScroller from './HorizontalScroller.astro';
+import ReviewCard from './ReviewCard.astro';
+import social from '../../content/data/social.json';
+
+// Static snapshot — no live API call (docs/rules/04-social-sync.md).
+const google = social.google;
+const reviews = google?.topReviews ?? [];
+const reviewsUrl = google?.reviewsUrl;
+---
+
+{
+  reviews.length > 0 && (
+    <section class="bg-white py-12 sm:py-16" aria-labelledby="reviews-heading">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="flex items-end justify-between gap-4">
+          <div class="max-w-2xl">
+            <p class="font-body text-sm font-medium uppercase tracking-wide text-accent">
+              Travellers' words
+            </p>
+            <h2 id="reviews-heading" class="mt-1 font-heading text-2xl text-primary sm:text-3xl">
+              Loved by {google.reviewCount}+ travellers
+            </h2>
+            <p class="mt-2 font-body text-neutral/60">
+              {google.rating.toFixed(1)} average rating on Google.
+            </p>
+          </div>
+          {reviewsUrl && (
+            <a
+              href={reviewsUrl}
+              target="_blank"
+              rel="noopener"
+              class="hidden shrink-0 font-body text-sm font-medium text-primary underline-offset-4 hover:underline sm:inline"
+            >
+              Read on Google
+            </a>
+          )}
+        </div>
+
+        <div class="mt-7">
+          <HorizontalScroller label="Traveller reviews">
+            {reviews.map((review) => (
+              <ReviewCard
+                author={review.author}
+                rating={review.rating}
+                text={review.text}
+                date={review.date}
+              />
+            ))}
+          </HorizontalScroller>
+        </div>
+      </div>
+    </section>
+  )
+}
