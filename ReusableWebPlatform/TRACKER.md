@@ -12,8 +12,8 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `4.1 About Us` page.
-- **Next:** `4.2 Contact`.
+- **Now:** `5.1 Animations pass`.
+- **Next:** `5.2 SEO meta, sitemap, Lighthouse`.
 - **Blocked on:** _nothing._
 
 ---
@@ -84,9 +84,9 @@ Before ticking any task, all of these must be true:
 
 ### Phase 4 — Supporting pages
 
-- [ ] **4.1** About Us.
-- [ ] **4.2** Contact.
-- [ ] **4.3** 404.
+- [x] **4.1** About Us.
+- [x] **4.2** Contact.
+- [x] **4.3** 404.
 
 ### Phase 5 — Polish & ship
 
@@ -120,13 +120,14 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 
 ## 📓 Session Log
 
-| Date       | Did                                                                                   | Next           |
-| ---------- | ------------------------------------------------------------------------------------- | -------------- |
-| 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created                            | Start step 0.1 |
-| 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo                            | Build 1.1      |
-| 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                         | Build 1.2      |
-| 2026-06-25 | 0.2 + 0.3 done — content collections + placeholder data, Header/Footer/WhatsApp float | Build 1.2      |
-| 2026-06-25 | 1.2 done — Company overview section + `overview` block in site.config | Build 1.3      |
-| 2026-06-25 | 1.3–1.9 done — Social proof, story circles, carousels, category blocks, PlanWithUs, reviews, footer | Build 2.1 |
-| 2026-06-25 | 2.1–2.2 done — Category landing + trip detail (card UX, danger token, scroll-spy, 5-img gallery) | Build 3.1 |
-| 2026-06-25 | 3.1–3.2 done — Family/School/Corporate pages + WhatsApp enquiry form | Build 4.1 |
+| Date       | Did                                                                                                 | Next           |
+| ---------- | --------------------------------------------------------------------------------------------------- | -------------- |
+| 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created                                          | Start step 0.1 |
+| 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo                                          | Build 1.1      |
+| 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                                       | Build 1.2      |
+| 2026-06-25 | 0.2 + 0.3 done — content collections + placeholder data, Header/Footer/WhatsApp float               | Build 1.2      |
+| 2026-06-25 | 1.2 done — Company overview section + `overview` block in site.config                               | Build 1.3      |
+| 2026-06-25 | 1.3–1.9 done — Social proof, story circles, carousels, category blocks, PlanWithUs, reviews, footer | Build 2.1      |
+| 2026-06-25 | 2.1–2.2 done — Category landing + trip detail (card UX, danger token, scroll-spy, 5-img gallery)    | Build 3.1      |
+| 2026-06-25 | 3.1–3.2 done — Family/School/Corporate pages + WhatsApp enquiry form                                | Build 4.1      |
+| 2026-06-25 | 4.1–4.3 done — About Us, Contact, 404 pages (data-driven, placeholder heroes registered)            | Build 5.1      |

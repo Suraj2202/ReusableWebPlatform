@@ -132,3 +132,44 @@ programs:
       - icon: zap
         title: Zero Downtime
         text: Dedicated coordinator ensures everything runs on schedule.
+
+# About Us page (/about)
+about:
+  title: About Us
+  tagline: The story behind the trails we trace.
+  image: /assets/misc/about-hero.jpg
+  story:
+    - >-
+      Hidden Naqsha was born from a simple frustration — every travel company offered the same
+      routes, the same buses, the same checklist tourism. We wanted to share the Kashmir we grew
+      up in: the meadows locals picnic at, the passes only shepherds know, the village homes
+      where chai tastes different.
+    - >-
+      What started as friends guiding friends in 2018 has grown into a team of mountain-born
+      planners, certified trek leaders, and logistics nerds. We still plan every trip as if a
+      friend is coming — because that's exactly who you are to us.
+    - >-
+      Today, Hidden Naqsha operates 60+ curated journeys across the Himalayas and beyond.
+      From beginner-friendly getaways to expedition-grade adventures, every route is scouted
+      on foot, every stay is personally vetted, and every itinerary is designed to leave you
+      with stories — not just photos.
+  values:
+    - icon: map
+      title: Local Knowledge
+      text: Born and raised in the mountains — we know trails that don't appear on maps.
+    - icon: shield
+      title: Safety Always
+      text: Certified leaders, medical kits, satellite comms, and real-time weather checks.
+    - icon: heart
+      title: Small Groups
+      text: Capped group sizes so every traveller gets attention, not just a seat.
+    - icon: award
+      title: No Compromises
+      text: We vet every stay, every vehicle, every meal — nothing is left to chance.
+
+# Contact page (/contact)
+contactPage:
+  title: Get In Touch
+  tagline: Let's plan your next journey together.
+  image: /assets/misc/contact-hero.jpg
+  location: Kashmir, India

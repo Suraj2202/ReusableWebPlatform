@@ -17,6 +17,8 @@
 | `categories/family.jpg`       | Family cover       | 4:3      | 1280px    | PLACEHOLDER | from `services/beach.jpg`     |
 | `categories/school.jpg`       | School cover       | 4:3      | 1280px    | PLACEHOLDER | from `services/culture.jpg`   |
 | `categories/corporate.jpg`    | Corporate cover    | 4:3      | 1280px    | PLACEHOLDER | from `services/city.jpg`      |
+| `misc/about-hero.jpg`         | About page hero    | 4:3      | 1280px    | PLACEHOLDER | from `services/mountain.jpg`  |
+| `misc/contact-hero.jpg`       | Contact page hero  | 4:3      | 1280px    | PLACEHOLDER | from `gallery/gallery-02.jpg` |
 | `reviews/avatar-01.jpg`       | Reviewer avatar    | 1:1      | 256px     | PLACEHOLDER | from `testimonials/priya.jpg` |
 | `reviews/avatar-02.jpg`       | Reviewer avatar    | 1:1      | 256px     | PLACEHOLDER | from `testimonials/rahul.jpg` |
 | `reviews/avatar-03.jpg`       | Reviewer avatar    | 1:1      | 256px     | PLACEHOLDER | from `testimonials/sarah.jpg` |
