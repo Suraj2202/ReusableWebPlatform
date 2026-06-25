@@ -13,6 +13,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   hideFloatMobile?: boolean;
+  showWhatsApp?: boolean;
 }
 
 const { name } = siteConfig.site;
@@ -22,6 +23,7 @@ const {
   description = siteConfig.site.description,
   ogImage = '/assets/brand/og-image.jpg',
   hideFloatMobile = false,
+  showWhatsApp = false,
 } = Astro.props;
 ---
 
@@ -66,9 +68,11 @@ const {
       <slot />
     </main>
     <Footer transition:persist />
-    <div class:list={[{ 'hidden md:block': hideFloatMobile }]} transition:persist>
-      <WhatsAppFloatButton />
-    </div>
+    {showWhatsApp && (
+      <div class:list={[{ 'hidden md:block': hideFloatMobile }]} transition:persist>
+        <WhatsAppFloatButton />
+      </div>
+    )}
     <BackToTop transition:persist />
   </body>
 </html>

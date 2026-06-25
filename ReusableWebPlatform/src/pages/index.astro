@@ -15,7 +15,7 @@ const { name, tagline, description } = siteConfig.site;
 const waHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
 ---
 
-<BaseLayout title={name} description={description}>
+<BaseLayout title={name} description={description} showWhatsApp>
   <VideoBanner
     poster="/assets/banner/home-poster.jpg"
     videoSrc="/assets/video/home-banner.mp4"
