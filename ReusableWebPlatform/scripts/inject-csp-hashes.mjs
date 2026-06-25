@@ -85,10 +85,7 @@ async function main() {
   const hashStr = [...hashes].join(' ');
 
   // Replace script-src 'self' data: with script-src 'self' data: + hashes
-  headers = headers.replace(
-    /script-src 'self'( data:)?/,
-    `script-src 'self' data: ${hashStr}`
-  );
+  headers = headers.replace(/script-src 'self'( data:)?/, `script-src 'self' data: ${hashStr}`);
 
   await writeFile(headersPath, headers, 'utf8');
   console.log(`[csp-hashes] Injected ${hashes.size} script hash(es) into dist/_headers.`);

@@ -224,10 +224,13 @@ const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
     panel.classList.add('translate-x-full');
     openBtn?.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    // Use transitionend with a safety timeout so the drawer never gets stuck
     const finish = () => {
       drawer.classList.add('hidden');
       panel.removeEventListener('transitionend', finish);
+      clearTimeout(safetyTimer);
     };
+    const safetyTimer = setTimeout(finish, 350);
     panel.addEventListener('transitionend', finish);
     lastFocused?.focus();
   }
@@ -272,6 +275,17 @@ const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
     if (!ticking) {
       requestAnimationFrame(onScroll);
       ticking = true;
+    }
+  });
+
+  // Reset drawer after View Transition navigations (prevents stuck state)
+  document.addEventListener('astro:after-swap', () => {
+    if (drawer && !drawer.classList.contains('hidden')) {
+      drawer.classList.add('hidden');
+      backdrop && (backdrop.style.opacity = '0');
+      panel?.classList.add('translate-x-full');
+      openBtn?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     }
   });
 </script>
