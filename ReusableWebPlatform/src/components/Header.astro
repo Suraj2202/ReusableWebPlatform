@@ -159,23 +159,25 @@ const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
         Home
       </a>
 
-      {drawerSections.map((section) => (
-        <div class="mt-3">
-          <span class="px-4 font-body text-xs font-semibold uppercase tracking-wide text-neutral/50">
-            {section.heading}
-          </span>
-          <div class="mt-1 flex flex-col gap-0.5">
-            {section.links.map((link) => (
-              <a
-                href={link.href}
-                class="drawer-link rounded-theme px-4 py-2.5 font-body text-sm font-medium text-neutral transition-colors hover:bg-primary/5 hover:text-primary"
-              >
-                {link.label}
-              </a>
-            ))}
+      {
+        drawerSections.map((section) => (
+          <div class="mt-3">
+            <span class="px-4 font-body text-xs font-semibold uppercase tracking-wide text-neutral/50">
+              {section.heading}
+            </span>
+            <div class="mt-1 flex flex-col gap-0.5">
+              {section.links.map((link) => (
+                <a
+                  href={link.href}
+                  class="drawer-link rounded-theme px-4 py-2.5 font-body text-sm font-medium text-neutral transition-colors hover:bg-primary/5 hover:text-primary"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </nav>
 
     <div class="border-t border-neutral/10 p-4">
