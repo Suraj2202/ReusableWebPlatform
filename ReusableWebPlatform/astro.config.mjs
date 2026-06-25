@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import yaml from '@rollup/plugin-yaml';
 
 export default defineConfig({
-  site: 'https://example.com', // Overridden per client
+  site: 'https://reusablewebplatform.suraj1-verma7.workers.dev',
   trailingSlash: 'ignore',
   integrations: [
     tailwind(),

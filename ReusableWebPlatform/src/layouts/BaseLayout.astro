@@ -6,14 +6,23 @@ import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import WhatsAppFloatButton from '@/components/WhatsAppFloatButton.astro';
 import BackToTop from '@/components/BackToTop.astro';
+import { siteConfig } from '@/utils/whatsapp';
 
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
   hideFloatMobile?: boolean;
 }
 
-const { title = 'Hidden Naqsha', description = '', hideFloatMobile = false } = Astro.props;
+const { name } = siteConfig.site;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const {
+  title = name,
+  description = siteConfig.site.description,
+  ogImage = '/assets/brand/og-image.jpg',
+  hideFloatMobile = false,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -22,8 +31,33 @@ const { title = 'Hidden Naqsha', description = '', hideFloatMobile = false } = A
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
     <title>{title}</title>
-    {description && <meta name="description" content={description} />}
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content={name} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#1B3A2D" />
+
     <ViewTransitions />
   </head>
   <body class="min-h-screen flex flex-col">
