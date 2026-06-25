@@ -1,0 +1,54 @@
+---
+/**
+ * Day-by-day itinerary using native <details> accordions (accessible, no JS needed).
+ * docs/rules/09-accessibility.md, 07-animation.md.
+ */
+interface Day {
+  day: number;
+  title: string;
+  points: string[];
+}
+interface Props {
+  itinerary: Day[];
+}
+const { itinerary } = Astro.props;
+---
+
+<div class="space-y-3">
+  {
+    itinerary.map((day, index) => (
+      <details
+        class="group/day overflow-hidden rounded-theme border border-neutral/10 bg-white"
+        open={index === 0}
+      >
+        <summary class="flex cursor-pointer list-none items-center gap-4 p-4 font-body font-medium text-neutral marker:hidden">
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 font-heading text-sm font-semibold text-primary">
+            {day.day}
+          </span>
+          <span class="flex-1">
+            <span class="block text-xs uppercase tracking-wide text-neutral/50">Day {day.day}</span>
+            <span class="font-heading text-base text-primary">{day.title}</span>
+          </span>
+          <svg
+            class="h-5 w-5 shrink-0 text-neutral/40 transition-transform duration-200 group-open/day:rotate-180"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </summary>
+        <ul class="space-y-2 border-t border-neutral/10 px-4 pb-4 pt-3 pl-[3.25rem]">
+          {day.points.map((point) => (
+            <li class="flex gap-2 font-body text-sm text-neutral/70">
+              <span aria-hidden="true" class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </details>
+    ))
+  }
+</div>

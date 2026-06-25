@@ -1,0 +1,66 @@
+---
+/**
+ * Sticky in-page tab nav with scroll-spy (docs/rules/08-navigation.md).
+ * Sticks just below the global header (h-16). Horizontally scrollable on phone.
+ * Pass tabs as { id, label }[]; each id must match a section id on the page.
+ */
+interface Tab {
+  id: string;
+  label: string;
+}
+interface Props {
+  tabs: Tab[];
+}
+const { tabs } = Astro.props;
+---
+
+<nav
+  data-tabnav
+  aria-label="Page sections"
+  class="sticky top-16 z-30 border-b border-neutral/10 bg-surface/95 backdrop-blur"
+>
+  <ul class="no-scrollbar mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 sm:px-6">
+    {
+      tabs.map((tab) => (
+        <li class="shrink-0">
+          <a
+            href={`#${tab.id}`}
+            data-tab={tab.id}
+            class="inline-block border-b-2 border-transparent px-3 py-3 font-body text-sm font-medium text-neutral/60 transition-colors hover:text-primary aria-[current=true]:border-accent aria-[current=true]:text-primary"
+          >
+            {tab.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<script>
+  const nav = document.querySelector<HTMLElement>('[data-tabnav]');
+  if (nav) {
+    const links = Array.from(nav.querySelectorAll<HTMLAnchorElement>('[data-tab]'));
+    const sections = links
+      .map((link) => document.getElementById(link.dataset.tab ?? ''))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const setActive = (id: string) => {
+      links.forEach((link) => {
+        const active = link.dataset.tab === id;
+        link.setAttribute('aria-current', active ? 'true' : 'false');
+        if (active) link.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(visible.target.id);
+      },
+      { rootMargin: '-30% 0px -55% 0px', threshold: [0, 0.25, 0.5, 1] },
+    );
+    sections.forEach((section) => observer.observe(section));
+  }
+</script>

@@ -45,6 +45,14 @@
 | `trips/kausernag-lake/cover.jpg`                | Kausernag Lake                  | from `gallery/gallery-06.jpg` |
 | `trips/taulian-meadow/cover.jpg`                | Taulian Meadow                  | from `services/mountain.jpg`  |
 
+### Trip galleries (4:3, min 640px) — all PLACEHOLDER
+
+| Path (under `public/assets/`)        | Purpose                         | Source if placeholder                     |
+| ------------------------------------ | ------------------------------- | ----------------------------------------- |
+| `trips/<slug>/gallery-01..03.jpg`    | Per-trip gallery (3 per trip)   | mixed copies of `gallery/*` + `services/*` |
+
+> 57 gallery placeholders (3 × 19 trips). Each trip's YAML lists 2–3 of these. Replace with real per-trip photos before the live demo.
+
 > Add a row whenever a new image path is introduced. Trip images go under `trips/<slug>/` and get their own rows as trips are built.
 
 ## Needed from user (request list)
