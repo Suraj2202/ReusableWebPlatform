@@ -11,6 +11,43 @@
     @apply bg-surface font-body text-neutral leading-relaxed;
   }
 
+  /* Dark mode overrides */
+  html.dark body {
+    @apply bg-[#111816] text-[#E8E4DF];
+  }
+
+  html.dark .bg-surface {
+    background-color: #111816;
+  }
+
+  html.dark .bg-surface\/90 {
+    background-color: rgb(17 24 22 / 0.9);
+  }
+
+  html.dark .bg-white {
+    background-color: #1A2220;
+  }
+
+  html.dark .text-neutral {
+    color: #E8E4DF;
+  }
+
+  html.dark .text-neutral\/80 {
+    color: rgb(232 228 223 / 0.8);
+  }
+
+  html.dark .text-neutral\/60 {
+    color: rgb(232 228 223 / 0.6);
+  }
+
+  html.dark .border-neutral\/10 {
+    border-color: rgb(232 228 223 / 0.1);
+  }
+
+  html.dark .border-neutral\/20 {
+    border-color: rgb(232 228 223 / 0.15);
+  }
+
   h1,
   h2,
   h3,

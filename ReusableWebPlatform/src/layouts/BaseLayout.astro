@@ -60,6 +60,22 @@ const {
     <!-- Theme -->
     <meta name="theme-color" content="#1B3A2D" />
 
+    <!-- Dark mode: apply class before paint to prevent flash -->
+    <script is:inline>
+      (function() {
+        function applyTheme() {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        }
+        applyTheme();
+        document.addEventListener('astro:after-swap', applyTheme);
+      })();
+    </script>
+
     <ViewTransitions />
   </head>
   <body class="min-h-screen flex flex-col">
@@ -68,11 +84,13 @@ const {
       <slot />
     </main>
     <Footer transition:persist />
-    {showWhatsApp && (
-      <div class:list={[{ 'hidden md:block': hideFloatMobile }]} transition:persist>
-        <WhatsAppFloatButton />
-      </div>
-    )}
+    {
+      showWhatsApp && (
+        <div class:list={[{ 'hidden md:block': hideFloatMobile }]} transition:persist>
+          <WhatsAppFloatButton />
+        </div>
+      )
+    }
     <BackToTop transition:persist />
   </body>
 </html>
