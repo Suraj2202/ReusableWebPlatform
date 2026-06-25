@@ -42,6 +42,7 @@ const drawerSections = [
 const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
 ---
 
+<div id="header-root">
 <header
   id="site-header"
   class="sticky top-0 z-50 w-full border-b border-neutral/10 bg-surface/90 backdrop-blur transition-shadow duration-200"
@@ -192,23 +193,38 @@ const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
     </div>
   </div>
 </div>
+</div>
 
 <script>
-  const header = document.getElementById('site-header');
-  const drawer = document.getElementById('mobile-drawer');
-  const backdrop = document.getElementById('drawer-backdrop');
-  const panel = document.getElementById('drawer-panel');
-  const openBtn = document.getElementById('menu-open');
-  const closeBtn = document.getElementById('menu-close');
-  const links = drawer?.querySelectorAll<HTMLAnchorElement>('.drawer-link');
+  /**
+   * Mobile drawer navigation — resilient to View Transition DOM swaps.
+   * All element refs are queried fresh on each interaction (never cached).
+   * Event delegation on document ensures listeners survive element replacement.
+   */
 
   let lastFocused: HTMLElement | null = null;
 
+  function getEls() {
+    return {
+      header: document.getElementById('site-header'),
+      drawer: document.getElementById('mobile-drawer'),
+      backdrop: document.getElementById('drawer-backdrop'),
+      panel: document.getElementById('drawer-panel'),
+      openBtn: document.getElementById('menu-open'),
+      closeBtn: document.getElementById('menu-close'),
+    };
+  }
+
+  function isDrawerOpen() {
+    const { drawer } = getEls();
+    return drawer ? !drawer.classList.contains('hidden') : false;
+  }
+
   function openDrawer() {
+    const { drawer, backdrop, panel, openBtn, closeBtn } = getEls();
     if (!drawer || !backdrop || !panel) return;
     lastFocused = document.activeElement as HTMLElement;
     drawer.classList.remove('hidden');
-    // next frame so the transition runs
     requestAnimationFrame(() => {
       backdrop.style.opacity = '1';
       panel.classList.remove('translate-x-full');
@@ -219,33 +235,46 @@ const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
   }
 
   function closeDrawer() {
+    const { drawer, backdrop, panel, openBtn } = getEls();
     if (!drawer || !backdrop || !panel) return;
+    if (drawer.classList.contains('hidden')) return; // already closed
     backdrop.style.opacity = '0';
     panel.classList.add('translate-x-full');
     openBtn?.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
-    // Use transitionend with a safety timeout so the drawer never gets stuck
     const finish = () => {
       drawer.classList.add('hidden');
       panel.removeEventListener('transitionend', finish);
       clearTimeout(safetyTimer);
     };
     const safetyTimer = setTimeout(finish, 350);
-    panel.addEventListener('transitionend', finish);
+    panel.addEventListener('transitionend', finish, { once: true });
     lastFocused?.focus();
   }
 
-  openBtn?.addEventListener('click', openDrawer);
-  closeBtn?.addEventListener('click', closeDrawer);
-  backdrop?.addEventListener('click', closeDrawer);
-  links?.forEach((link) => link.addEventListener('click', closeDrawer));
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && drawer && !drawer.classList.contains('hidden')) {
+  // --- Event delegation (survives DOM replacement) ---
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('#menu-open')) {
+      openDrawer();
+      return;
+    }
+    if (target.closest('#menu-close') || target.closest('#drawer-backdrop')) {
+      closeDrawer();
+      return;
+    }
+    if (target.closest('.drawer-link') && isDrawerOpen()) {
       closeDrawer();
     }
-    // Simple focus trap within the panel while open
-    if (e.key === 'Tab' && drawer && !drawer.classList.contains('hidden') && panel) {
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isDrawerOpen()) {
+      closeDrawer();
+    }
+    if (e.key === 'Tab' && isDrawerOpen()) {
+      const { panel } = getEls();
+      if (!panel) return;
       const focusable = panel.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
       if (focusable.length === 0) return;
       const first = focusable[0];
@@ -260,29 +289,27 @@ const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
     }
   });
 
-  // Subtle elevation on scroll (no layout shift)
+  // Scroll shadow
   let ticking = false;
-  function onScroll() {
-    if (!header) return;
-    if (window.scrollY > 8) {
-      header.classList.add('shadow-md');
-    } else {
-      header.classList.remove('shadow-md');
-    }
-    ticking = false;
-  }
   window.addEventListener('scroll', () => {
     if (!ticking) {
-      requestAnimationFrame(onScroll);
+      requestAnimationFrame(() => {
+        const { header } = getEls();
+        if (header) {
+          header.classList.toggle('shadow-md', window.scrollY > 8);
+        }
+        ticking = false;
+      });
       ticking = true;
     }
   });
 
-  // Reset drawer after View Transition navigations (prevents stuck state)
+  // Safety reset after View Transition swap
   document.addEventListener('astro:after-swap', () => {
+    const { drawer, backdrop, panel, openBtn } = getEls();
     if (drawer && !drawer.classList.contains('hidden')) {
       drawer.classList.add('hidden');
-      backdrop && (backdrop.style.opacity = '0');
+      if (backdrop) backdrop.style.opacity = '0';
       panel?.classList.add('translate-x-full');
       openBtn?.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
