@@ -47,6 +47,7 @@ theme:
     accent: '#C9A24B' # warm gold — CTAs, highlights, stars
     neutral: '#1F2A28' # charcoal — body text
     surface: '#F7F4EF' # warm off-white — section backgrounds
+    danger: '#B3454A' # muted terracotta red — "not included / avoid" states only (not a brand accent)
   fonts:
     heading: Fraunces # elegant modern serif
     body: Inter # clean, legible sans

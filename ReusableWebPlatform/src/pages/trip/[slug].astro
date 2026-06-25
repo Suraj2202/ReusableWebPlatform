@@ -50,12 +50,18 @@ const tabs = [
 ];
 
 const mustCarry = otherInfo?.mustCarry ?? [];
+
+const facts = [
+  { label: 'Duration', value: formatDuration(durationNights, durationDays) },
+  { label: 'Route', value: `${pickup} → ${drop}` },
+  { label: 'Category', value: categoryTitle },
+];
 ---
 
 <BaseLayout title={`${title} — ${name}`} description={overview}>
   <!-- Hero -->
   <section class="relative">
-    <div class="relative h-72 overflow-hidden sm:h-96">
+    <div class="relative h-72 overflow-hidden sm:h-80 lg:h-[22rem]">
       <img
         src={`/assets/${cover}`}
         alt={title}
@@ -63,24 +69,34 @@ const mustCarry = otherInfo?.mustCarry ?? [];
         height="720"
         class="h-full w-full object-cover"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-neutral/80 via-neutral/30 to-transparent">
+      <div class="absolute inset-0 bg-gradient-to-t from-neutral/85 via-neutral/40 to-neutral/10">
       </div>
       <div class="absolute inset-x-0 bottom-0">
-        <div class="mx-auto max-w-6xl px-6 pb-8">
-          <nav class="mb-3 font-body text-sm text-surface/80" aria-label="Breadcrumb">
-            <a href="/" class="underline-offset-4 hover:underline">Home</a>
+        <div class="mx-auto max-w-6xl px-5 pb-9 sm:px-6 sm:pb-12">
+          <nav class="mb-4 font-body text-sm text-surface/75" aria-label="Breadcrumb">
+            <a href="/" class="underline-offset-4 transition-colors hover:text-surface">Home</a>
             <span aria-hidden="true" class="px-1.5">/</span>
-            <a href={`/explore/${category}`} class="underline-offset-4 hover:underline"
-              >{categoryTitle}</a
+            <a
+              href={`/explore/${category}`}
+              class="underline-offset-4 transition-colors hover:text-surface"
             >
+              {categoryTitle}
+            </a>
             <span aria-hidden="true" class="px-1.5">/</span>
-            <span class="text-surface">{title}</span>
+            <span class="text-surface/90">{title}</span>
           </nav>
-          <h1 class="font-heading text-3xl text-surface sm:text-4xl">{title}</h1>
-          <div
-            class="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 font-body text-sm text-surface/90"
+          <p class="font-body text-sm font-medium uppercase tracking-wide text-accent">
+            {categoryTitle}
+          </p>
+          <h1
+            class="mt-1.5 max-w-3xl font-heading text-3xl leading-tight text-surface sm:text-4xl lg:text-5xl"
           >
-            <span class="inline-flex items-center gap-1.5">
+            {title}
+          </h1>
+          <div class="mt-5 flex flex-wrap items-center gap-2.5 font-body text-sm">
+            <span
+              class="inline-flex items-center gap-1.5 rounded-full bg-surface/15 px-3 py-1.5 text-surface backdrop-blur"
+            >
               <svg
                 class="h-4 w-4 text-accent"
                 viewBox="0 0 24 24"
@@ -94,7 +110,9 @@ const mustCarry = otherInfo?.mustCarry ?? [];
               </svg>
               {formatDuration(durationNights, durationDays)}
             </span>
-            <span class="inline-flex items-center gap-1.5">
+            <span
+              class="inline-flex items-center gap-1.5 rounded-full bg-surface/15 px-3 py-1.5 text-surface backdrop-blur"
+            >
               <svg
                 class="h-4 w-4 text-accent"
                 viewBox="0 0 24 24"
@@ -119,166 +137,318 @@ const mustCarry = otherInfo?.mustCarry ?? [];
 
   <StickyTabNav tabs={tabs} />
 
-  <div class="mx-auto max-w-6xl px-6 pb-28 pt-10">
-    <!-- Overview + highlights -->
-    <section id="overview" class="scroll-mt-32" aria-labelledby="overview-heading">
-      <h2 id="overview-heading" class="font-heading text-2xl text-primary">Overview</h2>
-      <p class="mt-3 font-body leading-relaxed text-neutral/70">{overview}</p>
-      {
-        highlights.length > 0 && (
-          <ul class="mt-5 flex flex-wrap gap-2">
-            {highlights.map((highlight) => (
-              <li class="rounded-full bg-primary/10 px-3 py-1.5 font-body text-sm text-primary">
-                {highlight}
-              </li>
-            ))}
-          </ul>
-        )
-      }
-    </section>
+  <!-- Body: content + sticky sidebar -->
+  <div class="bg-surface">
+    <div class="mx-auto max-w-6xl px-5 py-10 pb-28 sm:px-6 lg:py-14 lg:pb-14">
+      <div class="lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-12">
+        <!-- Main content -->
+        <div class="min-w-0 space-y-6 sm:space-y-8">
+          <!-- Overview -->
+          <section
+            id="overview"
+            class="scroll-mt-32 rounded-theme bg-white p-5 ring-1 ring-neutral/10 sm:p-6"
+            aria-labelledby="overview-heading"
+          >
+            <p class="font-body text-sm font-medium uppercase tracking-wide text-accent">
+              About this trip
+            </p>
+            <h2 id="overview-heading" class="mt-1 font-heading text-2xl text-primary sm:text-3xl">
+              Overview
+            </h2>
+            <p class="mt-4 max-w-prose font-body leading-relaxed text-neutral/70">{overview}</p>
+            {
+              highlights.length > 0 && (
+                <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+                  {highlights.map((highlight) => (
+                    <li class="flex items-start gap-3 rounded-theme bg-surface p-3.5">
+                      <svg
+                        class="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 7.1-1.01L12 2Z"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <span class="font-body text-sm text-neutral/80">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              )
+            }
+          </section>
 
-    <!-- Itinerary -->
-    {
-      itinerary.length > 0 && (
-        <section id="itinerary" class="mt-12 scroll-mt-32" aria-labelledby="itinerary-heading">
-          <h2 id="itinerary-heading" class="font-heading text-2xl text-primary">
-            Itinerary
-          </h2>
-          <p class="mt-2 font-body text-sm text-neutral/60">
-            {durationDays} days · {durationNights} nights
-          </p>
-          <div class="mt-5">
-            <ItineraryAccordion itinerary={itinerary} />
+          <!-- Itinerary -->
+          {
+            itinerary.length > 0 && (
+              <section
+                id="itinerary"
+                class="scroll-mt-32 rounded-theme bg-white p-5 ring-1 ring-neutral/10 sm:p-6"
+                aria-labelledby="itinerary-heading"
+              >
+                <p class="font-body text-sm font-medium uppercase tracking-wide text-accent">
+                  Day by day
+                </p>
+                <h2
+                  id="itinerary-heading"
+                  class="mt-1 font-heading text-2xl text-primary sm:text-3xl"
+                >
+                  Itinerary
+                </h2>
+                <p class="mt-2 font-body text-sm text-neutral/60">
+                  {durationDays} days · {durationNights} nights
+                </p>
+                <div class="mt-6">
+                  <ItineraryAccordion itinerary={itinerary} />
+                </div>
+              </section>
+            )
+          }
+
+          <!-- Inclusions / Exclusions -->
+          {
+            (inclusions.length > 0 || exclusions.length > 0) && (
+              <div class="grid gap-6 sm:grid-cols-2">
+                {inclusions.length > 0 && (
+                  <section
+                    id="inclusions"
+                    class="scroll-mt-32 rounded-theme bg-white p-5 ring-1 ring-neutral/10 sm:p-6"
+                    aria-labelledby="inclusions-heading"
+                  >
+                    <h2
+                      id="inclusions-heading"
+                      class="flex items-center gap-2 font-heading text-xl text-primary"
+                    >
+                      <svg
+                        class="h-5 w-5 text-primary"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="9" />
+                        <path
+                          d="M8 12.5l2.5 2.5L16 9.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      Inclusions
+                    </h2>
+                    <ul class="mt-4 space-y-3">
+                      {inclusions.map((item) => (
+                        <li class="flex gap-3 font-body text-sm text-neutral/70">
+                          <svg
+                            class="mt-0.5 h-5 w-5 shrink-0 text-primary"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            aria-hidden="true"
+                          >
+                            <circle cx="12" cy="12" r="9" />
+                            <path
+                              d="M8 12.5l2.5 2.5L16 9.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+                {exclusions.length > 0 && (
+                  <section
+                    id="exclusions"
+                    class="scroll-mt-32 rounded-theme bg-white p-5 ring-1 ring-danger/20 sm:p-6"
+                    aria-labelledby="exclusions-heading"
+                  >
+                    <h2
+                      id="exclusions-heading"
+                      class="flex items-center gap-2 font-heading text-xl text-danger"
+                    >
+                      <svg
+                        class="h-5 w-5 text-danger"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="9" />
+                        <path
+                          d="M9 9l6 6M15 9l-6 6"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      Exclusions
+                    </h2>
+                    <ul class="mt-4 space-y-3">
+                      {exclusions.map((item) => (
+                        <li class="flex gap-3 font-body text-sm text-neutral/70">
+                          <svg
+                            class="mt-0.5 h-5 w-5 shrink-0 text-danger"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            aria-hidden="true"
+                          >
+                            <circle cx="12" cy="12" r="9" />
+                            <path
+                              d="M9 9l6 6M15 9l-6 6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+              </div>
+            )
+          }
+
+          <!-- Other info -->
+          {
+            mustCarry.length > 0 && (
+              <section
+                id="other-info"
+                class="scroll-mt-32 rounded-theme bg-white p-5 ring-1 ring-neutral/10 sm:p-6"
+                aria-labelledby="other-info-heading"
+              >
+                <p class="font-body text-sm font-medium uppercase tracking-wide text-accent">
+                  Good to know
+                </p>
+                <h2
+                  id="other-info-heading"
+                  class="mt-1 font-heading text-2xl text-primary sm:text-3xl"
+                >
+                  Other Info
+                </h2>
+                <div class="mt-5 rounded-theme bg-surface p-4 sm:p-5">
+                  <h3 class="font-body text-sm font-semibold uppercase tracking-wide text-accent">
+                    Must carry
+                  </h3>
+                  <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+                    {mustCarry.map((item) => (
+                      <li class="flex gap-2.5 font-body text-sm text-neutral/70">
+                        <span
+                          aria-hidden="true"
+                          class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            )
+          }
+
+          <!-- Gallery -->
+          {
+            gallery.length > 0 && (
+              <section
+                id="gallery"
+                class="scroll-mt-32 rounded-theme bg-white p-5 ring-1 ring-neutral/10 sm:p-6"
+                aria-labelledby="gallery-heading"
+              >
+                <p class="font-body text-sm font-medium uppercase tracking-wide text-accent">
+                  Postcards
+                </p>
+                <h2
+                  id="gallery-heading"
+                  class="mt-1 font-heading text-2xl text-primary sm:text-3xl"
+                >
+                  Journey in frames
+                </h2>
+                <ul class="mt-6 grid grid-cols-2 gap-3 sm:gap-4">
+                  {gallery.map((image, index) => (
+                    <li class={`overflow-hidden rounded-theme ${index === 0 ? 'col-span-2' : ''}`}>
+                      <img
+                        src={`/assets/${image}`}
+                        alt={`${title} — photo ${index + 1}`}
+                        width="640"
+                        height="480"
+                        loading="lazy"
+                        decoding="async"
+                        class={`w-full object-cover transition-transform duration-300 hover:scale-105 ${index === 0 ? 'aspect-[16/9]' : 'aspect-[4/3]'}`}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )
+          }
+        </div>
+
+        <!-- Sticky booking sidebar (desktop) -->
+        <aside class="mt-12 hidden lg:mt-0 lg:block">
+          <div class="lg:sticky lg:top-28">
+            <div class="rounded-theme bg-white p-6 shadow-sm ring-1 ring-neutral/10">
+              <p class="font-body text-xs uppercase tracking-wide text-neutral/50">Starting from</p>
+              <p class="mt-1 font-heading text-3xl font-semibold text-neutral">
+                {formatPrice(priceFrom)}
+                <span class="font-body text-sm font-normal text-neutral/50">/ person</span>
+              </p>
+
+              <dl class="mt-5 space-y-3 border-t border-neutral/10 pt-5">
+                {
+                  facts.map((fact) => (
+                    <div class="flex items-start justify-between gap-3">
+                      <dt class="font-body text-sm text-neutral/50">{fact.label}</dt>
+                      <dd class="text-right font-body text-sm font-medium text-neutral">
+                        {fact.value}
+                      </dd>
+                    </div>
+                  ))
+                }
+              </dl>
+
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noopener"
+                class="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 font-body text-sm font-semibold text-white shadow-sm transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"
+                  ></path>
+                </svg>
+                Enquire on WhatsApp
+              </a>
+              <p class="mt-3 text-center font-body text-xs text-neutral/50">
+                Typically replies within an hour.
+              </p>
+            </div>
           </div>
-        </section>
-      )
-    }
-
-    <!-- Inclusions / Exclusions -->
-    <div class="mt-12 grid gap-8 lg:grid-cols-2">
-      {
-        inclusions.length > 0 && (
-          <section id="inclusions" class="scroll-mt-32" aria-labelledby="inclusions-heading">
-            <h2 id="inclusions-heading" class="font-heading text-2xl text-primary">
-              Inclusions
-            </h2>
-            <ul class="mt-4 space-y-2.5">
-              {inclusions.map((item) => (
-                <li class="flex gap-3 font-body text-sm text-neutral/70">
-                  <svg
-                    class="mt-0.5 h-5 w-5 shrink-0 text-primary"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    aria-hidden="true"
-                  >
-                    <circle cx="12" cy="12" r="9" />
-                    <path
-                      d="M8 12.5l2.5 2.5L16 9.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )
-      }
-      {
-        exclusions.length > 0 && (
-          <section id="exclusions" class="scroll-mt-32" aria-labelledby="exclusions-heading">
-            <h2 id="exclusions-heading" class="font-heading text-2xl text-primary">
-              Exclusions
-            </h2>
-            <ul class="mt-4 space-y-2.5">
-              {exclusions.map((item) => (
-                <li class="flex gap-3 font-body text-sm text-neutral/70">
-                  <svg
-                    class="mt-0.5 h-5 w-5 shrink-0 text-neutral/40"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    aria-hidden="true"
-                  >
-                    <circle cx="12" cy="12" r="9" />
-                    <path d="M9 9l6 6M15 9l-6 6" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )
-      }
+        </aside>
+      </div>
     </div>
-
-    <!-- Other info -->
-    {
-      mustCarry.length > 0 && (
-        <section id="other-info" class="mt-12 scroll-mt-32" aria-labelledby="other-info-heading">
-          <h2 id="other-info-heading" class="font-heading text-2xl text-primary">
-            Other Info
-          </h2>
-          <div class="mt-4 rounded-theme border border-neutral/10 bg-white p-5">
-            <h3 class="font-body text-sm font-semibold uppercase tracking-wide text-accent">
-              Must carry
-            </h3>
-            <ul class="mt-3 grid gap-2.5 sm:grid-cols-2">
-              {mustCarry.map((item) => (
-                <li class="flex gap-2.5 font-body text-sm text-neutral/70">
-                  <span
-                    aria-hidden="true"
-                    class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-                  />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )
-    }
-
-    <!-- Gallery -->
-    {
-      gallery.length > 0 && (
-        <section id="gallery" class="mt-12 scroll-mt-32" aria-labelledby="gallery-heading">
-          <h2 id="gallery-heading" class="font-heading text-2xl text-primary">
-            Journey in frames
-          </h2>
-          <ul class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {gallery.map((image, index) => (
-              <li class="overflow-hidden rounded-theme">
-                <img
-                  src={`/assets/${image}`}
-                  alt={`${title} — photo ${index + 1}`}
-                  width="640"
-                  height="480"
-                  loading="lazy"
-                  decoding="async"
-                  class="aspect-[4/3] h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </li>
-            ))}
-          </ul>
-        </section>
-      )
-    }
   </div>
 
   <!-- Reviews (global Google reviews) -->
   <ReviewsCarousel />
 
-  <!-- Sticky enquire bar -->
+  <!-- Mobile / tablet sticky enquire bar -->
   <div
-    class="fixed inset-x-0 bottom-0 z-40 border-t border-neutral/10 bg-surface/95 backdrop-blur"
+    class="fixed inset-x-0 bottom-0 z-40 border-t border-neutral/10 bg-surface/95 backdrop-blur lg:hidden"
     style="padding-bottom: env(safe-area-inset-bottom);"
   >
-    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-6">
       <div class="min-w-0">
         <p class="font-body text-xs text-neutral/50">Starting from</p>
         <p class="font-heading text-lg font-semibold text-neutral">
@@ -297,7 +467,7 @@ const mustCarry = otherInfo?.mustCarry ?? [];
             d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"
           ></path>
         </svg>
-        Enquire on WhatsApp
+        Enquire
       </a>
     </div>
   </div>

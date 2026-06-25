@@ -10,13 +10,14 @@
 
 ## 2. Color palette (approved)
 
-| Token                      | Hex       | Use                                   |
-| -------------------------- | --------- | ------------------------------------- |
-| `primary` (deep pine/teal) | `#0F4C45` | headers, primary buttons, key accents |
-| `secondary` (darker pine)  | `#0A3A34` | hovers, depth                         |
-| `accent` (warm gold)       | `#C9A24B` | CTAs, highlights, stars               |
-| `neutral` (charcoal)       | `#1F2A28` | body text                             |
-| `surface` (warm off-white) | `#F7F4EF` | section backgrounds                   |
+| Token                       | Hex       | Use                                                                                        |
+| --------------------------- | --------- | ------------------------------------------------------------------------------------------ |
+| `primary` (deep pine/teal)  | `#0F4C45` | headers, primary buttons, key accents                                                      |
+| `secondary` (darker pine)   | `#0A3A34` | hovers, depth                                                                              |
+| `accent` (warm gold)        | `#C9A24B` | CTAs, highlights, stars                                                                    |
+| `neutral` (charcoal)        | `#1F2A28` | body text                                                                                  |
+| `surface` (warm off-white)  | `#F7F4EF` | section backgrounds                                                                        |
+| `danger` (muted terracotta) | `#B3454A` | semantic "not included / avoid" state only (e.g. exclusions) — **not** a decorative accent |
 
 ### Usage rules
 

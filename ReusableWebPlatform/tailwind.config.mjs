@@ -24,6 +24,7 @@ export default {
         accent: colors.accent || '#C9A24B',
         neutral: colors.neutral || '#1F2A28',
         surface: colors.surface || '#F7F4EF',
+        danger: colors.danger || '#B3454A',
       },
       fontFamily: {
         heading: [fonts.heading || 'Fraunces', 'Georgia', 'serif'],
