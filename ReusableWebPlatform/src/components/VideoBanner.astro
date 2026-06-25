@@ -112,7 +112,23 @@ const { poster, videoSrc, headline, subtext, ctaText, ctaHref } = Astro.props;
       } else {
         video.addEventListener('canplay', reveal, { once: true });
       }
+    } else {
+      // Video hasn't started yet — try playing it explicitly
+      video
+        .play()
+        .then(reveal)
+        .catch(() => {});
     }
+
+    // Ultimate fallback: if nothing worked after 2s, force play + reveal
+    setTimeout(() => {
+      if (!revealed) {
+        video
+          .play()
+          .then(reveal)
+          .catch(() => {});
+      }
+    }, 2000);
 
     // Pause when offscreen to save battery/CPU; resume when back in view.
     const observer = new IntersectionObserver(
