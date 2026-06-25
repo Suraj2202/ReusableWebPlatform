@@ -1,0 +1,59 @@
+slug: kausernag-lake
+title: Kausernag Lake Trek
+category: trek
+durationNights: 4
+durationDays: 5
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 14999
+cover: trips/kausernag-lake/cover.jpg
+gallery:
+  - trips/kausernag-lake/gallery-01.jpg
+  - trips/kausernag-lake/gallery-02.jpg
+overview: >-
+  A sacred oligotrophic lake high in the south Kashmir mountains, fed by glaciers
+  and framed by snow even in summer. A moderate trek through Aharbal's waterfalls
+  and rolling pastures to one of the valley's most revered waters.
+highlights:
+  - Glacier-fed Kausernag Lake
+  - Aharbal waterfall
+  - High shepherd pastures
+  - Wildflower meadows in summer
+itinerary:
+  - day: 1
+    title: Srinagar to Aharbal
+    points:
+      - Drive and waterfall visit
+  - day: 2
+    title: Aharbal to Kungwattan
+    points:
+      - Forest and meadow trail
+  - day: 3
+    title: Kungwattan to Kausernag and back
+    points:
+      - Ascent to the lake, return to camp
+  - day: 4
+    title: Descent to Aharbal
+    points:
+      - Return trek
+  - day: 5
+    title: Departure
+    points:
+      - Drive to Srinagar airport
+inclusions:
+  - 4 nights accommodation (camps)
+  - All meals on trek
+  - Trek leader and support staff
+  - Camping gear and permits
+exclusions:
+  - Transport beyond base pickup
+  - Personal gear and insurance
+  - Personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Trekking shoes and pole
+    - Warm layers and rain gear
+    - Headlamp and water bottle
+featured: false
+order: 6

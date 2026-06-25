@@ -1,0 +1,62 @@
+slug: autumn-kashmir-chinar
+title: Autumn in Kashmir — Chinar Trail
+category: group-trip
+durationNights: 5
+durationDays: 6
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 18999
+cover: trips/autumn-kashmir-chinar/cover.jpg
+gallery:
+  - trips/autumn-kashmir-chinar/gallery-01.jpg
+  - trips/autumn-kashmir-chinar/gallery-02.jpg
+overview: >-
+  When the chinar leaves turn crimson and gold, the valley becomes a painting.
+  A slow autumn journey through gardens, orchards, and meadows at their most
+  photogenic moment of the year.
+highlights:
+  - Chinar avenues in full colour
+  - Apple orchards of Pahalgam
+  - Misty mornings on Dal Lake
+  - Naseem Bagh's ancient chinars
+itinerary:
+  - day: 1
+    title: Arrive in Srinagar
+    points:
+      - Transfer to houseboat and shikara ride
+  - day: 2
+    title: Mughal Gardens in Autumn
+    points:
+      - Nishat, Shalimar, and Naseem Bagh
+  - day: 3
+    title: Srinagar to Pahalgam
+    points:
+      - Orchards and Lidder riverside
+  - day: 4
+    title: Pahalgam to Gulmarg
+    points:
+      - Meadow walks and gondola
+  - day: 5
+    title: Srinagar Leisure
+    points:
+      - Old city, markets, and crafts
+  - day: 6
+    title: Departure
+    points:
+      - Transfer to Srinagar airport
+inclusions:
+  - 5 nights accommodation
+  - Daily breakfast and dinner
+  - Private vehicle and transfers
+  - Trip leader
+exclusions:
+  - Airfare
+  - Gondola and pony charges
+  - Personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Warm layers for cool evenings
+    - Camera and spare batteries
+featured: false
+order: 7

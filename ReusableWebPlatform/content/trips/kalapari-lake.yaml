@@ -1,0 +1,59 @@
+slug: kalapari-lake
+title: Kalapari Lake Trek
+category: trek
+durationNights: 4
+durationDays: 5
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 13999
+cover: trips/kalapari-lake/cover.jpg
+gallery:
+  - trips/kalapari-lake/gallery-01.jpg
+  - trips/kalapari-lake/gallery-02.jpg
+overview: >-
+  A lesser-known gem tucked above the Lidder valley — a short but rewarding climb
+  to the dark, still waters of Kalapari, ringed by peaks. Ideal for a first
+  high-altitude trek with big payoff for the effort.
+highlights:
+  - Hidden high-altitude lake
+  - Quiet, uncrowded trail
+  - Pahalgam pine forests
+  - Panoramic ridge views
+itinerary:
+  - day: 1
+    title: Srinagar to Pahalgam
+    points:
+      - Drive and overnight at base
+  - day: 2
+    title: Pahalgam to Forest Camp
+    points:
+      - Climb through pine and meadow
+  - day: 3
+    title: Forest Camp to Kalapari Lake
+    points:
+      - Ascent to the lake and back to camp
+  - day: 4
+    title: Descent to Pahalgam
+    points:
+      - Return trek and drive prep
+  - day: 5
+    title: Departure
+    points:
+      - Drive to Srinagar airport
+inclusions:
+  - 4 nights accommodation (camps + hotel)
+  - All meals on trek
+  - Trek leader and support staff
+  - Camping gear and permits
+exclusions:
+  - Transport beyond base pickup
+  - Personal gear and insurance
+  - Personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Trekking shoes and pole
+    - Warm layers and rain gear
+    - Headlamp and water bottle
+featured: false
+order: 2

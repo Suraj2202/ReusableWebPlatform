@@ -1,0 +1,63 @@
+slug: valley-of-flowers
+title: Valley of Flowers Trek
+category: trek
+durationNights: 5
+durationDays: 6
+pickup: Rishikesh
+drop: Rishikesh
+priceFrom: 15999
+cover: trips/valley-of-flowers/cover.jpg
+gallery:
+  - trips/valley-of-flowers/gallery-01.jpg
+  - trips/valley-of-flowers/gallery-02.jpg
+overview: >-
+  A UNESCO World Heritage valley that erupts into a carpet of wildflowers each
+  monsoon. Pair it with a pilgrimage climb to Hemkund Sahib for a trek that is
+  equal parts colour, devotion, and Himalayan grandeur.
+highlights:
+  - Carpet of monsoon wildflowers
+  - Hemkund Sahib high-altitude lake
+  - Glacial streams and waterfalls
+  - Pushpawati river valley
+itinerary:
+  - day: 1
+    title: Rishikesh to Govindghat
+    points:
+      - Scenic drive along the Alaknanda
+  - day: 2
+    title: Govindghat to Ghangaria
+    points:
+      - Forest trail base for both treks
+  - day: 3
+    title: Valley of Flowers
+    points:
+      - Day hike among the blooms
+  - day: 4
+    title: Hemkund Sahib
+    points:
+      - Steep climb to the glacial lake
+  - day: 5
+    title: Ghangaria to Govindghat
+    points:
+      - Descend and drive to Joshimath
+  - day: 6
+    title: Return to Rishikesh
+    points:
+      - Drive back
+inclusions:
+  - 5 nights accommodation
+  - All meals on trek
+  - Trek leader and permits
+  - Forest entry fees
+exclusions:
+  - Transport beyond base pickup
+  - Personal gear and insurance
+  - Personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Rain poncho (monsoon season)
+    - Trekking shoes and pole
+    - Headlamp and water bottle
+featured: false
+order: 4

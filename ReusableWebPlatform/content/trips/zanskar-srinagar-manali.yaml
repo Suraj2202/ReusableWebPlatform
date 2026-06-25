@@ -1,0 +1,77 @@
+slug: zanskar-srinagar-manali
+title: Zanskar Traverse — Srinagar to Manali
+category: group-trip
+durationNights: 8
+durationDays: 9
+pickup: Srinagar
+drop: Manali
+priceFrom: 36999
+cover: trips/zanskar-srinagar-manali/cover.jpg
+gallery:
+  - trips/zanskar-srinagar-manali/gallery-01.jpg
+  - trips/zanskar-srinagar-manali/gallery-02.jpg
+  - trips/zanskar-srinagar-manali/gallery-03.jpg
+overview: >-
+  One of the great Himalayan road journeys — from the houseboats of Srinagar
+  across the remote Zanskar range to the orchards of Manali. Nine days of high
+  passes, river gorges, and villages that time forgot.
+highlights:
+  - Crossing Penzi La into Zanskar
+  - Drang-Drung glacier viewpoint
+  - Remote Phugtal-region landscapes
+  - Finish over Rohtang into Manali
+itinerary:
+  - day: 1
+    title: Arrive in Srinagar
+    points:
+      - Transfer and Dal Lake shikara
+  - day: 2
+    title: Srinagar to Kargil
+    points:
+      - Drive via Zoji La and Drass
+  - day: 3
+    title: Kargil to Padum
+    points:
+      - Cross Penzi La and Drang-Drung glacier
+  - day: 4
+    title: Padum Exploration
+    points:
+      - Zanskar valley villages and monasteries
+  - day: 5
+    title: Padum to Sarchu
+    points:
+      - Long high-altitude drive
+  - day: 6
+    title: Sarchu Acclimatise
+    points:
+      - Rest and short walks
+  - day: 7
+    title: Sarchu to Jispa
+    points:
+      - Cross Baralacha La
+  - day: 8
+    title: Jispa to Manali
+    points:
+      - Atal Tunnel and Solang valley
+  - day: 9
+    title: Departure
+    points:
+      - Transfer from Manali
+inclusions:
+  - 8 nights accommodation (hotels + camps)
+  - Daily breakfast and dinner
+  - Private vehicle and transfers
+  - All permits
+  - Trip leader and support staff
+exclusions:
+  - Airfare and inbound transport
+  - Lunches and personal expenses
+  - Emergency evacuation costs
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - High-altitude clothing and gloves
+    - Sunscreen, sunglasses, lip balm
+    - Personal medication and Diamox (consult doctor)
+featured: true
+order: 5

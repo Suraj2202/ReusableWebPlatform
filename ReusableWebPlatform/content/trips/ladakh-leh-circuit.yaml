@@ -1,0 +1,83 @@
+slug: ladakh-leh-circuit
+title: Ladakh Leh Circuit
+category: group-trip
+durationNights: 6
+durationDays: 7
+pickup: Leh
+drop: Leh
+priceFrom: 24999
+cover: trips/ladakh-leh-circuit/cover.jpg
+gallery:
+  - trips/ladakh-leh-circuit/gallery-01.jpg
+  - trips/ladakh-leh-circuit/gallery-02.jpg
+  - trips/ladakh-leh-circuit/gallery-03.jpg
+overview: >-
+  A classic loop through the high desert of Ladakh — monasteries clinging to
+  cliffs, the surreal blue of Pangong, and starlit nights at 11,000 ft. Paced
+  with acclimatisation built in, so you arrive a traveller and leave a mountain
+  person.
+highlights:
+  - Sunrise over Thiksey Monastery
+  - Drive the world's highest motorable passes
+  - Camp beside Pangong Tso
+  - Local Ladakhi homestay dinner
+itinerary:
+  - day: 1
+    title: Arrive in Leh
+    points:
+      - Airport pickup and transfer to hotel
+      - Rest day for acclimatisation at 11,500 ft
+      - Evening stroll through Leh Market
+  - day: 2
+    title: Leh Local Sightseeing
+    points:
+      - Shanti Stupa and Leh Palace
+      - Hall of Fame museum
+      - Gentle walk to aid acclimatisation
+  - day: 3
+    title: Leh to Nubra Valley
+    points:
+      - Cross Khardung La pass
+      - Sand dunes and double-humped camels at Hunder
+      - Overnight in Nubra
+  - day: 4
+    title: Nubra to Pangong Lake
+    points:
+      - Scenic drive via Shyok river route
+      - Sunset at the lake shore
+      - Camp under the stars
+  - day: 5
+    title: Pangong to Leh
+    points:
+      - Sunrise photography at Pangong
+      - Return via Chang La pass
+      - Evening at leisure in Leh
+  - day: 6
+    title: Sham Valley Drive
+    points:
+      - Magnetic Hill and Sangam confluence
+      - Gurudwara Pathar Sahib
+      - Likir and Alchi monasteries
+  - day: 7
+    title: Departure
+    points:
+      - Transfer to Leh airport
+inclusions:
+  - 6 nights accommodation (hotels + camps)
+  - Daily breakfast and dinner
+  - All transfers in a private vehicle
+  - Inner line permits
+  - Trip leader throughout
+exclusions:
+  - Airfare to and from Leh
+  - Lunches and personal expenses
+  - Monastery entry fees
+  - Anything not in inclusions
+otherInfo:
+  mustCarry:
+    - Government photo ID
+    - Warm layers and a windproof jacket
+    - Sunglasses and high-SPF sunscreen
+    - Personal medication and Diamox (consult doctor)
+featured: true
+order: 1

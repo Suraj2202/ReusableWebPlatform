@@ -1,0 +1,62 @@
+slug: kashmir-valley-escape
+title: Kashmir Valley Escape
+category: group-trip
+durationNights: 4
+durationDays: 5
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 16999
+cover: trips/kashmir-valley-escape/cover.jpg
+gallery:
+  - trips/kashmir-valley-escape/gallery-01.jpg
+  - trips/kashmir-valley-escape/gallery-02.jpg
+overview: >-
+  Houseboats on the Dal, Mughal gardens in bloom, and meadows that run to the
+  horizon. A gentle, scenic introduction to the valley for travellers who want
+  beauty without the altitude.
+highlights:
+  - Shikara ride on Dal Lake
+  - Gondola at Gulmarg
+  - Betaab Valley in Pahalgam
+  - Saffron fields of Pampore
+itinerary:
+  - day: 1
+    title: Arrive in Srinagar
+    points:
+      - Transfer to houseboat
+      - Evening shikara ride on Dal Lake
+  - day: 2
+    title: Srinagar to Gulmarg
+    points:
+      - Gondola cable-car ride
+      - Meadow walks and return to Srinagar
+  - day: 3
+    title: Srinagar to Pahalgam
+    points:
+      - Betaab and Aru valleys
+      - Riverside leisure time
+  - day: 4
+    title: Mughal Gardens
+    points:
+      - Nishat and Shalimar Bagh
+      - Shankaracharya temple viewpoint
+  - day: 5
+    title: Departure
+    points:
+      - Transfer to Srinagar airport
+inclusions:
+  - 4 nights accommodation (houseboat + hotels)
+  - Daily breakfast and dinner
+  - Private vehicle and transfers
+  - Trip leader
+exclusions:
+  - Airfare
+  - Gondola and pony charges
+  - Lunches and personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Light woollens (evenings are cool)
+    - Comfortable walking shoes
+featured: true
+order: 3

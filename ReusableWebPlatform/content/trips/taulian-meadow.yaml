@@ -1,0 +1,52 @@
+slug: taulian-meadow
+title: Taulian Meadow Trek
+category: trek
+durationNights: 2
+durationDays: 3
+pickup: Pahalgam
+drop: Pahalgam
+priceFrom: 8999
+cover: trips/taulian-meadow/cover.jpg
+gallery:
+  - trips/taulian-meadow/gallery-01.jpg
+  - trips/taulian-meadow/gallery-02.jpg
+overview: >-
+  A short, scenic climb above Pahalgam to the open meadow of Taulian, with
+  grandstand views of Kolahoi glacier and the surrounding peaks. The perfect
+  weekend trek — easy enough for beginners, beautiful enough for everyone.
+highlights:
+  - Kolahoi glacier views
+  - Baisaran and Taulian meadows
+  - Pine forest trails
+  - Beginner-friendly gradient
+itinerary:
+  - day: 1
+    title: Pahalgam to Baisaran
+    points:
+      - Climb to the meadow base camp
+  - day: 2
+    title: Baisaran to Taulian and back
+    points:
+      - Ascend to Taulian meadow
+      - Glacier viewpoints
+  - day: 3
+    title: Descent and departure
+    points:
+      - Return to Pahalgam
+inclusions:
+  - 2 nights accommodation (camps)
+  - All meals on trek
+  - Trek leader and permits
+  - Camping gear
+exclusions:
+  - Transport to and from Pahalgam
+  - Personal gear and insurance
+  - Personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Trekking shoes and pole
+    - Warm layer and rain jacket
+    - Water bottle
+featured: false
+order: 7

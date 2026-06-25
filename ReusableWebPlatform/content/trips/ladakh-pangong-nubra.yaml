@@ -1,0 +1,69 @@
+slug: ladakh-pangong-nubra
+title: Ladakh Pangong & Nubra Explorer
+category: group-trip
+durationNights: 5
+durationDays: 6
+pickup: Leh
+drop: Leh
+priceFrom: 21999
+cover: trips/ladakh-pangong-nubra/cover.jpg
+gallery:
+  - trips/ladakh-pangong-nubra/gallery-01.jpg
+  - trips/ladakh-pangong-nubra/gallery-02.jpg
+overview: >-
+  A focused six-day escape to Ladakh's two showpiece landscapes — the dunes of
+  Nubra and the colour-shifting waters of Pangong — without rushing the
+  altitude. Ideal for first-time visitors short on days but big on wonder.
+highlights:
+  - Khardung La, gateway to Nubra
+  - Camel safari on Hunder dunes
+  - Golden hour at Pangong Tso
+  - Stargazing far from city light
+itinerary:
+  - day: 1
+    title: Arrive in Leh
+    points:
+      - Transfer to hotel and rest
+      - Acclimatisation, no strenuous activity
+  - day: 2
+    title: Leh Sightseeing
+    points:
+      - Shanti Stupa, Leh Palace, Hall of Fame
+      - Easy walk to adjust to altitude
+  - day: 3
+    title: Leh to Nubra
+    points:
+      - Drive over Khardung La
+      - Camel ride at Hunder dunes
+  - day: 4
+    title: Nubra to Pangong
+    points:
+      - Shyok river route to the lake
+      - Sunset and overnight camp
+  - day: 5
+    title: Pangong to Leh
+    points:
+      - Sunrise at the lake
+      - Return via Chang La
+  - day: 6
+    title: Departure
+    points:
+      - Transfer to Leh airport
+inclusions:
+  - 5 nights accommodation
+  - Daily breakfast and dinner
+  - Private vehicle and transfers
+  - Inner line permits
+  - Trip leader
+exclusions:
+  - Airfare
+  - Lunches and personal expenses
+  - Entry and camera fees
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Warm layers and gloves
+    - Sunscreen and sunglasses
+    - Personal medication
+featured: false
+order: 2

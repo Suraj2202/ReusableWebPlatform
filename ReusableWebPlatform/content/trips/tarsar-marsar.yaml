@@ -1,0 +1,64 @@
+slug: tarsar-marsar
+title: Tarsar Marsar Trek
+category: trek
+durationNights: 5
+durationDays: 6
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 16999
+cover: trips/tarsar-marsar/cover.jpg
+gallery:
+  - trips/tarsar-marsar/gallery-01.jpg
+  - trips/tarsar-marsar/gallery-02.jpg
+overview: >-
+  Two almond-shaped alpine lakes that mirror the sky, separated by a single
+  ridge. A moderate trek through some of Kashmir's most photogenic meadows —
+  gentle gradients, dreamy campsites, and water so still it doubles the
+  mountains.
+highlights:
+  - Twin lakes Tarsar and Marsar
+  - Sundersar's reflecting waters
+  - Rolling Aru valley meadows
+  - Sunrise over Marsar
+itinerary:
+  - day: 1
+    title: Srinagar to Aru
+    points:
+      - Drive and overnight at Aru
+  - day: 2
+    title: Aru to Lidderwat
+    points:
+      - Riverside meadow trail
+  - day: 3
+    title: Lidderwat to Tarsar
+    points:
+      - Camp beside Tarsar Lake
+  - day: 4
+    title: Tarsar to Sundersar
+    points:
+      - Cross the Tarsar pass
+  - day: 5
+    title: Marsar and back to Homwas
+    points:
+      - Sunrise at Marsar, descend
+  - day: 6
+    title: Homwas to Aru and Srinagar
+    points:
+      - Final descent and drive back
+inclusions:
+  - 5 nights accommodation (camps)
+  - All meals on trek
+  - Trek leader and support staff
+  - Camping gear and permits
+exclusions:
+  - Transport beyond base pickup
+  - Personal gear and insurance
+  - Personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Trekking shoes and pole
+    - Warm layers and rain gear
+    - Headlamp and personal medication
+featured: true
+order: 3

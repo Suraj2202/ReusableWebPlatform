@@ -1,0 +1,64 @@
+slug: gulmarg-snowboarding-freeride
+title: Gulmarg Snowboarding — Freeride
+category: adventure
+durationNights: 5
+durationDays: 6
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 33999
+cover: trips/gulmarg-snowboarding-freeride/cover.jpg
+gallery:
+  - trips/gulmarg-snowboarding-freeride/gallery-01.jpg
+  - trips/gulmarg-snowboarding-freeride/gallery-02.jpg
+overview: >-
+  For riders who already link turns and crave the deep stuff. Access Gulmarg's
+  phase 2 bowls and tree lines with a guide, ride untracked powder, and learn to
+  read backcountry terrain safely.
+highlights:
+  - Phase 2 freeride terrain
+  - Tree-line powder runs
+  - Avalanche awareness session
+  - Guided backcountry lines
+itinerary:
+  - day: 1
+    title: Srinagar to Gulmarg
+    points:
+      - Transfer and ability check
+  - day: 2
+    title: Upper Mountain
+    points:
+      - Phase 2 gondola riding
+      - Steeper groomed terrain
+  - day: 3
+    title: Powder Intro
+    points:
+      - Avalanche safety and beacons
+      - First guided powder lines
+  - day: 4
+    title: Tree Lines
+    points:
+      - Forested freeride descents
+  - day: 5
+    title: Free Ride
+    points:
+      - Guide-led runs by conditions
+  - day: 6
+    title: Departure
+    points:
+      - Transfer to Srinagar airport
+inclusions:
+  - 5 nights accommodation
+  - Daily breakfast and dinner
+  - Mountain guide and safety gear
+  - Lift pass (phase 1 and 2)
+exclusions:
+  - Airfare
+  - Personal board (rental available)
+  - Insurance and personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Thermal layers and waterproof shell
+    - Helmet, goggles, and wrist guards
+featured: true
+order: 4

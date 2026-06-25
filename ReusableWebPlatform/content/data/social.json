@@ -1,0 +1,56 @@
+{
+  "updatedAt": "2026-06-25",
+  "google": {
+    "rating": 4.9,
+    "reviewCount": 218,
+    "topReviews": [
+      {
+        "author": "Aarav Sharma",
+        "avatar": "reviews/aarav-sharma.jpg",
+        "rating": 5,
+        "text": "Our Kashmir Great Lakes trek was flawless from start to finish. The trip leader knew every ridge by name and the campsites were unreal. Already planning the next one with them.",
+        "date": "2026-05-18"
+      },
+      {
+        "author": "Meera Nair",
+        "avatar": "reviews/meera-nair.jpg",
+        "rating": 5,
+        "text": "Booked the Ladakh circuit for my family. Acclimatisation was handled so well, even my parents had a comfortable time at altitude. Genuinely thoughtful planning.",
+        "date": "2026-05-02"
+      },
+      {
+        "author": "Rohan Verma",
+        "avatar": "reviews/rohan-verma.jpg",
+        "rating": 5,
+        "text": "First time skiing in Gulmarg and the beginner course had me linking turns by day three. Instructors were patient and the gear was top quality.",
+        "date": "2026-04-21"
+      },
+      {
+        "author": "Sana Iqbal",
+        "avatar": "reviews/sana-iqbal.jpg",
+        "rating": 4,
+        "text": "Beautiful Tarsar Marsar trek and great food on the trail. Knocked one star only for a slightly rushed final day, but the team handled the weather change brilliantly.",
+        "date": "2026-04-09"
+      },
+      {
+        "author": "Karan Mehta",
+        "avatar": "reviews/karan-mehta.jpg",
+        "rating": 5,
+        "text": "The Meghalaya trip was a dream — living root bridges, Dawki river, and a perfectly paced itinerary. Hidden Naqsha really finds the spots others miss.",
+        "date": "2026-03-27"
+      },
+      {
+        "author": "Ananya Das",
+        "avatar": "reviews/ananya-das.jpg",
+        "rating": 5,
+        "text": "Solo traveller here — felt safe, included, and looked after the entire Zanskar traverse. One of the best road journeys of my life.",
+        "date": "2026-03-15"
+      }
+    ]
+  },
+  "instagram": {
+    "handle": "hiddennaqsha",
+    "followers": 18400,
+    "profileUrl": "https://instagram.com/hiddennaqsha"
+  }
+}

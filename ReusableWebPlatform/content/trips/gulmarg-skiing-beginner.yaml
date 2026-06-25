@@ -1,0 +1,63 @@
+slug: gulmarg-skiing-beginner
+title: Gulmarg Skiing — Beginner Course
+category: adventure
+durationNights: 4
+durationDays: 5
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 22999
+cover: trips/gulmarg-skiing-beginner/cover.jpg
+gallery:
+  - trips/gulmarg-skiing-beginner/gallery-01.jpg
+  - trips/gulmarg-skiing-beginner/gallery-02.jpg
+overview: >-
+  Learn to ski on the legendary slopes of Gulmarg with certified instructors.
+  From your first snowplough to confident green-run descents, all gear and
+  lift passes included — no experience needed.
+highlights:
+  - Certified ski instruction
+  - Phase 1 gondola lift access
+  - All ski gear and boots provided
+  - Small-group, beginner-friendly pace
+itinerary:
+  - day: 1
+    title: Srinagar to Gulmarg
+    points:
+      - Transfer and gear fitting
+      - Slope orientation
+  - day: 2
+    title: Skiing Basics
+    points:
+      - Balance, stance, and snowplough
+      - Nursery slope practice
+  - day: 3
+    title: First Lifts
+    points:
+      - Green-run descents
+      - Turning and stopping drills
+  - day: 4
+    title: Confidence Day
+    points:
+      - Longer runs with the instructor
+      - Free practice time
+  - day: 5
+    title: Departure
+    points:
+      - Transfer to Srinagar airport
+inclusions:
+  - 4 nights accommodation in Gulmarg
+  - Daily breakfast and dinner
+  - Ski gear, boots, and poles
+  - Certified instructor and lift pass (phase 1)
+exclusions:
+  - Airfare
+  - Phase 2 gondola
+  - Personal expenses and insurance
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Thermal base layers and woollen socks
+    - UV goggles or sunglasses
+    - Waterproof gloves
+featured: true
+order: 1

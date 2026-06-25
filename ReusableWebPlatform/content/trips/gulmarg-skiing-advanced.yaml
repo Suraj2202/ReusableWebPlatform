@@ -1,0 +1,66 @@
+slug: gulmarg-skiing-advanced
+title: Gulmarg Skiing — Advanced & Off-Piste
+category: adventure
+durationNights: 5
+durationDays: 6
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 32999
+cover: trips/gulmarg-skiing-advanced/cover.jpg
+gallery:
+  - trips/gulmarg-skiing-advanced/gallery-01.jpg
+  - trips/gulmarg-skiing-advanced/gallery-02.jpg
+overview: >-
+  Gulmarg's upper bowls hold some of Asia's finest off-piste powder. For
+  confident skiers, this course opens phase 2 terrain with a guide, avalanche
+  awareness, and long descents through untracked snow.
+highlights:
+  - Phase 2 gondola to 3,980 m
+  - Guided off-piste descents
+  - Avalanche safety briefing
+  - Backcountry powder runs
+itinerary:
+  - day: 1
+    title: Srinagar to Gulmarg
+    points:
+      - Transfer and gear check
+      - Skill assessment run
+  - day: 2
+    title: Upper Slopes
+    points:
+      - Phase 2 gondola terrain
+      - Carving and steeps practice
+  - day: 3
+    title: Off-Piste Intro
+    points:
+      - Avalanche safety and beacon use
+      - First guided powder lines
+  - day: 4
+    title: Backcountry Day
+    points:
+      - Long off-piste descents
+  - day: 5
+    title: Free Ride
+    points:
+      - Guide-led runs by conditions
+  - day: 6
+    title: Departure
+    points:
+      - Transfer to Srinagar airport
+inclusions:
+  - 5 nights accommodation
+  - Daily breakfast and dinner
+  - Mountain guide and safety gear
+  - Lift pass (phase 1 and 2)
+exclusions:
+  - Airfare
+  - Personal ski gear (rental available)
+  - Insurance and personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Avalanche beacon experience preferred
+    - Thermal layers and waterproof shell
+    - UV goggles and helmet
+featured: false
+order: 2

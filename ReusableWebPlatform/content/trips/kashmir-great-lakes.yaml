@@ -1,0 +1,69 @@
+slug: kashmir-great-lakes
+title: Kashmir Great Lakes Trek
+category: trek
+durationNights: 6
+durationDays: 7
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 18999
+cover: trips/kashmir-great-lakes/cover.jpg
+gallery:
+  - trips/kashmir-great-lakes/gallery-01.jpg
+  - trips/kashmir-great-lakes/gallery-02.jpg
+  - trips/kashmir-great-lakes/gallery-03.jpg
+overview: >-
+  Seven alpine lakes strung across high meadows and rocky passes — widely called
+  the most beautiful trek in India. A moderate-to-challenging week through
+  Kashmir's wild upper reaches, each day more stunning than the last.
+highlights:
+  - Seven turquoise alpine lakes
+  - Crossing Gadsar and Zaj passes
+  - Vishansar and Krishansar at dawn
+  - Wildflower meadows of Sonamarg
+itinerary:
+  - day: 1
+    title: Srinagar to Sonamarg
+    points:
+      - Drive and overnight at base camp
+  - day: 2
+    title: Sonamarg to Nichnai
+    points:
+      - Climb through pine forests and meadows
+  - day: 3
+    title: Nichnai to Vishansar
+    points:
+      - Cross Nichnai Pass
+      - Camp by Vishansar Lake
+  - day: 4
+    title: Vishansar to Gadsar
+    points:
+      - Krishansar Lake and Gadsar Pass
+  - day: 5
+    title: Gadsar to Satsar
+    points:
+      - Chain of Satsar lakes
+  - day: 6
+    title: Satsar to Gangbal
+    points:
+      - Zaj Pass and twin lakes
+  - day: 7
+    title: Gangbal to Naranag and Srinagar
+    points:
+      - Descent and drive back to Srinagar
+inclusions:
+  - 6 nights accommodation (camps)
+  - All meals on trek
+  - Certified trek leader and support staff
+  - Camping gear and permits
+exclusions:
+  - Transport beyond base camp pickup
+  - Personal trekking gear
+  - Insurance and personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID and medical certificate
+    - Trekking shoes and trekking pole
+    - Warm layers and rain gear
+    - Headlamp and personal medication
+featured: true
+order: 1

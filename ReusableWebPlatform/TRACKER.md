@@ -57,8 +57,8 @@ Before ticking any task, all of these must be true:
 ### Phase 0 — Foundations
 
 - [x] **0.1 Brand** — tokens (colors/fonts/radius) in `content/site.config.yaml` → `tailwind.config.mjs`; logo placeholder. _(rules: 06, 01)_
-- [ ] **0.2 Global layout** — Header + Footer + WhatsApp float button. _(rules: 08, 05)_
-- [ ] **0.3 Content model** — Astro collections: trips, packages, categories, reviews, site config. _(rules: 11, 05)_
+- [x] **0.2 Global layout** — Header (sticky + accessible drawer) + Footer + WhatsApp float button, wired into `BaseLayout`. _(rules: 08, 05)_
+- [x] **0.3 Content model** — `src/content.config.ts` collections (categories, trips) with zod; 3 categories + 19 placeholder trips + `social.json` snapshot. _(rules: 11, 05)_
 
 ### Phase 1 — Home page
 
@@ -120,8 +120,9 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 
 ## 📓 Session Log
 
-| Date       | Did                                                           | Next           |
-| ---------- | ------------------------------------------------------------- | -------------- |
-| 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created    | Start step 0.1 |
-| 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo    | Build 1.1      |
-| 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure | Build 1.2      |
+| Date       | Did                                                                                   | Next           |
+| ---------- | ------------------------------------------------------------------------------------- | -------------- |
+| 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created                            | Start step 0.1 |
+| 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo                            | Build 1.1      |
+| 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                         | Build 1.2      |
+| 2026-06-25 | 0.2 + 0.3 done — content collections + placeholder data, Header/Footer/WhatsApp float | Build 1.2      |

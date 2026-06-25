@@ -1,0 +1,57 @@
+slug: kashmir-gulmarg-getaway
+title: Kashmir Gulmarg Getaway
+category: group-trip
+durationNights: 3
+durationDays: 4
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 13999
+cover: trips/kashmir-gulmarg-getaway/cover.jpg
+gallery:
+  - trips/kashmir-gulmarg-getaway/gallery-01.jpg
+  - trips/kashmir-gulmarg-getaway/gallery-02.jpg
+overview: >-
+  A short, sweet weekend built around Gulmarg — the meadow of flowers — with the
+  world's second-highest gondola and easy alpine walks. Perfect for a quick
+  reset away from the plains.
+highlights:
+  - Two-stage Gulmarg gondola
+  - Strawberry Valley walk
+  - Dal Lake shikara at dusk
+  - Local Wazwan dinner
+itinerary:
+  - day: 1
+    title: Arrive in Srinagar
+    points:
+      - Transfer and shikara ride on Dal Lake
+      - Evening at leisure
+  - day: 2
+    title: Srinagar to Gulmarg
+    points:
+      - Gondola phase 1 and 2
+      - Meadow and forest walks
+  - day: 3
+    title: Gulmarg Leisure
+    points:
+      - Pony ride to viewpoints
+      - Return to Srinagar
+  - day: 4
+    title: Departure
+    points:
+      - Transfer to Srinagar airport
+inclusions:
+  - 3 nights accommodation
+  - Daily breakfast and dinner
+  - Private vehicle and transfers
+  - Trip leader
+exclusions:
+  - Airfare
+  - Gondola and pony charges
+  - Personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Warm jacket
+    - Walking shoes
+featured: false
+order: 4

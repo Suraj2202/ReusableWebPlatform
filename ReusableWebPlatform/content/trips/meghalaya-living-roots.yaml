@@ -1,0 +1,68 @@
+slug: meghalaya-living-roots
+title: Meghalaya Living Root Bridges
+category: group-trip
+durationNights: 6
+durationDays: 7
+pickup: Guwahati
+drop: Guwahati
+priceFrom: 26999
+cover: trips/meghalaya-living-roots/cover.jpg
+gallery:
+  - trips/meghalaya-living-roots/gallery-01.jpg
+  - trips/meghalaya-living-roots/gallery-02.jpg
+overview: >-
+  Rain-soaked hills, waterfalls without end, and bridges grown from living
+  roots. A week in the abode of clouds — Asia's cleanest village, crystal rivers,
+  and the double-decker root bridge of Nongriat.
+highlights:
+  - Double-decker living root bridge
+  - Crystal-clear Umngot river at Dawki
+  - Mawlynnong, Asia's cleanest village
+  - Seven Sisters and Nohkalikai falls
+itinerary:
+  - day: 1
+    title: Arrive in Guwahati
+    points:
+      - Transfer to Shillong
+  - day: 2
+    title: Shillong Sightseeing
+    points:
+      - Umiam Lake and local markets
+  - day: 3
+    title: Cherrapunji
+    points:
+      - Nohkalikai and Seven Sisters falls
+  - day: 4
+    title: Nongriat Trek
+    points:
+      - Hike to the double-decker root bridge
+  - day: 5
+    title: Dawki and Mawlynnong
+    points:
+      - Boating on the Umngot river
+      - Asia's cleanest village
+  - day: 6
+    title: Return to Guwahati
+    points:
+      - Kamakhya temple visit
+  - day: 7
+    title: Departure
+    points:
+      - Transfer to Guwahati airport
+inclusions:
+  - 6 nights accommodation
+  - Daily breakfast and dinner
+  - Private vehicle and transfers
+  - Trip leader
+exclusions:
+  - Airfare
+  - Boating and entry fees
+  - Personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Rain jacket and quick-dry clothes
+    - Trekking shoes with grip
+    - Insect repellent
+featured: true
+order: 8

@@ -1,0 +1,67 @@
+slug: kargil-zanskar-expedition
+title: Kargil–Zanskar Expedition
+category: group-trip
+durationNights: 6
+durationDays: 7
+pickup: Kargil
+drop: Kargil
+priceFrom: 28999
+cover: trips/kargil-zanskar-expedition/cover.jpg
+gallery:
+  - trips/kargil-zanskar-expedition/gallery-01.jpg
+  - trips/kargil-zanskar-expedition/gallery-02.jpg
+overview: >-
+  A deep dive into the Zanskar heartland from Kargil — glaciers, gorges, and
+  centuries-old gompas, on roads few travellers ever see. For those who want
+  raw, remote Himalaya.
+highlights:
+  - Suru Valley and Nun-Kun massif
+  - Drang-Drung glacier
+  - Karsha and Stongdey monasteries
+  - Star-filled Zanskar nights
+itinerary:
+  - day: 1
+    title: Arrive in Kargil
+    points:
+      - Transfer and rest
+  - day: 2
+    title: Kargil to Padum
+    points:
+      - Suru Valley and Penzi La
+  - day: 3
+    title: Zanskar Monasteries
+    points:
+      - Karsha and Stongdey gompas
+  - day: 4
+    title: Padum Surroundings
+    points:
+      - Villages and riverside walks
+  - day: 5
+    title: Padum to Rangdum
+    points:
+      - Drang-Drung glacier viewpoint
+  - day: 6
+    title: Rangdum to Kargil
+    points:
+      - Return drive via Suru Valley
+  - day: 7
+    title: Departure
+    points:
+      - Transfer from Kargil
+inclusions:
+  - 6 nights accommodation
+  - Daily breakfast and dinner
+  - Private vehicle and permits
+  - Trip leader
+exclusions:
+  - Inbound transport to Kargil
+  - Lunches and personal expenses
+  - Monastery fees
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Warm layers and gloves
+    - Sunscreen and sunglasses
+    - Personal medication
+featured: false
+order: 6

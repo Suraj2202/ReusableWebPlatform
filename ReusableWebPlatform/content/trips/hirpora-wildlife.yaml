@@ -1,0 +1,55 @@
+slug: hirpora-wildlife
+title: Hirpora Wildlife Trek
+category: trek
+durationNights: 3
+durationDays: 4
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 11999
+cover: trips/hirpora-wildlife/cover.jpg
+gallery:
+  - trips/hirpora-wildlife/gallery-01.jpg
+  - trips/hirpora-wildlife/gallery-02.jpg
+overview: >-
+  A quiet walk through the Hirpora Wildlife Sanctuary along the old Mughal Road,
+  home to the rare markhor. Forested ridges, shepherd trails, and sweeping views
+  toward the Pir Panjal — a gentle weekend in the wild.
+highlights:
+  - Hirpora Wildlife Sanctuary
+  - Historic Mughal Road
+  - Pir Panjal range views
+  - Chance sightings of markhor
+itinerary:
+  - day: 1
+    title: Srinagar to Hirpora
+    points:
+      - Drive and overnight at base
+  - day: 2
+    title: Hirpora to Ridge Camp
+    points:
+      - Forest and meadow ascent
+  - day: 3
+    title: Ridge Camp and back
+    points:
+      - Viewpoints and descent
+  - day: 4
+    title: Departure
+    points:
+      - Drive to Srinagar airport
+inclusions:
+  - 3 nights accommodation (camps)
+  - All meals on trek
+  - Trek leader and permits
+  - Camping gear
+exclusions:
+  - Transport beyond base pickup
+  - Personal gear and insurance
+  - Personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Trekking shoes and pole
+    - Warm layers and rain gear
+    - Binoculars (optional)
+featured: false
+order: 5

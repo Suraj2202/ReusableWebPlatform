@@ -1,0 +1,61 @@
+slug: gulmarg-snowboarding-intro
+title: Gulmarg Snowboarding — Intro Camp
+category: adventure
+durationNights: 4
+durationDays: 5
+pickup: Srinagar
+drop: Srinagar
+priceFrom: 23999
+cover: trips/gulmarg-snowboarding-intro/cover.jpg
+gallery:
+  - trips/gulmarg-snowboarding-intro/gallery-01.jpg
+  - trips/gulmarg-snowboarding-intro/gallery-02.jpg
+overview: >-
+  Strap in and ride. A beginner snowboarding camp on Gulmarg's forgiving lower
+  slopes, with patient instructors, soft snow for falling, and all the gear you
+  need to go from zero to linking turns.
+highlights:
+  - Beginner snowboard instruction
+  - All board and boots provided
+  - Soft powder for easy learning
+  - Small groups, big progress
+itinerary:
+  - day: 1
+    title: Srinagar to Gulmarg
+    points:
+      - Transfer and gear fitting
+      - Slope walk-through
+  - day: 2
+    title: Board Basics
+    points:
+      - Stance, balance, and falling safely
+      - Heel and toe edge control
+  - day: 3
+    title: First Slides
+    points:
+      - Straight glides and J-turns
+  - day: 4
+    title: Linking Turns
+    points:
+      - Lift-served gentle runs
+      - Free practice
+  - day: 5
+    title: Departure
+    points:
+      - Transfer to Srinagar airport
+inclusions:
+  - 4 nights accommodation
+  - Daily breakfast and dinner
+  - Snowboard, boots, and bindings
+  - Certified instructor and lift pass (phase 1)
+exclusions:
+  - Airfare
+  - Phase 2 gondola
+  - Insurance and personal expenses
+otherInfo:
+  mustCarry:
+    - Photo ID
+    - Thermal layers and wrist guards
+    - Waterproof gloves and goggles
+featured: false
+order: 3
