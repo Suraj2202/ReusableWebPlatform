@@ -23,17 +23,28 @@
 </button>
 
 <script>
-  const btn = document.getElementById('back-to-top');
-  if (btn) {
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const toggle = () => {
-      if (window.scrollY > 600) btn.setAttribute('data-visible', '');
-      else btn.removeAttribute('data-visible');
-    };
-    btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: reduce.matches ? 'auto' : 'smooth' });
-    });
-    window.addEventListener('scroll', toggle, { passive: true });
-    toggle();
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function getBtn() {
+    return document.getElementById('back-to-top');
   }
+
+  function toggle() {
+    const btn = getBtn();
+    if (!btn) return;
+    if (window.scrollY > 600) btn.setAttribute('data-visible', '');
+    else btn.removeAttribute('data-visible');
+  }
+
+  document.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).closest('#back-to-top')) {
+      window.scrollTo({ top: 0, behavior: reduce.matches ? 'auto' : 'smooth' });
+    }
+  });
+
+  window.addEventListener('scroll', toggle, { passive: true });
+  toggle();
+
+  // Re-check visibility after View Transition navigation
+  document.addEventListener('astro:page-load', toggle);
 </script>
