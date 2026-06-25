@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import TourCard from '@/components/TourCard.astro';
+import { getTripsByCategory } from '@/utils/trips';
+import { siteConfig, whatsappHref } from '@/utils/whatsapp';
+
+export async function getStaticPaths() {
+  const categories = await getCollection('categories');
+  const tripsByCategory = await getTripsByCategory();
+  return categories.map((category) => ({
+    params: { category: category.data.slug },
+    props: { category, trips: tripsByCategory[category.data.slug] ?? [] },
+  }));
+}
+
+const { category, trips } = Astro.props;
+const { title, blurb, cover } = category.data;
+const { name } = siteConfig.site;
+const waHref = whatsappHref(`Hi ${name}, I'd like to know more about your ${title} trips.`);
+---
+
+<BaseLayout title={`${title} Trips — ${name}`} description={blurb}>
+  <!-- Hero -->
+  <section class="relative">
+    <div class="relative h-64 overflow-hidden sm:h-80">
+      <img
+        src={`/assets/${cover}`}
+        alt={title}
+        width="1280"
+        height="720"
+        class="h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-neutral/70 via-neutral/30 to-transparent">
+      </div>
+      <div class="absolute inset-x-0 bottom-0">
+        <div class="mx-auto max-w-6xl px-6 pb-8">
+          <nav class="mb-3 font-body text-sm text-surface/80" aria-label="Breadcrumb">
+            <a href="/" class="underline-offset-4 hover:underline">Home</a>
+            <span aria-hidden="true" class="px-1.5">/</span>
+            <span class="text-surface">{title}</span>
+          </nav>
+          <h1 class="font-heading text-3xl text-surface sm:text-4xl">{title} Trips</h1>
+          <p class="mt-2 max-w-2xl font-body text-surface/90">{blurb}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trips grid -->
+  <section class="bg-surface py-10 sm:py-14" aria-label={`${title} trips`}>
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="flex items-center justify-between gap-4">
+        <p class="font-body text-sm text-neutral/60">
+          {trips.length}
+          {trips.length === 1 ? 'trip' : 'trips'} available
+        </p>
+        <a
+          href={waHref}
+          target="_blank"
+          rel="noopener"
+          class="font-body text-sm font-medium text-primary underline-offset-4 hover:underline"
+        >
+          Ask on WhatsApp
+        </a>
+      </div>
+
+      {
+        trips.length > 0 ? (
+          <ul class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {trips.map((trip) => (
+              <TourCard trip={trip} variant="grid" />
+            ))}
+          </ul>
+        ) : (
+          <p class="mt-6 font-body text-neutral/60">
+            No trips in this category yet — check back soon.
+          </p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

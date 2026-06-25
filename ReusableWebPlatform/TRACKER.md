@@ -12,8 +12,8 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `Phase 1 complete — review home page, then plan Phase 2`.
-- **Next:** `Phase 2 — trip detail pages & explore routes`.
+- **Now:** `2.2 Trip detail /trip/[slug]` — hero, sticky tabs, itinerary accordion, gallery, enquire bar.
+- **Next:** `Phase 2 complete — plan Phase 3`.
 - **Blocked on:** _nothing._
 
 ---
@@ -74,7 +74,7 @@ Before ticking any task, all of these must be true:
 
 ### Phase 2 — Category & Trip pages
 
-- [ ] **2.1** Category landing `/explore/[category]`.
+- [x] **2.1** Category landing `/explore/[category]`.
 - [ ] **2.2** Trip detail `/trip/[slug]` — sticky tabs, itinerary accordion, gallery.
 
 ### Phase 3 — Blog-style pages
@@ -134,3 +134,4 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 | 2026-06-25 | 1.7 done — Plan With Us band (#plan-with-us): Family/School/Corporate + WhatsApp CTA  | Build 1.8      |
 | 2026-06-25 | 1.8 done — Reviews carousel from social.json (ReviewCard, initials monogram avatars)  | Build 1.9      |
 | 2026-06-25 | 1.9 done — Footer verified + back-to-top control — Phase 1 complete                   | Plan Phase 2   |
+| 2026-06-25 | 2.1 done — Category landing /explore/[category]: hero + tour grid (TourCard grid variant) | Build 2.2    |
