@@ -1,0 +1,99 @@
+---
+import { whatsappHref, siteConfig } from '@/utils/whatsapp';
+
+// Blog-style offerings (no fixed package list) — these are the "Plan With Us" circles' targets.
+const programs = [
+  {
+    label: 'Family',
+    href: '/family',
+    image: '/assets/categories/family.jpg',
+    blurb: 'Relaxed, safe itineraries paced for kids and grandparents alike.',
+  },
+  {
+    label: 'School',
+    href: '/school',
+    image: '/assets/categories/school.jpg',
+    blurb: 'Educational tours with supervision, safety, and learning built in.',
+  },
+  {
+    label: 'Corporate',
+    href: '/corporate',
+    image: '/assets/categories/corporate.jpg',
+    blurb: 'Offsites and team retreats — logistics handled end to end.',
+  },
+];
+
+const { name } = siteConfig.site;
+const waHref = whatsappHref(`Hi ${name}, I'd like a custom plan for my group.`);
+---
+
+<section
+  id="plan-with-us"
+  class="scroll-mt-24 bg-surface py-12 sm:py-16"
+  aria-labelledby="plan-heading"
+>
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="font-body text-sm font-medium uppercase tracking-wide text-accent">Tailor-made</p>
+      <h2 id="plan-heading" class="mt-1 font-heading text-2xl text-primary sm:text-3xl">
+        Plan with us
+      </h2>
+      <p class="mt-2 font-body text-neutral/60">
+        No fixed departure that fits? We craft private journeys around your group.
+      </p>
+    </div>
+
+    <ul class="mt-9 grid gap-6 sm:grid-cols-3">
+      {
+        programs.map((program) => (
+          <li>
+            <a
+              href={program.href}
+              class="group/plan flex h-full flex-col overflow-hidden rounded-theme bg-white shadow-sm ring-1 ring-neutral/10 transition duration-200 hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <div class="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src={program.image}
+                  alt={program.label}
+                  width="384"
+                  height="240"
+                  loading="lazy"
+                  decoding="async"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover/plan:scale-105"
+                />
+                <span class="absolute inset-0 bg-gradient-to-t from-neutral/50 to-transparent" />
+                <h3 class="absolute bottom-3 left-4 font-heading text-xl text-white">
+                  {program.label}
+                </h3>
+              </div>
+              <div class="flex flex-1 flex-col p-4">
+                <p class="font-body text-sm text-neutral/60">{program.blurb}</p>
+                <span class="mt-auto pt-3 font-body text-sm font-medium text-primary">
+                  Plan a {program.label.toLowerCase()} trip
+                  <span
+                    aria-hidden="true"
+                    class="inline-block transition-transform group-hover/plan:translate-x-0.5"
+                  >
+                    {' '}
+                    &rarr;
+                  </span>
+                </span>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mt-9 text-center">
+      <a
+        href={waHref}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-body text-sm font-semibold text-white shadow-sm transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+      >
+        Plan a custom trip on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>

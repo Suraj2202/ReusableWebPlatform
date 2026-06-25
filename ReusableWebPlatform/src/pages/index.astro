@@ -6,6 +6,7 @@ import SocialProofStrip from '@/components/SocialProofStrip.astro';
 import StoryCircleRow from '@/components/StoryCircleRow.astro';
 import AllToursCarousel from '@/components/AllToursCarousel.astro';
 import CategoryBlocks from '@/components/CategoryBlocks.astro';
+import PlanWithUs from '@/components/PlanWithUs.astro';
 import { siteConfig, whatsappHref } from '@/utils/whatsapp';
 
 const { name, tagline, description } = siteConfig.site;
@@ -31,4 +32,6 @@ const waHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
   <AllToursCarousel />
 
   <CategoryBlocks />
+
+  <PlanWithUs />
 </BaseLayout>

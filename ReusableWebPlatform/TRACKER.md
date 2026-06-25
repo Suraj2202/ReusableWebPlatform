@@ -12,8 +12,8 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `1.7 Plan With Us feature band` — Family · School · Corporate band (id `#plan-with-us`, story-circle target).
-- **Next:** `1.8 Reviews carousel`.
+- **Now:** `1.8 Reviews carousel` — Google reviews from social.json (ReviewCard, initials avatar fallback).
+- **Next:** `1.9 Footer wiring + back-to-top`.
 - **Blocked on:** _nothing._
 
 ---
@@ -68,7 +68,7 @@ Before ticking any task, all of these must be true:
 - [x] **1.4** Explore story-circle row.
 - [x] **1.5** All Tours continuous carousel.
 - [x] **1.6** Category blocks (Group Trip · Adventure · Trek) — 3 stacked, each own slider.
-- [ ] **1.7** "Plan With Us" feature band (Family · School · Corporate).
+- [x] **1.7** "Plan With Us" feature band (Family · School · Corporate).
 - [ ] **1.8** Reviews carousel.
 - [ ] **1.9** Footer wiring.
 
@@ -131,3 +131,4 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 | 2026-06-25 | 1.4 done — Explore story-circle row (6 circles → in-page section anchors)             | Build 1.5      |
 | 2026-06-25 | 1.5 done — All Tours carousel: reusable HorizontalScroller + TourCard, 19 covers      | Build 1.6      |
 | 2026-06-25 | 1.6 done — Category blocks: 3 stacked sliders (#group-trip/#adventure/#trek)          | Build 1.7      |
+| 2026-06-25 | 1.7 done — Plan With Us band (#plan-with-us): Family/School/Corporate + WhatsApp CTA  | Build 1.8      |
