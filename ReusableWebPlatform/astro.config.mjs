@@ -6,10 +6,7 @@ import yaml from '@rollup/plugin-yaml';
 export default defineConfig({
   site: 'https://reusablewebplatform.suraj1-verma7.workers.dev',
   trailingSlash: 'ignore',
-  integrations: [
-    tailwind(),
-    sitemap(),
-  ],
+  integrations: [tailwind(), sitemap()],
   vite: {
     plugins: [yaml()],
   },

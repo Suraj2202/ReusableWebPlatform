@@ -43,98 +43,52 @@ const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
 ---
 
 <div id="header-root">
-<header
-  id="site-header"
-  class="sticky top-0 z-50 w-full border-b border-neutral/10 bg-surface/90 backdrop-blur transition-shadow duration-200"
->
-  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-    <!-- Logo -->
-    <a href="/" class="flex items-center gap-2" aria-label={`${name} home`}>
-      <img
-        src="/assets/brand/logo.svg"
-        alt={`${name} logo`}
-        width="160"
-        height="40"
-        class="h-9 w-auto"
-      />
-    </a>
-
-    <!-- Desktop nav -->
-    <nav class="hidden items-center gap-7 md:flex" aria-label="Primary">
-      {
-        navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="font-body text-sm font-medium text-neutral/80 transition-colors hover:text-primary"
-          >
-            {link.label}
-          </a>
-        ))
-      }
-      <a
-        href={enquireHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex min-h-[44px] items-center rounded-theme bg-accent px-5 py-2 font-body text-sm font-semibold text-neutral shadow-sm transition hover:bg-primary hover:text-surface"
-      >
-        Enquire
+  <header
+    id="site-header"
+    class="sticky top-0 z-50 w-full border-b border-neutral/10 bg-surface/90 backdrop-blur transition-shadow duration-200"
+  >
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2" aria-label={`${name} home`}>
+        <img
+          src="/assets/brand/logo.svg"
+          alt={`${name} logo`}
+          width="160"
+          height="40"
+          class="h-9 w-auto"
+        />
       </a>
-    </nav>
 
-    <!-- Mobile hamburger -->
-    <button
-      id="menu-open"
-      type="button"
-      class="inline-flex h-11 w-11 items-center justify-center rounded-theme text-neutral md:hidden"
-      aria-label="Open menu"
-      aria-controls="mobile-drawer"
-      aria-expanded="false"
-    >
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        aria-hidden="true"
-      >
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-    </button>
-  </div>
-</header>
+      <!-- Desktop nav -->
+      <nav class="hidden items-center gap-7 md:flex" aria-label="Primary">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="font-body text-sm font-medium text-neutral/80 transition-colors hover:text-primary"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+        <a
+          href={enquireHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-[44px] items-center rounded-theme bg-accent px-5 py-2 font-body text-sm font-semibold text-neutral shadow-sm transition hover:bg-primary hover:text-surface"
+        >
+          Enquire
+        </a>
+      </nav>
 
-<!-- Mobile drawer -->
-<div
-  id="mobile-drawer"
-  class="fixed inset-0 z-[60] hidden md:hidden"
-  role="dialog"
-  aria-modal="true"
-  aria-label="Menu"
->
-  <!-- Backdrop -->
-  <div
-    id="drawer-backdrop"
-    class="drawer-backdrop absolute inset-0 bg-neutral/50 opacity-0 transition-opacity duration-200"
-  >
-  </div>
-
-  <!-- Panel -->
-  <div
-    id="drawer-panel"
-    class="drawer-panel absolute right-0 top-0 flex h-full w-[82%] max-w-sm translate-x-full flex-col bg-surface shadow-xl transition-transform duration-300"
-    style="padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom);"
-  >
-    <div class="flex h-16 items-center justify-between border-b border-neutral/10 px-5">
-      <span class="font-heading text-lg text-primary">{name}</span>
+      <!-- Mobile hamburger -->
       <button
-        id="menu-close"
+        id="menu-open"
         type="button"
-        class="inline-flex h-11 w-11 items-center justify-center rounded-theme text-neutral"
-        aria-label="Close menu"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-theme text-neutral md:hidden"
+        aria-label="Open menu"
+        aria-controls="mobile-drawer"
+        aria-expanded="false"
       >
         <svg
           width="24"
@@ -145,54 +99,100 @@ const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
           stroke-width="2"
           aria-hidden="true"
         >
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
     </div>
+  </header>
 
-    <nav class="flex flex-1 flex-col overflow-y-auto px-3 py-4" aria-label="Mobile">
-      <!-- Home link -->
-      <a
-        href="/"
-        class="drawer-link rounded-theme px-4 py-3 font-body text-base font-semibold text-primary"
-      >
-        Home
-      </a>
+  <!-- Mobile drawer -->
+  <div
+    id="mobile-drawer"
+    class="fixed inset-0 z-[60] hidden md:hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menu"
+  >
+    <!-- Backdrop -->
+    <div
+      id="drawer-backdrop"
+      class="drawer-backdrop absolute inset-0 bg-neutral/50 opacity-0 transition-opacity duration-200"
+    >
+    </div>
 
-      {
-        drawerSections.map((section) => (
-          <div class="mt-3">
-            <span class="px-4 font-body text-xs font-semibold uppercase tracking-wide text-neutral/50">
-              {section.heading}
-            </span>
-            <div class="mt-1 flex flex-col gap-0.5">
-              {section.links.map((link) => (
-                <a
-                  href={link.href}
-                  class="drawer-link rounded-theme px-4 py-2.5 font-body text-sm font-medium text-neutral transition-colors hover:bg-primary/5 hover:text-primary"
-                >
-                  {link.label}
-                </a>
-              ))}
+    <!-- Panel -->
+    <div
+      id="drawer-panel"
+      class="drawer-panel absolute right-0 top-0 flex h-full w-[82%] max-w-sm translate-x-full flex-col bg-surface shadow-xl transition-transform duration-300"
+      style="padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom);"
+    >
+      <div class="flex h-16 items-center justify-between border-b border-neutral/10 px-5">
+        <span class="font-heading text-lg text-primary">{name}</span>
+        <button
+          id="menu-close"
+          type="button"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-theme text-neutral"
+          aria-label="Close menu"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="flex flex-1 flex-col overflow-y-auto px-3 py-4" aria-label="Mobile">
+        <!-- Home link -->
+        <a
+          href="/"
+          class="drawer-link rounded-theme px-4 py-3 font-body text-base font-semibold text-primary"
+        >
+          Home
+        </a>
+
+        {
+          drawerSections.map((section) => (
+            <div class="mt-3">
+              <span class="px-4 font-body text-xs font-semibold uppercase tracking-wide text-neutral/50">
+                {section.heading}
+              </span>
+              <div class="mt-1 flex flex-col gap-0.5">
+                {section.links.map((link) => (
+                  <a
+                    href={link.href}
+                    class="drawer-link rounded-theme px-4 py-2.5 font-body text-sm font-medium text-neutral transition-colors hover:bg-primary/5 hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-        ))
-      }
-    </nav>
+          ))
+        }
+      </nav>
 
-    <div class="border-t border-neutral/10 p-4">
-      <a
-        href={enquireHref}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="drawer-link flex min-h-[48px] items-center justify-center rounded-theme bg-accent px-5 font-body font-semibold text-neutral shadow-sm transition hover:bg-primary hover:text-surface"
-      >
-        Enquire on WhatsApp
-      </a>
+      <div class="border-t border-neutral/10 p-4">
+        <a
+          href={enquireHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="drawer-link flex min-h-[48px] items-center justify-center rounded-theme bg-accent px-5 font-body font-semibold text-neutral shadow-sm transition hover:bg-primary hover:text-surface"
+        >
+          Enquire on WhatsApp
+        </a>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 <script>

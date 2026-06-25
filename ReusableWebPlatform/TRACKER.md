@@ -120,15 +120,15 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 
 ## 📓 Session Log
 
-| Date       | Did                                                                                                 | Next           |
-| ---------- | --------------------------------------------------------------------------------------------------- | -------------- |
-| 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created                                          | Start step 0.1 |
-| 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo                                          | Build 1.1      |
-| 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                                       | Build 1.2      |
-| 2026-06-25 | 0.2 + 0.3 done — content collections + placeholder data, Header/Footer/WhatsApp float               | Build 1.2      |
-| 2026-06-25 | 1.2 done — Company overview section + `overview` block in site.config                               | Build 1.3      |
-| 2026-06-25 | 1.3–1.9 done — Social proof, story circles, carousels, category blocks, PlanWithUs, reviews, footer | Build 2.1      |
-| 2026-06-25 | 2.1–2.2 done — Category landing + trip detail (card UX, danger token, scroll-spy, 5-img gallery)    | Build 3.1      |
-| 2026-06-25 | 3.1–3.2 done — Family/School/Corporate pages + WhatsApp enquiry form                                | Build 4.1      |
-| 2026-06-25 | 4.1–4.3 done — About Us, Contact, 404 pages (data-driven, placeholder heroes registered)            | Build 5.1      |
-| 2026-06-26 | 5.1–5.4 done — Self-host fonts, CSP hash injection, View Transitions, SEO/OG meta, video compress, footer mobile redesign, form dates, nav grouping, Cloudflare deploy | Ship 🎉 |
+| Date       | Did                                                                                                                                                                    | Next           |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created                                                                                                             | Start step 0.1 |
+| 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo                                                                                                             | Build 1.1      |
+| 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                                                                                                          | Build 1.2      |
+| 2026-06-25 | 0.2 + 0.3 done — content collections + placeholder data, Header/Footer/WhatsApp float                                                                                  | Build 1.2      |
+| 2026-06-25 | 1.2 done — Company overview section + `overview` block in site.config                                                                                                  | Build 1.3      |
+| 2026-06-25 | 1.3–1.9 done — Social proof, story circles, carousels, category blocks, PlanWithUs, reviews, footer                                                                    | Build 2.1      |
+| 2026-06-25 | 2.1–2.2 done — Category landing + trip detail (card UX, danger token, scroll-spy, 5-img gallery)                                                                       | Build 3.1      |
+| 2026-06-25 | 3.1–3.2 done — Family/School/Corporate pages + WhatsApp enquiry form                                                                                                   | Build 4.1      |
+| 2026-06-25 | 4.1–4.3 done — About Us, Contact, 404 pages (data-driven, placeholder heroes registered)                                                                               | Build 5.1      |
+| 2026-06-26 | 5.1–5.4 done — Self-host fonts, CSP hash injection, View Transitions, SEO/OG meta, video compress, footer mobile redesign, form dates, nav grouping, Cloudflare deploy | Ship 🎉        |
