@@ -121,7 +121,7 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 ## 📓 Session Log
 
 | Date       | Did                                                                                   | Next           |
-| ---------- | ------------------------------------------------------------------------------------- | -------------- | --- | ---------- | ------------------------------------------------------------------------- | --------- |
+| ---------- | ------------------------------------------------------------------------------------- | -------------- |
 | 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created                            | Start step 0.1 |
 | 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo                            | Build 1.1      |
 | 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                         | Build 1.2      |
