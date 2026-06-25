@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import HorizontalScroller from './HorizontalScroller.astro';
+import TourCard from './TourCard.astro';
+import { getTripsByCategory } from '@/utils/trips';
+
+const categories = (await getCollection('categories')).sort((a, b) => a.data.order - b.data.order);
+const tripsByCategory = await getTripsByCategory();
+---
+
+{
+  categories.map((category, index) => {
+    const trips = tripsByCategory[category.data.slug] ?? [];
+    if (trips.length === 0) return null;
+    const { slug, title, blurb } = category.data;
+    // Alternate background so the three stacked blocks read as distinct bands.
+    const tint = index % 2 === 0 ? 'bg-white' : 'bg-surface';
+    return (
+      <section
+        id={slug}
+        class={`scroll-mt-24 py-10 sm:py-14 ${tint}`}
+        aria-labelledby={`${slug}-heading`}
+      >
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="flex items-end justify-between gap-4">
+            <div class="max-w-2xl">
+              <h2 id={`${slug}-heading`} class="font-heading text-2xl text-primary sm:text-3xl">
+                {title}
+              </h2>
+              <p class="mt-2 font-body text-neutral/60">{blurb}</p>
+            </div>
+            <a
+              href={`/explore/${slug}`}
+              class="hidden shrink-0 font-body text-sm font-medium text-primary underline-offset-4 hover:underline sm:inline"
+            >
+              View all
+            </a>
+          </div>
+
+          <div class="mt-7">
+            <HorizontalScroller label={title}>
+              {trips.map((trip) => (
+                <TourCard trip={trip} />
+              ))}
+            </HorizontalScroller>
+          </div>
+        </div>
+      </section>
+    );
+  })
+}

@@ -12,8 +12,8 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `1.6 Category blocks (Group Trip · Adventure · Trek)` — 3 stacked sections, each its own slider (ids = story-circle targets).
-- **Next:** `1.7 Plan With Us feature band`.
+- **Now:** `1.7 Plan With Us feature band` — Family · School · Corporate band (id `#plan-with-us`, story-circle target).
+- **Next:** `1.8 Reviews carousel`.
 - **Blocked on:** _nothing._
 
 ---
@@ -67,7 +67,7 @@ Before ticking any task, all of these must be true:
 - [x] **1.3** Social proof strip (static snapshot from `social.json`). _(rules: 04)_
 - [x] **1.4** Explore story-circle row.
 - [x] **1.5** All Tours continuous carousel.
-- [ ] **1.6** Category blocks (Group Trip · Adventure · Trek) — 3 stacked, each own slider.
+- [x] **1.6** Category blocks (Group Trip · Adventure · Trek) — 3 stacked, each own slider.
 - [ ] **1.7** "Plan With Us" feature band (Family · School · Corporate).
 - [ ] **1.8** Reviews carousel.
 - [ ] **1.9** Footer wiring.
@@ -130,3 +130,4 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 | 2026-06-25 | 1.3 done — Social proof strip (Google rating + Instagram from social.json)            | Build 1.4      |
 | 2026-06-25 | 1.4 done — Explore story-circle row (6 circles → in-page section anchors)             | Build 1.5      |
 | 2026-06-25 | 1.5 done — All Tours carousel: reusable HorizontalScroller + TourCard, 19 covers      | Build 1.6      |
+| 2026-06-25 | 1.6 done — Category blocks: 3 stacked sliders (#group-trip/#adventure/#trek)          | Build 1.7      |
