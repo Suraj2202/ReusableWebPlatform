@@ -12,8 +12,8 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `1.2 Company overview` — short who-we-are section below the hero (data from site.config), elegant + responsive.
-- **Next:** `1.3 Social proof strip`.
+- **Now:** `1.3 Social proof strip` — static snapshot from `social.json` (Google rating/count + Instagram followers), elegant + responsive.
+- **Next:** `1.4 Explore story-circle row`.
 - **Blocked on:** _nothing._
 
 ---
@@ -63,7 +63,7 @@ Before ticking any task, all of these must be true:
 ### Phase 1 — Home page
 
 - [x] **1.1** Video banner (placeholder video). _(rules: 03, 07)_ — ✅ done (poster-first, reduced-motion safe, real media in `assets/video/`).
-- [ ] **1.2** Company overview.
+- [x] **1.2** Company overview.
 - [ ] **1.3** Social proof strip (static snapshot from `social.json`). _(rules: 04)_
 - [ ] **1.4** Explore story-circle row.
 - [ ] **1.5** All Tours continuous carousel.
@@ -126,3 +126,4 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 | 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo                            | Build 1.1      |
 | 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                         | Build 1.2      |
 | 2026-06-25 | 0.2 + 0.3 done — content collections + placeholder data, Header/Footer/WhatsApp float | Build 1.2      |
+| 2026-06-25 | 1.2 done — Company overview section + `overview` block in site.config                 | Build 1.3      |

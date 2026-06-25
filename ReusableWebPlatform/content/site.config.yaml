@@ -19,6 +19,27 @@ social:
   instagram: 'hiddennaqsha'
   # Review/follower snapshots are generated into content/data/social.json by the sync script (see docs/rules/04-social-sync.md).
 
+# Home "Company Overview" section (step 1.2). Single source of truth for who-we-are copy.
+overview:
+  eyebrow: Who we are
+  heading: Journeys mapped by people who live the mountains
+  body:
+    - >-
+      Hidden Naqsha is a small team of mountain-born guides and obsessive
+      planners. We design trips, treks, and bespoke escapes across the Himalayas
+      and beyond — the routes guidebooks miss and locals keep to themselves.
+    - >-
+      From first-time trekkers to seasoned riders, we handle the details —
+      permits, stays, acclimatisation, safety — so you can simply travel. No
+      crowds, no cookie-cutter packages, just thoughtfully crafted journeys.
+  stats:
+    - value: '60+'
+      label: Curated journeys
+    - value: '4.9★'
+      label: Traveller rating
+    - value: '8'
+      label: Years in the mountains
+
 theme:
   colors:
     primary: '#0F4C45' # deep pine / teal — headers, primary buttons, key accents
