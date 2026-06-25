@@ -12,8 +12,8 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `Phase 2 complete — review trip pages, then plan Phase 3`.
-- **Next:** `Phase 3 — Family/School/Corporate pages + enquiry form, /about, /contact`.
+- **Now:** `1.3 Social proof strip` — static snapshot from `social.json` (Google rating/count + Instagram followers), elegant + responsive.
+- **Next:** `1.4 Explore story-circle row`.
 - **Blocked on:** _nothing._
 
 ---
@@ -64,18 +64,18 @@ Before ticking any task, all of these must be true:
 
 - [x] **1.1** Video banner (placeholder video). _(rules: 03, 07)_ — ✅ done (poster-first, reduced-motion safe, real media in `assets/video/`).
 - [x] **1.2** Company overview.
-- [x] **1.3** Social proof strip (static snapshot from `social.json`). _(rules: 04)_
-- [x] **1.4** Explore story-circle row.
-- [x] **1.5** All Tours continuous carousel.
-- [x] **1.6** Category blocks (Group Trip · Adventure · Trek) — 3 stacked, each own slider.
-- [x] **1.7** "Plan With Us" feature band (Family · School · Corporate).
-- [x] **1.8** Reviews carousel.
-- [x] **1.9** Footer wiring.
+- [ ] **1.3** Social proof strip (static snapshot from `social.json`). _(rules: 04)_
+- [ ] **1.4** Explore story-circle row.
+- [ ] **1.5** All Tours continuous carousel.
+- [ ] **1.6** Category blocks (Group Trip · Adventure · Trek) — 3 stacked, each own slider.
+- [ ] **1.7** "Plan With Us" feature band (Family · School · Corporate).
+- [ ] **1.8** Reviews carousel.
+- [ ] **1.9** Footer wiring.
 
 ### Phase 2 — Category & Trip pages
 
-- [x] **2.1** Category landing `/explore/[category]`.
-- [x] **2.2** Trip detail `/trip/[slug]` — sticky tabs, itinerary accordion, gallery.
+- [ ] **2.1** Category landing `/explore/[category]`.
+- [ ] **2.2** Trip detail `/trip/[slug]` — sticky tabs, itinerary accordion, gallery.
 
 ### Phase 3 — Blog-style pages
 
@@ -120,19 +120,10 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 
 ## 📓 Session Log
 
-| Date       | Did                                                                                       | Next           |
-| ---------- | ----------------------------------------------------------------------------------------- | -------------- |
-| 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created                                | Start step 0.1 |
-| 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo                                | Build 1.1      |
-| 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                             | Build 1.2      |
-| 2026-06-25 | 0.2 + 0.3 done — content collections + placeholder data, Header/Footer/WhatsApp float     | Build 1.2      |
-| 2026-06-25 | 1.2 done — Company overview section + `overview` block in site.config                     | Build 1.3      |
-| 2026-06-25 | 1.3 done — Social proof strip (Google rating + Instagram from social.json)                | Build 1.4      |
-| 2026-06-25 | 1.4 done — Explore story-circle row (6 circles → in-page section anchors)                 | Build 1.5      |
-| 2026-06-25 | 1.5 done — All Tours carousel: reusable HorizontalScroller + TourCard, 19 covers          | Build 1.6      |
-| 2026-06-25 | 1.6 done — Category blocks: 3 stacked sliders (#group-trip/#adventure/#trek)              | Build 1.7      |
-| 2026-06-25 | 1.7 done — Plan With Us band (#plan-with-us): Family/School/Corporate + WhatsApp CTA      | Build 1.8      |
-| 2026-06-25 | 1.8 done — Reviews carousel from social.json (ReviewCard, initials monogram avatars)      | Build 1.9      |
-| 2026-06-25 | 1.9 done — Footer verified + back-to-top control — Phase 1 complete                       | Plan Phase 2   |
-| 2026-06-25 | 2.1 done — Category landing /explore/[category]: hero + tour grid (TourCard grid variant) | Build 2.2      |
-| 2026-06-25 | 2.2 done — Trip detail /trip/[slug]: sticky tabs, accordion, gallery, enquire bar — Phase 2 done | Plan Phase 3 |
+| Date       | Did                                                                                   | Next           |
+| ---------- | ------------------------------------------------------------------------------------- | -------------- |
+| 2026-06-25 | Plan + 13 rule docs + uploads inbox + this tracker created                            | Start step 0.1 |
+| 2026-06-25 | 0.1 Brand done — central config, theme tokens, fonts, logo                            | Build 1.1      |
+| 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                         | Build 1.2      |
+| 2026-06-25 | 0.2 + 0.3 done — content collections + placeholder data, Header/Footer/WhatsApp float | Build 1.2      |
+| 2026-06-25 | 1.2 done — Company overview section + `overview` block in site.config | Build 1.3      |

@@ -47,8 +47,88 @@ theme:
     accent: '#C9A24B' # warm gold — CTAs, highlights, stars
     neutral: '#1F2A28' # charcoal — body text
     surface: '#F7F4EF' # warm off-white — section backgrounds
-    danger: '#B3454A' # muted terracotta red — "not included / avoid" states only (not a brand accent)
   fonts:
     heading: Fraunces # elegant modern serif
     body: Inter # clean, legible sans
   borderRadius: '0.75rem'
+
+# Programs — /family, /school, /corporate page content (data-driven, single source of truth)
+programs:
+  family:
+    title: Family Trips
+    tagline: Relaxed, safe itineraries paced for kids and grandparents alike.
+    image: /assets/categories/family.jpg
+    narrative:
+      - >-
+        We understand that family travel isn't just about the destination — it's about shared
+        moments. Our family journeys are designed with generous rest days, child-friendly stays,
+        and activities that engage every age group without exhausting anyone.
+      - >-
+        From lakeside picnics in Kashmir to gentle nature walks in Meghalaya, every day is
+        crafted so the youngest and the eldest can participate equally. Safety, comfort, and
+        wonder — in that order.
+    highlights:
+      - icon: shield
+        title: Safety First
+        text: Vetted stays, experienced guides, and medical backup on every trip.
+      - icon: clock
+        title: Relaxed Pacing
+        text: No 4 AM starts. Generous rest days built in for kids and elders.
+      - icon: map
+        title: Curated Experiences
+        text: Activities designed for all ages — from toddlers to grandparents.
+      - icon: heart
+        title: Memories Over Miles
+        text: We prioritise meaningful moments over ticking off tourist spots.
+  school:
+    title: School Trips
+    tagline: Educational tours with supervision, safety, and learning built in.
+    image: /assets/categories/school.jpg
+    narrative:
+      - >-
+        Our school programmes blend experiential learning with adventure. Students don't just
+        visit places — they interact with local communities, learn geography first-hand, and
+        build confidence through age-appropriate challenges.
+      - >-
+        Every itinerary is co-designed with educators. We handle permissions, transport,
+        accommodation, meals, and safety protocols — so teachers can focus on teaching and
+        students can focus on discovery.
+    highlights:
+      - icon: book
+        title: Learning by Doing
+        text: Curriculum-aligned activities — ecology, history, geography come alive.
+      - icon: shield
+        title: Supervised & Safe
+        text: 1:10 guide-to-student ratio, 24/7 on-call support, parent updates.
+      - icon: users
+        title: Team Building
+        text: Collaborative challenges that build leadership and social skills.
+      - icon: award
+        title: Certified Programmes
+        text: Post-trip certificates and teacher feedback reports included.
+  corporate:
+    title: Corporate Retreats
+    tagline: Offsites and team retreats — logistics handled end to end.
+    image: /assets/categories/corporate.jpg
+    narrative:
+      - >-
+        Break the conference-room monotony. Our corporate retreats are designed to recharge
+        teams, spark creativity, and strengthen bonds — all while we handle every logistical
+        detail from airport transfers to team dinner arrangements.
+      - >-
+        Whether it's a leadership offsite in Ladakh or a creative workshop beside Dal Lake,
+        we tailor each programme to your team size, objectives, and comfort preferences.
+        No generic packages — only bespoke experiences.
+    highlights:
+      - icon: briefcase
+        title: End-to-End Logistics
+        text: Transport, stays, meals, venues, AV — we manage it all.
+      - icon: target
+        title: Goal-Oriented Design
+        text: Tell us your objectives and we'll design activities around them.
+      - icon: users
+        title: Scales Easily
+        text: From 8-person leadership teams to 200-person company offsites.
+      - icon: zap
+        title: Zero Downtime
+        text: Dedicated coordinator ensures everything runs on schedule.

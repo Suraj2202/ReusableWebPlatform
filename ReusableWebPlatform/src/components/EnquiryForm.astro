@@ -1,0 +1,196 @@
+---
+interface Props {
+  tripType?: string;
+  whatsappNumber: string;
+}
+const { tripType = '', whatsappNumber } = Astro.props;
+---
+
+<section id="enquiry" class="scroll-mt-32 bg-white">
+  <div class="mx-auto max-w-6xl px-5 py-12 sm:px-6 lg:py-16">
+    <div class="mx-auto max-w-2xl">
+      <p class="text-center font-body text-sm font-medium uppercase tracking-wide text-accent">
+        Get started
+      </p>
+      <h2 class="mt-1 text-center font-heading text-2xl text-primary sm:text-3xl">
+        Plan your trip
+      </h2>
+      <p class="mt-2 text-center font-body text-sm text-neutral/60">
+        Fill in the details and we'll get back to you on WhatsApp within an hour.
+      </p>
+
+      <form
+        id="enquiry-form"
+        class="mt-8 space-y-5"
+        data-wa-number={whatsappNumber}
+        data-trip-type={tripType}
+        novalidate
+      >
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="eq-name" class="block font-body text-sm font-medium text-neutral">
+              Name <span class="text-danger">*</span>
+            </label>
+            <input
+              type="text"
+              id="eq-name"
+              name="name"
+              required
+              autocomplete="name"
+              class="mt-1.5 block w-full rounded-theme border border-neutral/20 bg-surface px-4 py-2.5 font-body text-sm text-neutral placeholder:text-neutral/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              placeholder="Your name"
+            />
+          </div>
+          <div>
+            <label for="eq-phone" class="block font-body text-sm font-medium text-neutral">
+              Phone <span class="text-danger">*</span>
+            </label>
+            <input
+              type="tel"
+              id="eq-phone"
+              name="phone"
+              required
+              autocomplete="tel"
+              class="mt-1.5 block w-full rounded-theme border border-neutral/20 bg-surface px-4 py-2.5 font-body text-sm text-neutral placeholder:text-neutral/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              placeholder="+91 98765 43210"
+            />
+          </div>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="eq-people" class="block font-body text-sm font-medium text-neutral">
+              Number of people <span class="text-danger">*</span>
+            </label>
+            <select
+              id="eq-people"
+              name="people"
+              required
+              class="mt-1.5 block w-full rounded-theme border border-neutral/20 bg-surface px-4 py-2.5 font-body text-sm text-neutral focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            >
+              <option value="" disabled selected>Select</option>
+              <option value="1-5">1–5</option>
+              <option value="6-10">6–10</option>
+              <option value="11-20">11–20</option>
+              <option value="21-50">21–50</option>
+              <option value="50+">50+</option>
+            </select>
+          </div>
+          <div>
+            <label for="eq-destination" class="block font-body text-sm font-medium text-neutral">
+              Destination / Location
+            </label>
+            <input
+              type="text"
+              id="eq-destination"
+              name="destination"
+              autocomplete="off"
+              class="mt-1.5 block w-full rounded-theme border border-neutral/20 bg-surface px-4 py-2.5 font-body text-sm text-neutral placeholder:text-neutral/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              placeholder="e.g. Kashmir, Ladakh"
+            />
+          </div>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="eq-type" class="block font-body text-sm font-medium text-neutral">
+              Trip type
+            </label>
+            <select
+              id="eq-type"
+              name="type"
+              class="mt-1.5 block w-full rounded-theme border border-neutral/20 bg-surface px-4 py-2.5 font-body text-sm text-neutral focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            >
+              <option value="Family" selected={tripType === 'Family'}>Family</option>
+              <option value="School" selected={tripType === 'School'}>School</option>
+              <option value="Corporate" selected={tripType === 'Corporate'}>Corporate</option>
+              <option value="Custom" selected={tripType === 'Custom'}>Custom / Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="eq-dates" class="block font-body text-sm font-medium text-neutral">
+              Approximate dates
+            </label>
+            <input
+              type="text"
+              id="eq-dates"
+              name="dates"
+              autocomplete="off"
+              class="mt-1.5 block w-full rounded-theme border border-neutral/20 bg-surface px-4 py-2.5 font-body text-sm text-neutral placeholder:text-neutral/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              placeholder="e.g. July 2026"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="eq-message" class="block font-body text-sm font-medium text-neutral">
+            Anything else?
+          </label>
+          <textarea
+            id="eq-message"
+            name="message"
+            rows="3"
+            class="mt-1.5 block w-full rounded-theme border border-neutral/20 bg-surface px-4 py-2.5 font-body text-sm text-neutral placeholder:text-neutral/40 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            placeholder="Special requirements, questions, preferences…"></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-body text-sm font-semibold text-white shadow-sm transition hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:w-auto"
+        >
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"
+            ></path>
+          </svg>
+          Send Enquiry on WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('enquiry-form') as HTMLFormElement | null;
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+      const name = (data.get('name') as string)?.trim();
+      const phone = (data.get('phone') as string)?.trim();
+      const people = (data.get('people') as string) || '';
+      const destination = (data.get('destination') as string)?.trim();
+      const type = (data.get('type') as string) || '';
+      const dates = (data.get('dates') as string)?.trim();
+      const message = (data.get('message') as string)?.trim();
+
+      // Validate required fields
+      if (!name || !phone || !people) {
+        // Focus first empty required field
+        if (!name) form.querySelector<HTMLInputElement>('#eq-name')?.focus();
+        else if (!phone) form.querySelector<HTMLInputElement>('#eq-phone')?.focus();
+        else form.querySelector<HTMLSelectElement>('#eq-people')?.focus();
+        return;
+      }
+
+      // Assemble message
+      const lines: string[] = [
+        `Hi, I'd like to enquire about a trip.`,
+        ``,
+        `*Name:* ${name}`,
+        `*Phone:* ${phone}`,
+        `*People:* ${people}`,
+      ];
+      if (type) lines.push(`*Trip type:* ${type}`);
+      if (destination) lines.push(`*Destination:* ${destination}`);
+      if (dates) lines.push(`*Dates:* ${dates}`);
+      if (message) lines.push(``, `*Notes:* ${message}`);
+
+      const text = lines.join('\n');
+      const number = form.dataset.waNumber || '';
+      const url = `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank', 'noopener');
+    });
+  }
+</script>

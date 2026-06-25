@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  tagline: string;
+  image: string;
+}
+const { title, tagline, image } = Astro.props;
+---
+
+<section class="relative">
+  <div class="relative h-64 overflow-hidden sm:h-72 lg:h-80">
+    <img src={image} alt={title} width="1280" height="720" class="h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral/80 via-neutral/40 to-neutral/10">
+    </div>
+    <div class="absolute inset-x-0 bottom-0">
+      <div class="mx-auto max-w-6xl px-5 pb-8 sm:px-6 sm:pb-10">
+        <nav class="mb-3 font-body text-sm text-surface/75" aria-label="Breadcrumb">
+          <a href="/" class="underline-offset-4 transition-colors hover:text-surface">Home</a>
+          <span aria-hidden="true" class="px-1.5">/</span>
+          <span class="text-surface/90">{title}</span>
+        </nav>
+        <h1
+          class="max-w-2xl font-heading text-3xl leading-tight text-surface sm:text-4xl lg:text-5xl"
+        >
+          {title}
+        </h1>
+        <p class="mt-2 max-w-xl font-body text-base text-surface/80 sm:text-lg">
+          {tagline}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
