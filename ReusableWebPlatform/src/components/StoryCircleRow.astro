@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+
+// Package-based categories come from the collection (link to their home-page section).
+const categories = (await getCollection('categories')).sort((a, b) => a.data.order - b.data.order);
+
+const categoryCircles = categories.map((c) => ({
+  label: c.data.title,
+  image: `/assets/${c.data.cover}`,
+  href: `#${c.data.slug}`,
+}));
+
+// Blog-based offerings (no package list) — they live in the "Plan With Us" band.
+const planCircles = [
+  { label: 'Family', image: '/assets/categories/family.jpg', href: '#plan-with-us' },
+  { label: 'School', image: '/assets/categories/school.jpg', href: '#plan-with-us' },
+  { label: 'Corporate', image: '/assets/categories/corporate.jpg', href: '#plan-with-us' },
+];
+
+const circles = [...categoryCircles, ...planCircles];
+---
+
+<section class="bg-surface py-12 sm:py-16" aria-labelledby="explore-heading">
+  <div class="mx-auto max-w-6xl px-6">
+    <h2 id="explore-heading" class="text-center font-heading text-2xl text-primary sm:text-3xl">
+      Explore by interest
+    </h2>
+    <p class="mt-2 text-center font-body text-neutral/60">
+      Tap a circle to jump to that part of the journey.
+    </p>
+
+    <ul
+      class="no-scrollbar mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto px-1 pb-2 sm:gap-7 md:flex-wrap md:justify-center"
+    >
+      {
+        circles.map((circle) => (
+          <li class="shrink-0 snap-start">
+            <a href={circle.href} class="group flex w-20 flex-col items-center gap-2 sm:w-24">
+              <span class="rounded-full bg-gradient-to-tr from-accent to-primary p-[3px] transition-transform duration-200 group-hover:scale-105">
+                <span class="block rounded-full bg-surface p-[3px]">
+                  <img
+                    src={circle.image}
+                    alt={circle.label}
+                    width="96"
+                    height="96"
+                    loading="lazy"
+                    class="h-16 w-16 rounded-full object-cover sm:h-20 sm:w-20"
+                  />
+                </span>
+              </span>
+              <span class="text-center font-body text-xs font-medium text-neutral/80 transition-colors group-hover:text-primary sm:text-sm">
+                {circle.label}
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

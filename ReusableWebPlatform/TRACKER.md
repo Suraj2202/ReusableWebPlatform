@@ -12,8 +12,8 @@
 
 > Exactly **one** task lives here at a time. When done, tick it in the checklist below and copy the next unchecked task up here.
 
-- **Now:** `1.4 Explore story-circle row` — Instagram-highlight-style circles that scroll to their home sections.
-- **Next:** `1.5 All Tours continuous carousel`.
+- **Now:** `1.5 All Tours continuous carousel` — reusable horizontal scroller + tour cards (all trips).
+- **Next:** `1.6 Category blocks (Group Trip · Adventure · Trek)`.
 - **Blocked on:** _nothing._
 
 ---
@@ -65,7 +65,7 @@ Before ticking any task, all of these must be true:
 - [x] **1.1** Video banner (placeholder video). _(rules: 03, 07)_ — ✅ done (poster-first, reduced-motion safe, real media in `assets/video/`).
 - [x] **1.2** Company overview.
 - [x] **1.3** Social proof strip (static snapshot from `social.json`). _(rules: 04)_
-- [ ] **1.4** Explore story-circle row.
+- [x] **1.4** Explore story-circle row.
 - [ ] **1.5** All Tours continuous carousel.
 - [ ] **1.6** Category blocks (Group Trip · Adventure · Trek) — 3 stacked, each own slider.
 - [ ] **1.7** "Plan With Us" feature band (Family · School · Corporate).
@@ -127,4 +127,4 @@ Authoritative log lives in [Plan §13](docs/Hidden-Naqsha-Plan.md#13-decisions-l
 | 2026-06-25 | 1.1 Hero done — poster-first video banner + asset restructure                         | Build 1.2      |
 | 2026-06-25 | 0.2 + 0.3 done — content collections + placeholder data, Header/Footer/WhatsApp float | Build 1.2      |
 | 2026-06-25 | 1.2 done — Company overview section + `overview` block in site.config                 | Build 1.3      |
-| 2026-06-25 | 1.3 done — Social proof strip (Google rating + Instagram from social.json)            | Build 1.4      |
+| 2026-06-25 | 1.3 done — Social proof strip (Google rating + Instagram from social.json)            | Build 1.4      || 2026-06-25 | 1.4 done — Explore story-circle row (6 circles → in-page section anchors)              | Build 1.5      |

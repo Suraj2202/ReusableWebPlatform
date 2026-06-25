@@ -3,6 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import VideoBanner from '@/components/VideoBanner.astro';
 import CompanyOverview from '@/components/CompanyOverview.astro';
 import SocialProofStrip from '@/components/SocialProofStrip.astro';
+import StoryCircleRow from '@/components/StoryCircleRow.astro';
 import { siteConfig, whatsappHref } from '@/utils/whatsapp';
 
 const { name, tagline, description } = siteConfig.site;
@@ -20,7 +21,8 @@ const waHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
     ctaHref={waHref}
   />
 
+  <SocialProofStrip />
   <CompanyOverview />
 
-  <SocialProofStrip />
+  <StoryCircleRow />
 </BaseLayout>
