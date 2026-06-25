@@ -9,6 +9,9 @@ const categories = (await getCollection('categories')).sort((a, b) => a.data.ord
 const navLinks = [
   { label: 'Home', href: '/' },
   ...categories.map((c) => ({ label: c.data.title, href: `/explore/${c.data.slug}` })),
+  { label: 'Family', href: '/family' },
+  { label: 'School', href: '/school' },
+  { label: 'Corporate', href: '/corporate' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];
