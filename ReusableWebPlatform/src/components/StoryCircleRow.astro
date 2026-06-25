@@ -20,7 +20,7 @@ const planCircles = [
 const circles = [...categoryCircles, ...planCircles];
 ---
 
-<section class="bg-surface py-12 sm:py-16" aria-labelledby="explore-heading">
+<section class="bg-surface py-6 sm:py-8" aria-labelledby="explore-heading">
   <div class="mx-auto max-w-6xl px-6">
     <h2 id="explore-heading" class="text-center font-heading text-2xl text-primary sm:text-3xl">
       Explore by interest
@@ -30,7 +30,7 @@ const circles = [...categoryCircles, ...planCircles];
     </p>
 
     <ul
-      class="no-scrollbar mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto px-1 pb-2 sm:gap-7 md:flex-wrap md:justify-center"
+      class="no-scrollbar -mx-6 mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-2 sm:gap-7 md:mx-0 md:flex-wrap md:justify-center md:px-0 max-md:[mask-image:linear-gradient(to_right,transparent,#000_1.5rem,#000_calc(100%_-_1.5rem),transparent)]"
     >
       {
         circles.map((circle) => (
