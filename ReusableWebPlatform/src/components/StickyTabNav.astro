@@ -39,6 +39,7 @@ const { tabs } = Astro.props;
 <script>
   const nav = document.querySelector<HTMLElement>('[data-tabnav]');
   if (nav) {
+    const list = nav.querySelector<HTMLElement>('ul');
     const links = Array.from(nav.querySelectorAll<HTMLAnchorElement>('[data-tab]'));
     const sections = links
       .map((link) => document.getElementById(link.dataset.tab ?? ''))
@@ -48,7 +49,16 @@ const { tabs } = Astro.props;
       links.forEach((link) => {
         const active = link.dataset.tab === id;
         link.setAttribute('aria-current', active ? 'true' : 'false');
-        if (active) link.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+        // Centre the active tab horizontally WITHIN the strip only — never scroll the page.
+        if (active && list) {
+          const linkRect = link.getBoundingClientRect();
+          const listRect = list.getBoundingClientRect();
+          const target =
+            list.scrollLeft +
+            (linkRect.left - listRect.left) -
+            (list.clientWidth - link.clientWidth) / 2;
+          list.scrollTo({ left: target, behavior: 'smooth' });
+        }
       });
     };
 
