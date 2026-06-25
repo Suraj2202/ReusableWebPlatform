@@ -16,6 +16,29 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
+// Grouped links for mobile drawer
+const drawerSections = [
+  {
+    heading: 'Explore',
+    links: categories.map((c) => ({ label: c.data.title, href: `/explore/${c.data.slug}` })),
+  },
+  {
+    heading: 'Plan With Us',
+    links: [
+      { label: 'Family Trips', href: '/family' },
+      { label: 'School Trips', href: '/school' },
+      { label: 'Corporate Trips', href: '/corporate' },
+    ],
+  },
+  {
+    heading: 'Company',
+    links: [
+      { label: 'About Us', href: '/about' },
+      { label: 'Contact', href: '/contact' },
+    ],
+  },
+];
+
 const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
 ---
 
@@ -127,17 +150,32 @@ const enquireHref = whatsappHref(`Hi ${name}, I'd like help planning a trip.`);
       </button>
     </div>
 
-    <nav class="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4" aria-label="Mobile">
-      {
-        navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="drawer-link rounded-theme px-4 py-3 font-body text-base font-medium text-neutral transition-colors hover:bg-primary/5 hover:text-primary"
-          >
-            {link.label}
-          </a>
-        ))
-      }
+    <nav class="flex flex-1 flex-col overflow-y-auto px-3 py-4" aria-label="Mobile">
+      <!-- Home link -->
+      <a
+        href="/"
+        class="drawer-link rounded-theme px-4 py-3 font-body text-base font-semibold text-primary"
+      >
+        Home
+      </a>
+
+      {drawerSections.map((section) => (
+        <div class="mt-3">
+          <span class="px-4 font-body text-xs font-semibold uppercase tracking-wide text-neutral/50">
+            {section.heading}
+          </span>
+          <div class="mt-1 flex flex-col gap-0.5">
+            {section.links.map((link) => (
+              <a
+                href={link.href}
+                class="drawer-link rounded-theme px-4 py-2.5 font-body text-sm font-medium text-neutral transition-colors hover:bg-primary/5 hover:text-primary"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
     </nav>
 
     <div class="border-t border-neutral/10 p-4">
