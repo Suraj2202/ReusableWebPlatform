@@ -10,7 +10,7 @@ const program = siteConfig.programs.corporate;
 const { title, tagline, image, narrative, highlights } = program;
 ---
 
-<BaseLayout title={`${title} — ${siteConfig.site.name}`} description={tagline}>
+<BaseLayout title={`${title} — ${siteConfig.site.name}`} description={tagline} hideFloatMobile>
   <ProgramPageHero title={title} tagline={tagline} image={image} />
 
   <!-- What We Do -->

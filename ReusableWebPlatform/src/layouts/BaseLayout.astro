@@ -8,9 +8,10 @@ import BackToTop from '@/components/BackToTop.astro';
 interface Props {
   title?: string;
   description?: string;
+  hideFloatMobile?: boolean;
 }
 
-const { title = 'Hidden Naqsha', description = '' } = Astro.props;
+const { title = 'Hidden Naqsha', description = '', hideFloatMobile = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -36,7 +37,9 @@ const { title = 'Hidden Naqsha', description = '' } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <WhatsAppFloatButton />
+    <div class:list={[{ 'hidden md:block': hideFloatMobile }]}>
+      <WhatsAppFloatButton />
+    </div>
     <BackToTop />
   </body>
 </html>
