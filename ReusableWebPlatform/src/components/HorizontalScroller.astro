@@ -1,0 +1,88 @@
+---
+/**
+ * Reusable horizontal snap scroller (docs/rules/07-animation.md, 08-navigation.md).
+ * Full-bleed soft edges on mobile (no hard "wall"), hidden scrollbar with iOS momentum,
+ * snap points, keyboard-scrollable, and arrow buttons on md+ where hover is available.
+ * Cards go in the default <slot/>. Pass `label` for the scroll region's accessible name.
+ */
+interface Props {
+  label: string;
+  /** Tailwind gap utility between items, e.g. "gap-4 sm:gap-5". */
+  gap?: string;
+}
+const { label, gap = 'gap-4 sm:gap-5' } = Astro.props;
+---
+
+<div class="group/scroller relative">
+  <!-- Prev arrow (md+) -->
+  <button
+    type="button"
+    data-scroll="prev"
+    aria-label="Scroll left"
+    class="absolute left-1 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-surface/90 p-2 text-primary shadow-md ring-1 ring-neutral/10 backdrop-blur transition hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-0 md:block"
+  >
+    <svg
+      class="h-5 w-5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      aria-hidden="true"
+    >
+      <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+
+  <ul
+    data-scroller
+    role="list"
+    aria-label={label}
+    tabindex="0"
+    class={`no-scrollbar -mx-6 flex snap-x snap-mandatory overflow-x-auto px-6 pb-2 md:mx-0 md:px-1 max-md:[mask-image:linear-gradient(to_right,transparent,#000_1.5rem,#000_calc(100%_-_1.5rem),transparent)] focus-visible:outline-none ${gap}`}
+  >
+    <slot />
+  </ul>
+
+  <!-- Next arrow (md+) -->
+  <button
+    type="button"
+    data-scroll="next"
+    aria-label="Scroll right"
+    class="absolute right-1 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-surface/90 p-2 text-primary shadow-md ring-1 ring-neutral/10 backdrop-blur transition hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-0 md:block"
+  >
+    <svg
+      class="h-5 w-5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      aria-hidden="true"
+    >
+      <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+</div>
+
+<script>
+  // Wire arrow buttons to scroll their sibling track by ~85% of the visible width.
+  document.querySelectorAll<HTMLElement>('[data-scroller]').forEach((track) => {
+    const scroller = track.closest('.group\\/scroller');
+    if (!scroller) return;
+    const prev = scroller.querySelector<HTMLButtonElement>('[data-scroll="prev"]');
+    const next = scroller.querySelector<HTMLButtonElement>('[data-scroll="next"]');
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth - 1;
+      if (prev) prev.disabled = track.scrollLeft <= 1;
+      if (next) next.disabled = track.scrollLeft >= max;
+    };
+    const page = (dir: number) =>
+      track.scrollBy({ left: dir * track.clientWidth * 0.85, behavior: 'smooth' });
+
+    prev?.addEventListener('click', () => page(-1));
+    next?.addEventListener('click', () => page(1));
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  });
+</script>

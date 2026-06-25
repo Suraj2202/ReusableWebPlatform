@@ -21,6 +21,30 @@
 | `reviews/avatar-02.jpg`       | Reviewer avatar    | 1:1      | 256px     | PLACEHOLDER | from `testimonials/rahul.jpg` |
 | `reviews/avatar-03.jpg`       | Reviewer avatar    | 1:1      | 256px     | PLACEHOLDER | from `testimonials/sarah.jpg` |
 
+### Trip covers (4:3, min 1280px) — all PLACEHOLDER until real assets arrive
+
+| Path (under `public/assets/`)                  | Trip                          | Source if placeholder        |
+| ---------------------------------------------- | ----------------------------- | ---------------------------- |
+| `trips/ladakh-leh-circuit/cover.jpg`           | Ladakh Leh Circuit            | from `services/mountain.jpg` |
+| `trips/ladakh-pangong-nubra/cover.jpg`         | Ladakh Pangong & Nubra        | from `gallery/gallery-01.jpg`|
+| `trips/kashmir-valley-escape/cover.jpg`        | Kashmir Valley Escape         | from `gallery/gallery-02.jpg`|
+| `trips/kashmir-gulmarg-getaway/cover.jpg`      | Kashmir Gulmarg Getaway       | from `gallery/gallery-03.jpg`|
+| `trips/zanskar-srinagar-manali/cover.jpg`      | Zanskar Srinagar–Manali       | from `gallery/gallery-04.jpg`|
+| `trips/kargil-zanskar-expedition/cover.jpg`    | Kargil Zanskar Expedition     | from `services/safari.jpg`   |
+| `trips/autumn-kashmir-chinar/cover.jpg`        | Autumn in Kashmir — Chinar    | from `gallery/gallery-05.jpg`|
+| `trips/meghalaya-living-roots/cover.jpg`       | Meghalaya Living Roots        | from `services/culture.jpg`  |
+| `trips/gulmarg-skiing-beginner/cover.jpg`      | Gulmarg Skiing — Beginner     | from `gallery/gallery-06.jpg`|
+| `trips/gulmarg-skiing-advanced/cover.jpg`      | Gulmarg Skiing — Advanced     | from `services/mountain.jpg` |
+| `trips/gulmarg-snowboarding-intro/cover.jpg`   | Gulmarg Snowboarding — Intro  | from `gallery/gallery-01.jpg`|
+| `trips/gulmarg-snowboarding-freeride/cover.jpg`| Gulmarg Snowboarding — Freeride | from `gallery/gallery-02.jpg`|
+| `trips/kashmir-great-lakes/cover.jpg`          | Kashmir Great Lakes           | from `gallery/gallery-03.jpg`|
+| `trips/kalapari-lake/cover.jpg`                | Kalapari Lake                 | from `gallery/gallery-04.jpg`|
+| `trips/tarsar-marsar/cover.jpg`                | Tarsar Marsar                 | from `gallery/gallery-05.jpg`|
+| `trips/valley-of-flowers/cover.jpg`            | Valley of Flowers             | from `services/culture.jpg`  |
+| `trips/hirpora-wildlife/cover.jpg`             | Hirpora Wildlife              | from `services/safari.jpg`   |
+| `trips/kausernag-lake/cover.jpg`               | Kausernag Lake                | from `gallery/gallery-06.jpg`|
+| `trips/taulian-meadow/cover.jpg`               | Taulian Meadow                | from `services/mountain.jpg` |
+
 > Add a row whenever a new image path is introduced. Trip images go under `trips/<slug>/` and get their own rows as trips are built.
 
 ## Needed from user (request list)

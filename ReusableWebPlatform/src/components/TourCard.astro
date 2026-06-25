@@ -1,0 +1,66 @@
+---
+import type { Trip } from '@/utils/trips';
+import { formatPrice, formatDuration } from '@/utils/trips';
+
+interface Props {
+  trip: Trip;
+}
+const { trip } = Astro.props;
+const { slug, title, cover, durationNights, durationDays, pickup, drop, priceFrom } = trip.data;
+const href = `/trip/${slug}`;
+---
+
+<li class="w-64 shrink-0 snap-start sm:w-72">
+  <a
+    href={href}
+    class="group/card block overflow-hidden rounded-theme bg-white shadow-sm ring-1 ring-neutral/10 transition duration-200 hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+  >
+    <div class="relative aspect-[4/3] overflow-hidden">
+      <img
+        src={`/assets/${cover}`}
+        alt={title}
+        width="384"
+        height="288"
+        loading="lazy"
+        decoding="async"
+        class="h-full w-full object-cover transition-transform duration-300 group-hover/card:scale-105"
+      />
+      <span
+        class="absolute right-3 top-3 rounded-full bg-surface/95 px-2.5 py-1 text-xs font-semibold text-primary shadow-sm backdrop-blur"
+      >
+        {formatDuration(durationNights, durationDays)}
+      </span>
+    </div>
+
+    <div class="space-y-2 p-4">
+      <h3
+        class="font-heading text-lg leading-snug text-primary transition-colors group-hover/card:text-secondary"
+      >
+        {title}
+      </h3>
+      <p class="flex items-center gap-1.5 font-body text-sm text-neutral/60">
+        <svg
+          class="h-4 w-4 shrink-0 text-accent"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
+          <path
+            d="M12 21s-7-5.2-7-11a7 7 0 1 1 14 0c0 5.8-7 11-7 11Z"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <circle cx="12" cy="10" r="2.5"></circle>
+        </svg>
+        <span class="truncate">{pickup} → {drop}</span>
+      </p>
+      <p class="pt-1 font-body text-sm text-neutral/60">
+        from <span class="font-heading text-lg font-semibold text-neutral"
+          >{formatPrice(priceFrom)}</span
+        >
+        <span class="text-xs">/ person</span>
+      </p>
+    </div>
+  </a>
+</li>

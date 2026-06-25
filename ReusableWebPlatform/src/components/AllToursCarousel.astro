@@ -1,0 +1,34 @@
+---
+import HorizontalScroller from './HorizontalScroller.astro';
+import TourCard from './TourCard.astro';
+import { getAllTrips } from '@/utils/trips';
+
+const trips = await getAllTrips();
+---
+
+<section id="all-tours" class="bg-surface py-10 sm:py-14" aria-labelledby="all-tours-heading">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <p class="font-body text-sm font-medium uppercase tracking-wide text-accent">
+          All journeys
+        </p>
+        <h2 id="all-tours-heading" class="mt-1 font-heading text-2xl text-primary sm:text-3xl">
+          Every trip we run
+        </h2>
+      </div>
+      <a
+        href="/explore"
+        class="hidden shrink-0 font-body text-sm font-medium text-primary underline-offset-4 hover:underline sm:inline"
+      >
+        View all
+      </a>
+    </div>
+
+    <div class="mt-7">
+      <HorizontalScroller label="All journeys">
+        {trips.map((trip) => <TourCard trip={trip} />)}
+      </HorizontalScroller>
+    </div>
+  </div>
+</section>
