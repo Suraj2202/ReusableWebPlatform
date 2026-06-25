@@ -8,6 +8,7 @@
     "dev": "astro dev",
     "prebuild": "node scripts/optimize-images.mjs",
     "build": "astro build",
+    "postbuild": "node scripts/inject-csp-hashes.mjs",
     "preview": "astro preview",
     "lint": "prettier --check \"src/**/*.{astro,css,ts,js}\"",
     "lint:fix": "prettier --write \"src/**/*.{astro,css,ts,js}\"",

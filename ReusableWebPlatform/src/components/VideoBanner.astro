@@ -31,7 +31,7 @@ const { poster, videoSrc, headline, subtext, ctaText, ctaHref } = Astro.props;
         muted
         loop
         playsinline
-        preload="metadata"
+        preload="auto"
         aria-hidden="true"
       >
         <source src={videoSrc} type="video/mp4" />
@@ -76,7 +76,7 @@ const { poster, videoSrc, headline, subtext, ctaText, ctaHref } = Astro.props;
 <script>
   // Poster-first hero. The video uses native `autoplay muted loop playsinline`,
   // which browsers allow to autoplay on all devices (iOS/Android/desktop).
-  // This script only: (1) reveals the video once it actually plays,
+  // This script: (1) reveals the video once it actually plays,
   // (2) honors reduced-motion (poster only), (3) pauses when scrolled offscreen.
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -92,11 +92,27 @@ const { poster, videoSrc, headline, subtext, ctaText, ctaHref } = Astro.props;
     }
 
     // Reveal the video only once a frame is actually rendered (no black flash).
+    let revealed = false;
     const reveal = () => {
+      if (revealed) return;
+      revealed = true;
       video.style.opacity = '1';
     };
+
+    // Listen for playing event (fires on play/resume)
     video.addEventListener('playing', reveal);
-    if (!video.paused && video.readyState >= 2) reveal();
+
+    // Handle race condition: if autoplay already started before this script ran,
+    // the 'playing' event was missed. Check multiple states:
+    if (!video.paused) {
+      // Video is already playing or buffering to play — reveal immediately
+      // if data is available, or wait for canplay.
+      if (video.readyState >= 2) {
+        reveal();
+      } else {
+        video.addEventListener('canplay', reveal, { once: true });
+      }
+    }
 
     // Pause when offscreen to save battery/CPU; resume when back in view.
     const observer = new IntersectionObserver(
