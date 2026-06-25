@@ -48,37 +48,54 @@ const companyLinks = [
       <nav aria-label="Explore">
         <h3 class="font-body text-xs font-semibold uppercase tracking-wide text-accent">Explore</h3>
         <ul class="mt-2.5 space-y-1.5">
-          {exploreLinks.map((link) => (
-            <li>
-              <a href={link.href} class="font-body text-sm text-surface/80 transition-colors hover:text-surface">
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {
+            exploreLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="font-body text-sm text-surface/80 transition-colors hover:text-surface"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
       <nav aria-label="Plan with us">
-        <h3 class="font-body text-xs font-semibold uppercase tracking-wide text-accent">Plan With Us</h3>
+        <h3 class="font-body text-xs font-semibold uppercase tracking-wide text-accent">
+          Plan With Us
+        </h3>
         <ul class="mt-2.5 space-y-1.5">
-          {planLinks.map((link) => (
-            <li>
-              <a href={link.href} class="font-body text-sm text-surface/80 transition-colors hover:text-surface">
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {
+            planLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="font-body text-sm text-surface/80 transition-colors hover:text-surface"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
       <nav aria-label="Company">
         <h3 class="font-body text-xs font-semibold uppercase tracking-wide text-accent">Company</h3>
         <ul class="mt-2.5 space-y-1.5">
-          {companyLinks.map((link) => (
-            <li>
-              <a href={link.href} class="font-body text-sm text-surface/80 transition-colors hover:text-surface">
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {
+            companyLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="font-body text-sm text-surface/80 transition-colors hover:text-surface"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
     </div>
@@ -98,7 +115,15 @@ const companyLinks = [
         class="inline-flex items-center gap-1.5 font-body text-xs text-surface/70 transition-colors hover:text-surface"
         aria-label={`Follow on Instagram @${igHandle}`}
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+        >
           <rect x="2" y="2" width="20" height="20" rx="5"></rect>
           <circle cx="12" cy="12" r="4"></circle>
           <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
